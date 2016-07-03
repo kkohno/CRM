@@ -12,7 +12,7 @@ namespace CRM_MODEL
 	/// </summary>
 	public class ProviderReference
 	{
-		public ulong? Id { get; set; }
+		public long? Id { get; set; }
 		/// <summary>
 		/// ссылка
 		/// </summary>

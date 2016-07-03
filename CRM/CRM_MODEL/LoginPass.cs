@@ -10,9 +10,10 @@ namespace CRM_MODEL
 {
 	public class LoginPass
 	{
-		public ulong? Id { get; set; }
+		public long? Id { get; set; }
 		[Required]
 		[Index(IsUnique = true)]
+		[StringLength(50)]
 		public string Login { get; set; }
 		[Required]
 		public string Pass { get; set; }

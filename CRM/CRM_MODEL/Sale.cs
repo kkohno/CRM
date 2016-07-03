@@ -12,7 +12,7 @@ namespace CRM_MODEL
 	/// </summary>
 	public class Sale
 	{
-		public ulong? Id { get; set; }
+		public long? Id { get; set; }
 		[Required]
 		public Good Good { get; set; }
 		public double SellingPrice { get; set; }

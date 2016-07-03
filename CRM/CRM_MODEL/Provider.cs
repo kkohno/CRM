@@ -12,7 +12,7 @@ namespace CRM_MODEL
 	/// </summary>
 	public class Provider
 	{
-		public ulong? Id { get; set; }
+		public long? Id { get; set; }
 		/// <summary>
 		/// название поставщика
 		/// </summary>
@@ -26,10 +26,10 @@ namespace CRM_MODEL
 		/// <summary>
 		/// телефоны поставщика
 		/// </summary>
-		public List<ProviderPhone> Phones { get; set; } = new List<ProviderPhone>();
+		public ICollection<ProviderPhone> Phones { get; set; } = new List<ProviderPhone>();
 		/// <summary>
 		/// ссылки на поставщика
 		/// </summary>
-		public List<ProviderReference> References { get; set; } = new List<ProviderReference>();
+		public ICollection<ProviderReference> References { get; set; } = new List<ProviderReference>();
 	}
 }

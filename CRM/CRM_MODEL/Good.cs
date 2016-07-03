@@ -12,7 +12,7 @@ namespace CRM_MODEL
 	/// </summary>
 	public class Good
 	{
-		public ulong? Id { get; set; }
+		public long? Id { get; set; }
 		/// <summary>
 		/// название товара
 		/// </summary>
@@ -38,6 +38,6 @@ namespace CRM_MODEL
 		/// <summary>
 		/// ссылки на теже товары у конкурентов
 		/// </summary>
-		public List<GoodCompetitorRef> CompetitorRefs { get; set; } = new List<GoodCompetitorRef>();
+		public ICollection<GoodCompetitorRef> CompetitorRefs { get; set; } = new List<GoodCompetitorRef>();
 	}
 }

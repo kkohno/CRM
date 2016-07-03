@@ -12,7 +12,7 @@ namespace CRM_MODEL
 	/// </summary>
 	public class GoodCompetitorRef
 	{
-		public ulong? Id { get; set; }
+		public long? Id { get; set; }
 		[Required]
 		public string Reference { get; set; }
 		public string Comment { get; set; }

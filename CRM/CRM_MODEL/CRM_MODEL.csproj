@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRMDBContext.cs" />
     <Compile Include="Good.cs" />
     <Compile Include="GoodCompetitorRef.cs" />
     <Compile Include="GoodStorageItem.cs" />

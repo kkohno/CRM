@@ -12,7 +12,7 @@ namespace CRM_MODEL
 	/// </summary>
 	public class User
 	{
-		public ulong? Id { get; set; }
+		public long? Id { get; set; }
 		/// <summary>
 		/// фамилия
 		/// </summary>
@@ -29,7 +29,9 @@ namespace CRM_MODEL
 		/// <summary>
 		/// бинарная маска прав пользователя
 		/// </summary>
-		public uint Rights { get; set; }
+		public int Rights { get; set; }
+		[Required]
+		public LoginPass LoginPass { get; set; }
 
 		/// <summary>
 		/// возвращает короткое ФИО
