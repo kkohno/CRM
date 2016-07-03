@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRM.Properties
+namespace CRM_VIEW.Properties
 {
 
 

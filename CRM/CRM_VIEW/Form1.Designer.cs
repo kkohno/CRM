@@ -1,4 +1,4 @@
-﻿namespace CRM
+﻿namespace CRM_VIEW
 {
 	partial class Form1
 	{
