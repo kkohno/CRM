@@ -18,7 +18,6 @@ namespace CRM_MODEL
 		[Required]
 		public string Pass { get; set; }
 		[Required]
-		[Index(IsUnique = true)]
-		public User User { get; set; }
+		public virtual User User { get; set; }
 	}
 }

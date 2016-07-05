@@ -17,7 +17,7 @@ namespace CRM_MODEL
 		/// товар на складе
 		/// </summary>
 		[Required]
-		public Good Good { get; set; }
+		public virtual Good Good { get; set; }
 		/// <summary>
 		/// количество товара на складе
 		/// </summary>

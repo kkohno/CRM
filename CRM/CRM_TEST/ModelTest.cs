@@ -39,7 +39,6 @@ namespace CRM_TEST
 				context.LoginPasses.Add(lp2);
 				context.SaveChanges();
 				Assert.IsTrue(lp1.Id > 0);
-				Assert.IsNotNull(lp1.User.LoginPass);
 			}
 		}
 
@@ -82,10 +81,6 @@ namespace CRM_TEST
 					Name1 = "AddGood фамилия",
 					Name2 = "AddGood имя",
 					Name3 = "AddGood отчество",
-					LoginPass = new LoginPass {
-						Login = "AddGood login",
-						Pass = "AddGood pass"
-					}
 				};
 				var sale = new Sale {
 					Date = DateTime.Today,
@@ -93,9 +88,15 @@ namespace CRM_TEST
 					SellingPrice = good.CurrentSellingPrice,
 					User = user
 				};
-				context.Goods.Add(good);
+				var lp = new LoginPass {
+					Login = "AddGood login",
+					Pass = "AddGood pass",
+					User = user
+				};
+                context.Goods.Add(good);
 				context.GoodStorageItems.Add(goodStorageItem);
 				context.Sales.Add(sale);
+				context.LoginPasses.Add(lp);
 				context.SaveChanges();
 			}
 		}

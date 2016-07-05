@@ -14,9 +14,9 @@ namespace CRM_MODEL
 	{
 		public long? Id { get; set; }
 		[Required]
-		public Good Good { get; set; }
+		public virtual Good Good { get; set; }
 		public double SellingPrice { get; set; }
-		public User User { get; set; }
+		public virtual User User { get; set; }
 		[Required]
 		public DateTime? Date { get; set; }
 	}

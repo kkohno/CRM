@@ -30,8 +30,6 @@ namespace CRM_MODEL
 		/// бинарная маска прав пользователя
 		/// </summary>
 		public int Rights { get; set; }
-		[Required]
-		public LoginPass LoginPass { get; set; }
 
 		/// <summary>
 		/// возвращает короткое ФИО

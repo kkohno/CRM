@@ -26,10 +26,10 @@ namespace CRM_MODEL
 		/// <summary>
 		/// телефоны поставщика
 		/// </summary>
-		public ICollection<ProviderPhone> Phones { get; set; } = new List<ProviderPhone>();
+		public virtual ICollection<ProviderPhone> Phones { get; set; } = new List<ProviderPhone>();
 		/// <summary>
 		/// ссылки на поставщика
 		/// </summary>
-		public ICollection<ProviderReference> References { get; set; } = new List<ProviderReference>();
+		public virtual ICollection<ProviderReference> References { get; set; } = new List<ProviderReference>();
 	}
 }

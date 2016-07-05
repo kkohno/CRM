@@ -25,11 +25,11 @@ namespace CRM_MODEL
 		/// <summary>
 		/// тип товара
 		/// </summary>
-		public GoodType GoodType { get; set; }
+		public virtual GoodType GoodType { get; set; }
 		/// <summary>
 		/// поставщик
 		/// </summary>
-		public Provider Provider { get; set; }
+		public virtual Provider Provider { get; set; }
 		/// <summary>
 		/// текущая розничная цена
 		/// </summary>
@@ -38,6 +38,6 @@ namespace CRM_MODEL
 		/// <summary>
 		/// ссылки на теже товары у конкурентов
 		/// </summary>
-		public ICollection<GoodCompetitorRef> CompetitorRefs { get; set; } = new List<GoodCompetitorRef>();
+		public virtual ICollection<GoodCompetitorRef> CompetitorRefs { get; set; } = new List<GoodCompetitorRef>();
 	}
 }

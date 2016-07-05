@@ -64,7 +64,7 @@ namespace CRM_MODEL
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
-			modelBuilder.Entity<LoginPass>().HasRequired(lp => lp.User).WithRequiredDependent(user => user.LoginPass);
+			//modelBuilder.Entity<LoginPass>().HasRequired(lp => lp.User).WithRequiredDependent(user => user.LoginPass);
 		}
 	}
 }

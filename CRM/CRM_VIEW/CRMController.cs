@@ -9,52 +9,111 @@ using CRM_MODEL;
 
 namespace CRM_VIEW
 {
+	/// <summary>
+	/// логика работы с БД от имени пользователя
+	/// </summary>
 	public partial class CRMController : Component
 	{
-		CRMDBContext _dbContext;
-		public CRMDBContext DBContext
-		{
-			get
-			{
-				return _dbContext;
-			}
-			set
-			{
-				_dbContext = value;
-			}
-		}
 		User _user;
 		public CRM_MODEL.User User
 		{
 			get { return _user; }
-			private set
+			set
 			{
-				if (value == _user) return;
-				var last = _user;
 				_user = value;
-				if (last != null && OnDeauthorized != null) OnDeauthorized(this, last);
-				if (_user != null && OnAuthorized != null) OnAuthorized(this, _user);
 			}
 		}
-
+		public bool Authorized
+		{
+			get
+			{
+				return User != null;
+			}
+		}
 
 		public CRMController()
 		{
 			InitializeComponent();
 		}
-
 		public CRMController(IContainer container)
 		{
 			container.Add(this);
 
 			InitializeComponent();
 		}
+		public void CopyState(CRMController other)
+		{
+			_user = other._user;
+		}
+
+		public void Authorization(string login, string pass)
+		{
+			if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(pass)) return;
+
+			var loginPass = new LoginPass { Login = login, Pass = pass };
+			using (var context = new CRMDBContext()) {
+				var query = from lp in context.LoginPasses
+							where lp.Login == loginPass.Login && lp.Pass == loginPass.Pass
+							select lp;
+				var reslp = query.FirstOrDefault();
+				if (reslp == null) {
+					if (OnBadLoginOrPass != null) {
+						loginPass.Pass = "";
+						OnBadLoginOrPass(this, loginPass);
+					}
+                    return;
+				}
+				User = reslp.User;
+				if (User == null) throw new Exception("Не указан пользователь в БД для логина или пароля");
+				if (OnAuthorized != null) OnAuthorized(this, User);
+			}
+		}
+		public bool Registration(LoginPass loginPass, User user)
+		{
+			if (string.IsNullOrEmpty(loginPass.Login)) throw new Exception("Не удалось зарегестрировать пользователя - не указан логин");
+			if (string.IsNullOrEmpty(loginPass.Pass)) throw new Exception("Не удалось зарегестрировать пользователя - не указан пароль");
+			if (user == null) throw new Exception("Не удалось зарегестрировать пользователя - не указан пользователь");
+			if (string.IsNullOrEmpty(user.Name1)) throw new Exception("Не удалось зарегестрировать пользователя - не указана фамилия");
+			if (string.IsNullOrEmpty(user.Name2)) throw new Exception("Не удалось зарегестрировать пользователя - не указана имя");
+			if (string.IsNullOrEmpty(user.Name3)) throw new Exception("Не удалось зарегестрировать пользователя - не указана отчество");
+
+			using (var context = new CRMDBContext()) {
+				// проверка логина
+				var query = from lp in context.LoginPasses
+							where lp.Login == loginPass.Login
+							select lp;
+				var reslp = query.FirstOrDefault();
+				if (reslp != null) {
+					if (OnLoginExists != null) OnLoginExists(this, loginPass);
+                    return false;
+				}
+				// вставляем логинпароль
+				loginPass.User = user;
+				context.LoginPasses.Add(loginPass);
+				context.SaveChanges();
+				return true;
+			}
+		}
+		public void LogOut()
+		{
+			if (!Authorized) return;
+			var last = User;
+			_user = null;
+			if (OnLogout != null) OnLogout(this, last);
+		}
 
 		[Category("Авторизация")]
-		[Description("Происходит когда был авторизован пользователь")]
+		[Description("авторизовался пользователь")]
 		public event EventHandler<User> OnAuthorized;
 		[Category("Авторизация")]
-		[Description("Происходит пользователь стал не авторизован")]
-		public event EventHandler<User> OnDeauthorized;
+		[Description("пользователь стал не авторизован")]
+		public event EventHandler<User> OnLogout;
+		[Category("Авторизация")]
+		[Description("если логин или пароль не совпадают при авторизации")]
+		public event EventHandler<LoginPass> OnBadLoginOrPass;
+
+		[Category("Регистрация")]
+		[Description("если логин уже существует")]
+		public event EventHandler<LoginPass> OnLoginExists;
 	}
 }
