@@ -208,6 +208,7 @@
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.bindingNavigator1);
 			this.Name = "GoodTypesForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "GoodTypesForm";
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).EndInit();

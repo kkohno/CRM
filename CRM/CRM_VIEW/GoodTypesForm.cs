@@ -16,8 +16,8 @@ namespace CRM_VIEW
 		public GoodTypesForm(User user)
 		{
 			if (user == null) throw new Exception("Сначала нужно авторизоваться");
-			crmController1.User = user;
 			InitializeComponent();
+			crmController1.User = user;
 		}
 	}
 }
