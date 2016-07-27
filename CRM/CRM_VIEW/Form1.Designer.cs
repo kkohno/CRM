@@ -32,16 +32,19 @@
 			this.авторизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.входToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.crmController1 = new CRM_VIEW.CRMController(this.components);
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
 			this.регистрацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.crmController1 = new CRM_VIEW.CRMController(this.components);
+			this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.типыТоваровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.авторизацияToolStripMenuItem});
+            this.авторизацияToolStripMenuItem,
+            this.справочникиToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -62,16 +65,28 @@
 			// входToolStripMenuItem
 			// 
 			this.входToolStripMenuItem.Name = "входToolStripMenuItem";
-			this.входToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.входToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
 			this.входToolStripMenuItem.Text = "Вход";
 			this.входToolStripMenuItem.Click += new System.EventHandler(this.входToolStripMenuItem_Click);
 			// 
 			// выходToolStripMenuItem
 			// 
 			this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-			this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.выходToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
 			this.выходToolStripMenuItem.Text = "Выход";
 			this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
+			// 
+			// регистрацияToolStripMenuItem
+			// 
+			this.регистрацияToolStripMenuItem.Name = "регистрацияToolStripMenuItem";
+			this.регистрацияToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+			this.регистрацияToolStripMenuItem.Text = "Регистрация";
+			this.регистрацияToolStripMenuItem.Click += new System.EventHandler(this.регистрацияToolStripMenuItem_Click);
 			// 
 			// crmController1
 			// 
@@ -79,17 +94,20 @@
 			this.crmController1.OnAuthorized += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnAuthorized);
 			this.crmController1.OnLogout += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnLogout);
 			// 
-			// toolStripMenuItem1
+			// справочникиToolStripMenuItem
 			// 
-			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+			this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.типыТоваровToolStripMenuItem});
+			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
+			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+			this.справочникиToolStripMenuItem.Text = "Справочники";
 			// 
-			// регистрацияToolStripMenuItem
+			// типыТоваровToolStripMenuItem
 			// 
-			this.регистрацияToolStripMenuItem.Name = "регистрацияToolStripMenuItem";
-			this.регистрацияToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.регистрацияToolStripMenuItem.Text = "Регистрация";
-			this.регистрацияToolStripMenuItem.Click += new System.EventHandler(this.регистрацияToolStripMenuItem_Click);
+			this.типыТоваровToolStripMenuItem.Name = "типыТоваровToolStripMenuItem";
+			this.типыТоваровToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.типыТоваровToolStripMenuItem.Text = "Типы товаров";
+			this.типыТоваровToolStripMenuItem.Click += new System.EventHandler(this.типыТоваровToolStripMenuItem_Click);
 			// 
 			// Form1
 			// 
@@ -117,6 +135,8 @@
 		private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem регистрацияToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem типыТоваровToolStripMenuItem;
 	}
 }
 

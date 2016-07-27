@@ -42,7 +42,12 @@ namespace CRM_VIEW
 
 		private void регистрацияToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			using (var f = new RegistrationForm()) f.ShowDialog();
+			ViewUtils.ExceptionWrapper(this, () => { using (var f = new RegistrationForm()) f.ShowDialog(); });
+		}
+
+		private void типыТоваровToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ViewUtils.ExceptionWrapper(this, () => { using (var f = new GoodTypesForm(crmController1.User)) f.ShowDialog(); });
 		}
 	}
 }

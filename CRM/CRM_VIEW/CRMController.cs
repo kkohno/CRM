@@ -100,7 +100,7 @@ namespace CRM_VIEW
 			var last = User;
 			_user = null;
 			if (OnLogout != null) OnLogout(this, last);
-		}
+        }
 
 		[Category("Авторизация")]
 		[Description("авторизовался пользователь")]
