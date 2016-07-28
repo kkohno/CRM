@@ -56,8 +56,8 @@
     <Compile Include="GoodType.cs" />
     <Compile Include="LoginPass.cs" />
     <Compile Include="Provider.cs" />
-    <Compile Include="ProviderPhone.cs" />
-    <Compile Include="ProviderReference.cs" />
+    <Compile Include="Phone.cs" />
+    <Compile Include="Reference.cs" />
     <Compile Include="Sale.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

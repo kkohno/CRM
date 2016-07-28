@@ -59,15 +59,15 @@ namespace CRM_TEST
 					Provider = new Provider {
 						Name = "имя провайдера",
 						Comment = "коммент к провайдеру",
-						Phones = new ProviderPhone[] {
-							new ProviderPhone { PhoneNumber="номер телефона 1", Comment="комментарий 1" },
-							new ProviderPhone { PhoneNumber="номер телефона 2", Comment="комментарий 2" },
-							new ProviderPhone { PhoneNumber="номер телефона 3", Comment="комментарий 3" }
+						Phones = new Phone[] {
+							new Phone { PhoneNumber="номер телефона 1", Comment="комментарий 1" },
+							new Phone { PhoneNumber="номер телефона 2", Comment="комментарий 2" },
+							new Phone { PhoneNumber="номер телефона 3", Comment="комментарий 3" }
 						},
-						References = new ProviderReference[] {
-							new ProviderReference { Reference="ссылка 1", Comment= "коммент к ссылке 1" },
-							new ProviderReference { Reference="ссылка 2", Comment= "коммент к ссылке 2" },
-							new ProviderReference { Reference="ссылка 3", Comment= "коммент к ссылке 3" }
+						References = new Reference[] {
+							new Reference { ReferenceString="ссылка 1", Comment= "коммент к ссылке 1" },
+							new Reference { ReferenceString="ссылка 2", Comment= "коммент к ссылке 2" },
+							new Reference { ReferenceString="ссылка 3", Comment= "коммент к ссылке 3" }
 						}
 					}
 				};

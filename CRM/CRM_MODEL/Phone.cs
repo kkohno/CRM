@@ -10,7 +10,7 @@ namespace CRM_MODEL
 	/// <summary>
 	/// телефон поставщика
 	/// </summary>
-	public class ProviderPhone
+	public class Phone
 	{
 		public long? Id { get; set; }
 		/// <summary>

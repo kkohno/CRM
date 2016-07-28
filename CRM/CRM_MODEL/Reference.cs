@@ -10,14 +10,14 @@ namespace CRM_MODEL
 	/// <summary>
 	/// ссылка на поставщика в интернете
 	/// </summary>
-	public class ProviderReference
+	public class Reference
 	{
 		public long? Id { get; set; }
 		/// <summary>
 		/// ссылка
 		/// </summary>
 		[Required]
-		public string Reference { get; set; }
+		public string ReferenceString { get; set; }
 		/// <summary>
 		/// комментарий
 		/// </summary>

@@ -45,11 +45,11 @@ namespace CRM_MODEL
 		/// <summary>
 		/// телефоны поставщиков
 		/// </summary>
-		public DbSet<ProviderPhone> ProviderPhones { get; set; }
+		public DbSet<Phone> ProviderPhones { get; set; }
 		/// <summary>
 		/// интернет ссылки на поставщиков
 		/// </summary>
-		public DbSet<ProviderReference> ProviderReferences { get; set; }
+		public DbSet<Reference> ProviderReferences { get; set; }
 		#endregion
 		#region продажи
 		/// <summary>
