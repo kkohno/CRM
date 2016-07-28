@@ -30,7 +30,6 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoodTypesForm));
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.goodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -45,6 +44,8 @@
 			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.crmController1 = new CRM_VIEW.CRMController(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).BeginInit();
@@ -57,26 +58,21 @@
 			this.dataGridView1.AutoGenerateColumns = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
 			this.dataGridView1.DataSource = this.goodTypeBindingSource;
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(0, 25);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(497, 237);
+			this.dataGridView1.Size = new System.Drawing.Size(403, 249);
 			this.dataGridView1.TabIndex = 0;
-			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
 			// 
 			// nameDataGridViewTextBoxColumn
 			// 
 			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Тип товара";
 			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.Width = 350;
 			// 
 			// goodTypeBindingSource
 			// 
@@ -85,6 +81,7 @@
 			// bindingNavigator1
 			// 
 			this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+			this.bindingNavigator1.BindingSource = this.goodTypeBindingSource;
 			this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
 			this.bindingNavigator1.CountItemFormat = "из {0}";
 			this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
@@ -99,7 +96,9 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.toolStripSeparator1,
+            this.сохранитьToolStripButton});
 			this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
 			this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
 			this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -107,7 +106,7 @@
 			this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
 			this.bindingNavigator1.Name = "bindingNavigator1";
 			this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-			this.bindingNavigator1.Size = new System.Drawing.Size(497, 25);
+			this.bindingNavigator1.Size = new System.Drawing.Size(403, 25);
 			this.bindingNavigator1.TabIndex = 1;
 			this.bindingNavigator1.Text = "bindingNavigator1";
 			// 
@@ -196,6 +195,21 @@
 			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
 			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
 			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+			// 
+			// сохранитьToolStripButton
+			// 
+			this.сохранитьToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.сохранитьToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьToolStripButton.Image")));
+			this.сохранитьToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.сохранитьToolStripButton.Name = "сохранитьToolStripButton";
+			this.сохранитьToolStripButton.Size = new System.Drawing.Size(23, 22);
+			this.сохранитьToolStripButton.Text = "&Сохранить";
+			this.сохранитьToolStripButton.Click += new System.EventHandler(this.сохранитьToolStripButton_Click);
+			// 
 			// crmController1
 			// 
 			this.crmController1.User = null;
@@ -204,12 +218,13 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(497, 262);
+			this.ClientSize = new System.Drawing.Size(403, 274);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.bindingNavigator1);
 			this.Name = "GoodTypesForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "GoodTypesForm";
+			this.Text = "Типы товаров";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoodTypesForm_FormClosing);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
@@ -223,8 +238,6 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.BindingSource goodTypeBindingSource;
 		private System.Windows.Forms.BindingNavigator bindingNavigator1;
 		private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
@@ -239,5 +252,8 @@
 		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
 		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
 		private CRMController crmController1;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripButton сохранитьToolStripButton;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 	}
 }

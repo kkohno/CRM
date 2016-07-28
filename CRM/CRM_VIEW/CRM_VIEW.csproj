@@ -55,10 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorizationForm.cs">
+    <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuthorizationForm.Designer.cs">
+    <Compile Include="Forms\AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CRMController.cs">
@@ -73,10 +73,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GoodTypesForm.cs">
+    <Compile Include="Forms\GoodTypesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GoodTypesForm.Designer.cs">
+    <Compile Include="Forms\GoodTypesForm.Designer.cs">
       <DependentUpon>GoodTypesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -87,20 +87,20 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserView.cs">
+    <Compile Include="Views\UserView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserView.Designer.cs">
+    <Compile Include="Views\UserView.Designer.cs">
       <DependentUpon>UserView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewUtils.cs" />
-    <EmbeddedResource Include="AuthorizationForm.resx">
+    <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GoodTypesForm.resx">
+    <EmbeddedResource Include="Forms\GoodTypesForm.resx">
       <DependentUpon>GoodTypesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -115,7 +115,7 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserView.resx">
+    <EmbeddedResource Include="Views\UserView.resx">
       <DependentUpon>UserView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

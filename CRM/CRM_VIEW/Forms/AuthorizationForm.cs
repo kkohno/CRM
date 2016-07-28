@@ -13,7 +13,6 @@ namespace CRM_VIEW
 {
 	public partial class AuthorizationForm : Form
 	{
-
         public AuthorizationForm(User user)
 		{
 			InitializeComponent();
