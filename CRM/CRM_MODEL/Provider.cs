@@ -31,5 +31,10 @@ namespace CRM_MODEL
 		/// ссылки на поставщика
 		/// </summary>
 		public virtual ICollection<Reference> References { get; set; } = new List<Reference>();
+
+		public override string ToString()
+		{
+			return !string.IsNullOrEmpty(Name) ? Name : "<NONE>";
+		}
 	}
 }

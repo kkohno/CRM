@@ -10,6 +10,7 @@ namespace CRM_MODEL
 	/// <summary>
 	/// ссылка на поставщика в интернете
 	/// </summary>
+	[Serializable]
 	public class Reference
 	{
 		public long? Id { get; set; }

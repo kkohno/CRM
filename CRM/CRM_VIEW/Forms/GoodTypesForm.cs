@@ -18,7 +18,8 @@ namespace CRM_VIEW
 		bool saved = true;
 		void SaveChanges()
 		{
-			this.Validate();
+			goodTypeBindingSource.EndEdit();
+            this.Validate();
 			context.SaveChanges();
 			saved = true;
 		}

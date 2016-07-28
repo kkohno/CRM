@@ -10,6 +10,7 @@ namespace CRM_MODEL
 	/// <summary>
 	/// телефон поставщика
 	/// </summary>
+	[Serializable]
 	public class Phone
 	{
 		public long? Id { get; set; }
@@ -22,5 +23,12 @@ namespace CRM_MODEL
 		/// комментарий
 		/// </summary>
 		public string Comment { get; set; }
+
+		public override string ToString()
+		{
+			string res = string.IsNullOrEmpty(PhoneNumber) ? PhoneNumber : "<NONE>";
+			if (!string.IsNullOrEmpty(Comment)) res += " - " + Comment;
+            return res;
+		}
 	}
 }
