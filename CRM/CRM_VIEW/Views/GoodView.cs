@@ -15,6 +15,15 @@ namespace CRM_VIEW.Views
 	public partial class GoodView : UserControl
 	{
 		CRMDBContext context = new CRMDBContext();
+		public CRM_MODEL.CRMDBContext Context
+		{
+			get { return context; }
+			set
+			{
+				context = value;
+				ReloadData();
+            }
+		}
 		Good _good;
 		public Good Good
 		{
@@ -35,23 +44,32 @@ namespace CRM_VIEW.Views
 				referenceBindingSource1.DataSource = _good.CompetitorRefs;
 
 				comboBox1.SelectedItem = _good?.GoodType;
+				comboBox2.SelectedItem = _good?.Provider;
 			}
 		}
 
+		void ReloadData()
+		{
+			Context.GoodTypes.Load();
+			Context.Providers.Load();
+			goodTypeBindingSource.DataSource = Context.GoodTypes.Local;
+			providerBindingSource.DataSource = Context.Providers.Local;
+		}
 		public GoodView()
 		{
 			InitializeComponent();
-			context.GoodTypes.Load();
-			context.Providers.Load();
-			goodTypeBindingSource.DataSource = context.GoodTypes.Local;
-			providerBindingSource.DataSource = context.Providers.Local;
+			ReloadData();
 			Good = new Good();
 		}
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			var item = comboBox1.SelectedItem as GoodType;
-			_good.GoodType = item;
+			Good.GoodType = comboBox1.SelectedItem as GoodType;
         }
+
+		private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Good.Provider = comboBox2.SelectedItem as Provider;
+		}
 	}
 }

@@ -25,6 +25,7 @@ namespace CRM_VIEW.Forms
 		public GoodsForm(User user)
 		{
 			InitializeComponent();
+			goodView1.Context = context;
 			context.Goods.Load();
 			goodBindingSource.DataSource = context.Goods.Local.ToBindingList();
 		}
