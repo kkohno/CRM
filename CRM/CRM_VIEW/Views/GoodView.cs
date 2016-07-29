@@ -14,15 +14,13 @@ namespace CRM_VIEW.Views
 {
 	public partial class GoodView : UserControl
 	{
-		CRMDBContext context = new CRMDBContext();
 		public CRM_MODEL.CRMDBContext Context
 		{
-			get { return context; }
+			get { return crmdbContextController1.Context; }
 			set
 			{
-				context = value;
-				ReloadData();
-            }
+				crmdbContextController1.Context = value; ReloadData();
+			}
 		}
 		Good _good;
 		public Good Good
@@ -32,19 +30,9 @@ namespace CRM_VIEW.Views
 			{
 				_good = value;
 				if (_good == null) _good = new Good();
-				textBox1.DataBindings.Clear();
-				textBox1.DataBindings.Add("Text", _good, "Name");
-				textBox2.DataBindings.Clear();
-				textBox2.DataBindings.Add("Text", _good, "Comment");
-				textBox3.DataBindings.Clear();
-				textBox3.DataBindings.Add("Text", _good, "PurchasePrice");
-				textBox4.DataBindings.Clear();
-				textBox4.DataBindings.Add("Text", _good, "CurrentSellingPrice");
+				goodBindingSource.DataSource = _good;
 				referenceBindingSource.DataSource = _good.References;
-				referenceBindingSource1.DataSource = _good.CompetitorRefs;
-
-				comboBox1.SelectedItem = _good?.GoodType;
-				comboBox2.SelectedItem = _good?.Provider;
+				competitorBindingSource.DataSource = _good.CompetitorRefs;
 			}
 		}
 
@@ -60,16 +48,6 @@ namespace CRM_VIEW.Views
 			InitializeComponent();
 			ReloadData();
 			Good = new Good();
-		}
-
-		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			Good.GoodType = comboBox1.SelectedItem as GoodType;
-        }
-
-		private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			Good.Provider = comboBox2.SelectedItem as Provider;
 		}
 	}
 }

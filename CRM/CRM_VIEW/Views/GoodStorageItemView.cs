@@ -14,15 +14,10 @@ namespace CRM_VIEW.Views
 {
 	public partial class GoodStorageItemView : UserControl
 	{
-		CRMDBContext _context;
 		public CRMDBContext Context
 		{
-			get
-			{
-				if (_context == null) _context = new CRMDBContext();
-				return _context;
-			}
-			set { _context = value; }
+			get { return crmdbContextController1.Context; }
+			set { crmdbContextController1.Context = value; }
 		}
 		GoodStorageItem _goodStorageItem;
 		public GoodStorageItem GoodStorageItem
@@ -36,8 +31,7 @@ namespace CRM_VIEW.Views
 				_goodStorageItem = value;
 				if (value == null) _goodStorageItem = new GoodStorageItem();
 				comboBox1.SelectedItem = _goodStorageItem.Good;
-				receiveDatebindingSource.DataSource = _goodStorageItem;
-				shelfLifebindingSource.DataSource = _goodStorageItem;
+				goodStorageItemBindingSource.DataSource = _goodStorageItem;
             }
 		}
 		public void ReloadAll()

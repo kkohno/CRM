@@ -39,6 +39,8 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -53,6 +55,8 @@
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.referenceStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -65,10 +69,6 @@
 			this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-			this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.referenceStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.referenceBindingSource)).BeginInit();
@@ -179,6 +179,22 @@
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(276, 110);
 			this.dataGridView1.TabIndex = 3;
+			// 
+			// phoneNumberDataGridViewTextBoxColumn
+			// 
+			this.phoneNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+			this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+			this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Телефон";
+			this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+			this.phoneNumberDataGridViewTextBoxColumn.Width = 77;
+			// 
+			// commentDataGridViewTextBoxColumn
+			// 
+			this.commentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+			this.commentDataGridViewTextBoxColumn.Width = 82;
 			// 
 			// bindingNavigator1
 			// 
@@ -321,6 +337,21 @@
 			this.dataGridView2.Size = new System.Drawing.Size(276, 110);
 			this.dataGridView2.TabIndex = 3;
 			// 
+			// commentDataGridViewTextBoxColumn1
+			// 
+			this.commentDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.commentDataGridViewTextBoxColumn1.DataPropertyName = "Comment";
+			this.commentDataGridViewTextBoxColumn1.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
+			this.commentDataGridViewTextBoxColumn1.Width = 82;
+			// 
+			// referenceStringDataGridViewTextBoxColumn
+			// 
+			this.referenceStringDataGridViewTextBoxColumn.DataPropertyName = "ReferenceString";
+			this.referenceStringDataGridViewTextBoxColumn.HeaderText = "Ссылка";
+			this.referenceStringDataGridViewTextBoxColumn.Name = "referenceStringDataGridViewTextBoxColumn";
+			this.referenceStringDataGridViewTextBoxColumn.Width = 71;
+			// 
 			// bindingNavigator2
 			// 
 			this.bindingNavigator2.AddNewItem = this.bindingNavigatorAddNewItem1;
@@ -435,37 +466,6 @@
 			// 
 			this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
 			this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
-			// 
-			// phoneNumberDataGridViewTextBoxColumn
-			// 
-			this.phoneNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-			this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-			this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Телефон";
-			this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-			this.phoneNumberDataGridViewTextBoxColumn.Width = 77;
-			// 
-			// commentDataGridViewTextBoxColumn
-			// 
-			this.commentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
-			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-			this.commentDataGridViewTextBoxColumn.Width = 82;
-			// 
-			// commentDataGridViewTextBoxColumn1
-			// 
-			this.commentDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.commentDataGridViewTextBoxColumn1.DataPropertyName = "Comment";
-			this.commentDataGridViewTextBoxColumn1.HeaderText = "Описание";
-			this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
-			this.commentDataGridViewTextBoxColumn1.Width = 82;
-			// 
-			// referenceStringDataGridViewTextBoxColumn
-			// 
-			this.referenceStringDataGridViewTextBoxColumn.DataPropertyName = "ReferenceString";
-			this.referenceStringDataGridViewTextBoxColumn.HeaderText = "Ссылка";
-			this.referenceStringDataGridViewTextBoxColumn.Name = "referenceStringDataGridViewTextBoxColumn";
-			this.referenceStringDataGridViewTextBoxColumn.Width = 71;
 			// 
 			// ProviderView
 			// 

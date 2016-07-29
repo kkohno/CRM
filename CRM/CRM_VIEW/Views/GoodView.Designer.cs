@@ -29,11 +29,13 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoodView));
+			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.goodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -47,8 +49,6 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.referenceStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.referenceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -64,9 +64,7 @@
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.referenceStringDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.referenceBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.competitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -79,6 +77,12 @@
 			this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
+			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.referenceStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.referenceStringDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -90,7 +94,7 @@
 			this.bindingNavigator1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.referenceBindingSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.competitorBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
 			this.bindingNavigator2.SuspendLayout();
 			this.SuspendLayout();
@@ -141,22 +145,27 @@
 			// 
 			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.goodBindingSource, "Name", true));
 			this.textBox1.Location = new System.Drawing.Point(95, 3);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(199, 20);
 			this.textBox1.TabIndex = 4;
 			// 
+			// goodBindingSource
+			// 
+			this.goodBindingSource.DataSource = typeof(CRM_MODEL.Good);
+			// 
 			// comboBox1
 			// 
 			this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.goodBindingSource, "GoodType", true));
 			this.comboBox1.DataSource = this.goodTypeBindingSource;
 			this.comboBox1.FormattingEnabled = true;
 			this.comboBox1.Location = new System.Drawing.Point(95, 55);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(199, 21);
 			this.comboBox1.TabIndex = 5;
-			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 			// 
 			// goodTypeBindingSource
 			// 
@@ -166,13 +175,13 @@
 			// 
 			this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.goodBindingSource, "Provider", true));
 			this.comboBox2.DataSource = this.providerBindingSource;
 			this.comboBox2.FormattingEnabled = true;
 			this.comboBox2.Location = new System.Drawing.Point(95, 82);
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(199, 21);
 			this.comboBox2.TabIndex = 6;
-			this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
 			// 
 			// providerBindingSource
 			// 
@@ -182,6 +191,7 @@
 			// 
 			this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.goodBindingSource, "Comment", true));
 			this.textBox2.Location = new System.Drawing.Point(96, 29);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(199, 20);
@@ -211,6 +221,7 @@
 			// 
 			this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.goodBindingSource, "CurrentSellingPrice", true));
 			this.textBox4.Location = new System.Drawing.Point(96, 135);
 			this.textBox4.Name = "textBox4";
 			this.textBox4.Size = new System.Drawing.Size(199, 20);
@@ -231,6 +242,7 @@
 			// 
 			this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.goodBindingSource, "PurchasePrice", true));
 			this.textBox3.Location = new System.Drawing.Point(96, 108);
 			this.textBox3.Name = "textBox3";
 			this.textBox3.Size = new System.Drawing.Size(199, 20);
@@ -283,20 +295,6 @@
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(284, 127);
 			this.dataGridView1.TabIndex = 1;
-			// 
-			// commentDataGridViewTextBoxColumn
-			// 
-			this.commentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
-			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-			this.commentDataGridViewTextBoxColumn.Width = 82;
-			// 
-			// referenceStringDataGridViewTextBoxColumn
-			// 
-			this.referenceStringDataGridViewTextBoxColumn.DataPropertyName = "ReferenceString";
-			this.referenceStringDataGridViewTextBoxColumn.HeaderText = "Ссылка";
-			this.referenceStringDataGridViewTextBoxColumn.Name = "referenceStringDataGridViewTextBoxColumn";
 			// 
 			// referenceBindingSource
 			// 
@@ -436,35 +434,21 @@
 			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.commentDataGridViewTextBoxColumn1,
             this.referenceStringDataGridViewTextBoxColumn1});
-			this.dataGridView2.DataSource = this.referenceBindingSource1;
+			this.dataGridView2.DataSource = this.competitorBindingSource;
 			this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView2.Location = new System.Drawing.Point(3, 28);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.Size = new System.Drawing.Size(284, 127);
 			this.dataGridView2.TabIndex = 1;
 			// 
-			// commentDataGridViewTextBoxColumn1
+			// competitorBindingSource
 			// 
-			this.commentDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.commentDataGridViewTextBoxColumn1.DataPropertyName = "Comment";
-			this.commentDataGridViewTextBoxColumn1.HeaderText = "Описание";
-			this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
-			this.commentDataGridViewTextBoxColumn1.Width = 82;
-			// 
-			// referenceStringDataGridViewTextBoxColumn1
-			// 
-			this.referenceStringDataGridViewTextBoxColumn1.DataPropertyName = "ReferenceString";
-			this.referenceStringDataGridViewTextBoxColumn1.HeaderText = "Ссылка";
-			this.referenceStringDataGridViewTextBoxColumn1.Name = "referenceStringDataGridViewTextBoxColumn1";
-			// 
-			// referenceBindingSource1
-			// 
-			this.referenceBindingSource1.DataSource = typeof(CRM_MODEL.Reference);
+			this.competitorBindingSource.DataSource = typeof(CRM_MODEL.Reference);
 			// 
 			// bindingNavigator2
 			// 
 			this.bindingNavigator2.AddNewItem = this.bindingNavigatorAddNewItem1;
-			this.bindingNavigator2.BindingSource = this.referenceBindingSource1;
+			this.bindingNavigator2.BindingSource = this.competitorBindingSource;
 			this.bindingNavigator2.CountItem = this.bindingNavigatorCountItem1;
 			this.bindingNavigator2.CountItemFormat = "из {0}";
 			this.bindingNavigator2.DeleteItem = this.bindingNavigatorDeleteItem1;
@@ -576,6 +560,38 @@
 			this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
 			this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
+			// crmdbContextController1
+			// 
+			this.crmdbContextController1.Context = crmdbContext2;
+			// 
+			// commentDataGridViewTextBoxColumn
+			// 
+			this.commentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+			this.commentDataGridViewTextBoxColumn.Width = 82;
+			// 
+			// referenceStringDataGridViewTextBoxColumn
+			// 
+			this.referenceStringDataGridViewTextBoxColumn.DataPropertyName = "ReferenceString";
+			this.referenceStringDataGridViewTextBoxColumn.HeaderText = "Ссылка";
+			this.referenceStringDataGridViewTextBoxColumn.Name = "referenceStringDataGridViewTextBoxColumn";
+			// 
+			// commentDataGridViewTextBoxColumn1
+			// 
+			this.commentDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.commentDataGridViewTextBoxColumn1.DataPropertyName = "Comment";
+			this.commentDataGridViewTextBoxColumn1.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
+			this.commentDataGridViewTextBoxColumn1.Width = 82;
+			// 
+			// referenceStringDataGridViewTextBoxColumn1
+			// 
+			this.referenceStringDataGridViewTextBoxColumn1.DataPropertyName = "ReferenceString";
+			this.referenceStringDataGridViewTextBoxColumn1.HeaderText = "Ссылка";
+			this.referenceStringDataGridViewTextBoxColumn1.Name = "referenceStringDataGridViewTextBoxColumn1";
+			// 
 			// GoodView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +600,7 @@
 			this.Controls.Add(this.panel1);
 			this.Name = "GoodView";
 			this.Size = new System.Drawing.Size(298, 344);
+			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
 			this.panel1.ResumeLayout(false);
@@ -599,7 +616,7 @@
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.referenceBindingSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.competitorBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
 			this.bindingNavigator2.ResumeLayout(false);
 			this.bindingNavigator2.PerformLayout();
@@ -650,14 +667,16 @@
 		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
 		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
 		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn referenceStringDataGridViewTextBoxColumn;
 		private System.Windows.Forms.BindingSource referenceBindingSource;
 		private System.Windows.Forms.DataGridView dataGridView2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn referenceStringDataGridViewTextBoxColumn1;
-		private System.Windows.Forms.BindingSource referenceBindingSource1;
+		private System.Windows.Forms.BindingSource competitorBindingSource;
 		private System.Windows.Forms.BindingSource goodTypeBindingSource;
 		private System.Windows.Forms.BindingSource providerBindingSource;
+		private CRMDBContextController crmdbContextController1;
+		private System.Windows.Forms.BindingSource goodBindingSource;
+		private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn referenceStringDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn referenceStringDataGridViewTextBoxColumn1;
 	}
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CRM_VIEW.Forms;
+using CRM_MODEL;
+using System.Data.Entity;
 
 namespace CRM_VIEW
 {
@@ -16,7 +18,9 @@ namespace CRM_VIEW
 		public Form1()
 		{
 			InitializeComponent();
-		}
+			//goodStorageItemView1.GoodStorageItem.Good = new Good { Name = "ololo" };
+            //goodStorageItemView1.GoodStorageItem.ReceivingDate = new DateTime(1990, 1, 1);
+        }
 
 		private void crmController1_OnAuthorized(object sender, CRM_MODEL.User e)
 		{
@@ -59,6 +63,11 @@ namespace CRM_VIEW
 		private void товарыToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			ViewUtils.ExceptionWrapper(this, () => { using (var f = new GoodsForm(crmController1.User)) f.ShowDialog(); });
+		}
+
+		private void складToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ViewUtils.ExceptionWrapper(this, () => { using (var f = new StorageForm(crmController1.User)) f.ShowDialog(); });
 		}
 	}
 }
