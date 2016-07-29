@@ -99,6 +99,12 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\GoodStorageItemView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\GoodStorageItemView.Designer.cs">
+      <DependentUpon>GoodStorageItemView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\GoodView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\GoodStorageItemView.resx">
+      <DependentUpon>GoodStorageItemView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\GoodView.resx">
       <DependentUpon>GoodView.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +166,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CRM_MODEL.Good.datasource" />
+    <None Include="Properties\DataSources\CRM_MODEL.GoodStorageItem.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.GoodType.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Phone.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Provider.datasource" />
