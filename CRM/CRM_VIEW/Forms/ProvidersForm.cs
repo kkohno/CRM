@@ -17,9 +17,11 @@ namespace CRM_VIEW.Forms
 		CRMDBContext context = new CRMDBContext();
 		void Save()
 		{
-			providerBindingSource.EndEdit();
-			this.Validate();
-			context.SaveChanges();
+			ViewUtils.ExceptionWrapper(this, () => {
+				providerBindingSource.EndEdit();
+				this.Validate();
+				context.SaveChanges();
+			});
 		}
 
 		public ProvidersForm(User user)

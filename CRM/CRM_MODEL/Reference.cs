@@ -23,5 +23,12 @@ namespace CRM_MODEL
 		/// комментарий
 		/// </summary>
 		public string Comment { get; set; }
+
+		public override string ToString()
+		{
+			if (!string.IsNullOrEmpty(Comment)) return Comment;
+			if (!string.IsNullOrEmpty(ReferenceString)) return ReferenceString;
+			return Utils.NoNameString;
+		}
 	}
 }

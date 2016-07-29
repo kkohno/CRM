@@ -49,12 +49,11 @@ namespace CRM_TEST
 				var good = new Good {
 					Name = "товар 1",
 					GoodType = new GoodType { Name = "тип товара 1" },
-					Reference = "ссылка на товар",
 					CurrentSellingPrice = 123.45,
-					CompetitorRefs = new GoodCompetitorRef[] {
-						new GoodCompetitorRef { Reference="ссылка на такойже товар конкурента 1", Comment="коммент к ссылке конкурента 1" },
-						new GoodCompetitorRef { Reference="ссылка на такойже товар конкурента 2", Comment="коммент к ссылке конкурента 2" },
-						new GoodCompetitorRef { Reference="ссылка на такойже товар конкурента 3", Comment="коммент к ссылке конкурента 3" }
+					CompetitorRefs = new Reference[] {
+						new Reference { ReferenceString="ссылка на такойже товар конкурента 1", Comment="коммент к ссылке конкурента 1" },
+						new Reference { ReferenceString="ссылка на такойже товар конкурента 2", Comment="коммент к ссылке конкурента 2" },
+						new Reference { ReferenceString="ссылка на такойже товар конкурента 3", Comment="коммент к ссылке конкурента 3" }
 					},
 					Provider = new Provider {
 						Name = "имя провайдера",

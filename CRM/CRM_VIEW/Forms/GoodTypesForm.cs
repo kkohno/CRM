@@ -19,7 +19,7 @@ namespace CRM_VIEW
 		void SaveChanges()
 		{
 			goodTypeBindingSource.EndEdit();
-            this.Validate();
+			this.Validate();
 			context.SaveChanges();
 			saved = true;
 		}
@@ -43,13 +43,13 @@ namespace CRM_VIEW
 		private void GoodTypesForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			if (!saved && MessageBox.Show(this, "Сохранить изменения?", "CRM", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-				SaveChanges();
+				e.Cancel = ViewUtils.ExceptionWrapper(this, SaveChanges);
         }
 
 		private void сохранитьToolStripButton_Click(object sender, EventArgs e)
 		{
-			SaveChanges();
-        }
+			ViewUtils.ExceptionWrapper(this, SaveChanges);
+		}
 
 		private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
 		{

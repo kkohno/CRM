@@ -13,7 +13,7 @@ namespace CRM_VIEW.Views
 {
 	public partial class ProviderView : UserControl
 	{
-		Provider _provider = new Provider();
+		Provider _provider;
 		public Provider Provider
 		{
 			get { return _provider; }
@@ -32,6 +32,7 @@ namespace CRM_VIEW.Views
 		public ProviderView()
 		{
 			InitializeComponent();
+			Provider = new Provider();
 		}
 	}
 }

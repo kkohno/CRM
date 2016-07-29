@@ -29,10 +29,6 @@ namespace CRM_MODEL
 		/// </summary>
 		public DbSet<GoodType> GoodTypes { get; set; }
 		/// <summary>
-		/// ссылки на такиеже товары у конкурентов
-		/// </summary>
-		public DbSet<GoodCompetitorRef> GoodCompetitorRefs { get; set; }
-		/// <summary>
 		/// все имеющиеся в наличии товары
 		/// </summary>
 		public DbSet<GoodStorageItem> GoodStorageItems { get; set; }

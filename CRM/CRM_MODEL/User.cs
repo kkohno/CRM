@@ -44,5 +44,10 @@ namespace CRM_MODEL
 				return fio;
 			}
 		}
+
+		public override string ToString()
+		{
+			return ShortFIO;
+		}
 	}
 }

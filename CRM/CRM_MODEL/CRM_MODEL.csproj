@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="CRMDBContext.cs" />
     <Compile Include="Good.cs" />
-    <Compile Include="GoodCompetitorRef.cs" />
     <Compile Include="GoodStorageItem.cs" />
     <Compile Include="GoodType.cs" />
     <Compile Include="LoginPass.cs" />
@@ -61,6 +60,7 @@
     <Compile Include="Sale.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

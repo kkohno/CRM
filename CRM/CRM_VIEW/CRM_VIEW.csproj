@@ -73,6 +73,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\GoodsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GoodsForm.Designer.cs">
+      <DependentUpon>GoodsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GoodTypesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     </Compile>
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoodView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\GoodView.Designer.cs">
+      <DependentUpon>GoodView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ProviderView.cs">
       <SubType>UserControl</SubType>
@@ -113,6 +125,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GoodsForm.resx">
+      <DependentUpon>GoodsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GoodTypesForm.resx">
       <DependentUpon>GoodTypesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +146,9 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\GoodView.resx">
+      <DependentUpon>GoodView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ProviderView.resx">
       <DependentUpon>ProviderView.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +156,7 @@
       <DependentUpon>UserView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CRM_MODEL.Good.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.GoodType.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Phone.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Provider.datasource" />

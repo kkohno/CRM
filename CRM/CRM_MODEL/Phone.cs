@@ -26,7 +26,7 @@ namespace CRM_MODEL
 
 		public override string ToString()
 		{
-			string res = string.IsNullOrEmpty(PhoneNumber) ? PhoneNumber : "<NONE>";
+			string res = string.IsNullOrEmpty(PhoneNumber) ? PhoneNumber : Utils.NoNameString;
 			if (!string.IsNullOrEmpty(Comment)) res += " - " + Comment;
             return res;
 		}

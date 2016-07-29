@@ -10,6 +10,7 @@ namespace CRM_MODEL
 	/// <summary>
 	/// поставщик
 	/// </summary>
+	[Serializable]
 	public class Provider
 	{
 		public long? Id { get; set; }
@@ -34,7 +35,7 @@ namespace CRM_MODEL
 
 		public override string ToString()
 		{
-			return !string.IsNullOrEmpty(Name) ? Name : "<NONE>";
+			return !string.IsNullOrEmpty(Name) ? Name : Utils.NoNameString;
 		}
 	}
 }
