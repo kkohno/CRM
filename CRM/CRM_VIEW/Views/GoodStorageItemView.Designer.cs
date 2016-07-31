@@ -113,6 +113,7 @@
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(201, 21);
 			this.comboBox1.TabIndex = 5;
+			this.comboBox1.TextUpdate += new System.EventHandler(this.comboBox1_TextChanged);
 			// 
 			// goodStorageItemBindingSource
 			// 
@@ -159,10 +160,11 @@
 			this.nullableDateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("NullableValue", this.goodStorageItemBindingSource, "ReceivingDate", true));
 			this.nullableDateTimePicker1.Location = new System.Drawing.Point(97, 82);
 			this.nullableDateTimePicker1.Name = "nullableDateTimePicker1";
-			this.nullableDateTimePicker1.NullableValue = new System.DateTime(2016, 7, 31, 23, 24, 0, 466);
+			this.nullableDateTimePicker1.NullableValue = new System.DateTime(2016, 7, 31, 23, 34, 54, 311);
 			this.nullableDateTimePicker1.ShowCheckBox = true;
 			this.nullableDateTimePicker1.Size = new System.Drawing.Size(200, 20);
 			this.nullableDateTimePicker1.TabIndex = 11;
+			this.nullableDateTimePicker1.Value = new System.DateTime(2016, 7, 31, 23, 34, 54, 311);
 			// 
 			// nullableDateTimePicker2
 			// 
@@ -171,10 +173,11 @@
 			this.nullableDateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("NullableValue", this.goodStorageItemBindingSource, "ShelfLife", true));
 			this.nullableDateTimePicker2.Location = new System.Drawing.Point(97, 108);
 			this.nullableDateTimePicker2.Name = "nullableDateTimePicker2";
-			this.nullableDateTimePicker2.NullableValue = new System.DateTime(2016, 7, 31, 23, 24, 3, 349);
+			this.nullableDateTimePicker2.NullableValue = new System.DateTime(2016, 7, 31, 23, 34, 54, 315);
 			this.nullableDateTimePicker2.ShowCheckBox = true;
 			this.nullableDateTimePicker2.Size = new System.Drawing.Size(200, 20);
 			this.nullableDateTimePicker2.TabIndex = 12;
+			this.nullableDateTimePicker2.Value = new System.DateTime(2016, 7, 31, 23, 34, 54, 315);
 			// 
 			// GoodStorageItemView
 			// 

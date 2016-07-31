@@ -14,6 +14,12 @@ namespace CRM_VIEW.Forms
 {
 	public partial class StorageForm : Form
 	{
+		void SaveAll()
+		{
+			goodStorageItemBindingSource.EndEdit();
+			Validate();
+			crmdbContextController1.Context.SaveChanges();
+		}
 		public void ReloadAll()
 		{
 			crmdbContextController1.Context.GoodStorageItems.Load();
@@ -22,12 +28,19 @@ namespace CRM_VIEW.Forms
 		public StorageForm(User user)
 		{
 			InitializeComponent();
+			goodStorageItemView1.Context = crmdbContextController1;
 			ReloadAll();
         }
 
 		private void goodStorageItemBindingSource_CurrentChanged(object sender, EventArgs e)
 		{
+			goodStorageItemBindingSource.EndEdit();
 			goodStorageItemView1.GoodStorageItem = goodStorageItemBindingSource.Current as GoodStorageItem;
 		}
+
+		private void сохранитьToolStripButton_Click(object sender, EventArgs e)
+		{
+			SaveAll();
+        }
 	}
 }

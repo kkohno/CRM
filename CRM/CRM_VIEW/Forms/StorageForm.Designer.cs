@@ -45,6 +45,8 @@
 			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+			this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.goodStorageItemView1 = new CRM_VIEW.Views.GoodStorageItemView();
@@ -75,7 +77,9 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.toolStripSeparator,
+            this.сохранитьToolStripButton});
 			this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
 			this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
 			this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -177,6 +181,21 @@
 			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
 			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
 			// 
+			// toolStripSeparator
+			// 
+			this.toolStripSeparator.Name = "toolStripSeparator";
+			this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+			// 
+			// сохранитьToolStripButton
+			// 
+			this.сохранитьToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.сохранитьToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьToolStripButton.Image")));
+			this.сохранитьToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.сохранитьToolStripButton.Name = "сохранитьToolStripButton";
+			this.сохранитьToolStripButton.Size = new System.Drawing.Size(23, 22);
+			this.сохранитьToolStripButton.Text = "&Сохранить";
+			this.сохранитьToolStripButton.Click += new System.EventHandler(this.сохранитьToolStripButton_Click);
+			// 
 			// listBox1
 			// 
 			this.listBox1.DataSource = this.goodStorageItemBindingSource;
@@ -208,7 +227,7 @@
 			// 
 			this.goodStorageItemView1.Context = crmdbContext1;
 			this.goodStorageItemView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			goodStorageItem1.Count = ((uint)(0u));
+			goodStorageItem1.Count = (0);
 			goodStorageItem1.Good = null;
 			goodStorageItem1.Id = null;
 			goodStorageItem1.PurchasePrice = 0D;
@@ -266,5 +285,7 @@
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private Views.GoodStorageItemView goodStorageItemView1;
 		private CRMDBContextController crmdbContextController1;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+		private System.Windows.Forms.ToolStripButton сохранитьToolStripButton;
 	}
 }

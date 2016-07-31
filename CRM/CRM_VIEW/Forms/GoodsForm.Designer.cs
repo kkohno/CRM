@@ -28,6 +28,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoodsForm));
 			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -90,6 +91,7 @@
 			// 
 			// goodView1
 			// 
+			this.goodView1.Context = crmdbContext1;
 			this.goodView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.goodView1.Good = ((CRM_MODEL.Good)(resources.GetObject("goodView1.Good")));
 			this.goodView1.Location = new System.Drawing.Point(0, 0);

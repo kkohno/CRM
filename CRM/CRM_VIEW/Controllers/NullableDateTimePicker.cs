@@ -16,14 +16,14 @@ namespace CRM_VIEW.Controllers
 		{
 			get
 			{
-				if (!Checked) return null;
-				return Value;
+				if (Checked) return Value;
+				else return null;
 			}
 			set
 			{
-				Checked = value != null;
-				if (value == null) Value = DateTime.Today;
-				else Value = Value;				
+				if (value.HasValue) Value = value.Value;
+				else Value = DateTime.Today;
+				Checked = value.HasValue;
 			}
 		}
 		public NullableDateTimePicker()

@@ -17,7 +17,11 @@ namespace CRM_VIEW.Views
 		public CRMDBContext Context
 		{
 			get { return crmdbContextController1.Context; }
-			set { crmdbContextController1.Context = value; }
+			set
+			{
+				crmdbContextController1.Context = value;
+				ReloadAll();
+			}
 		}
 		GoodStorageItem _goodStorageItem;
 		[Bindable(BindableSupport.Default)]
@@ -45,6 +49,11 @@ namespace CRM_VIEW.Views
 			InitializeComponent();
 			ReloadAll();
 			GoodStorageItem = new GoodStorageItem();
+		}
+
+		private void comboBox1_TextChanged(object sender, EventArgs e)
+		{
+			comboBox1.Text = comboBox1.SelectedItem?.ToString();
 		}
 	}
 }
