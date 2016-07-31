@@ -34,6 +34,7 @@
 			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.goodStorageItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -44,7 +45,6 @@
 			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.goodStorageItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.goodStorageItemView1 = new CRM_VIEW.Views.GoodStorageItemView();
@@ -61,6 +61,7 @@
 			// bindingNavigator1
 			// 
 			this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+			this.bindingNavigator1.BindingSource = this.goodStorageItemBindingSource;
 			this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
 			this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
 			this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -94,6 +95,11 @@
 			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
 			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorAddNewItem.Text = "Добавить";
+			// 
+			// goodStorageItemBindingSource
+			// 
+			this.goodStorageItemBindingSource.DataSource = typeof(CRM_MODEL.GoodStorageItem);
+			this.goodStorageItemBindingSource.CurrentChanged += new System.EventHandler(this.goodStorageItemBindingSource_CurrentChanged);
 			// 
 			// bindingNavigatorCountItem
 			// 
@@ -170,10 +176,6 @@
 			// 
 			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
 			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-			// 
-			// goodStorageItemBindingSource
-			// 
-			this.goodStorageItemBindingSource.DataSource = typeof(CRM_MODEL.GoodStorageItem);
 			// 
 			// listBox1
 			// 

@@ -20,6 +20,7 @@ namespace CRM_VIEW.Views
 			set { crmdbContextController1.Context = value; }
 		}
 		GoodStorageItem _goodStorageItem;
+		[Bindable(BindableSupport.Default)]
 		public GoodStorageItem GoodStorageItem
 		{
 			get

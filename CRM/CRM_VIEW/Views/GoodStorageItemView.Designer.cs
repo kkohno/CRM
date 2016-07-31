@@ -28,7 +28,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
+			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -38,10 +38,10 @@
 			this.goodStorageItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
+			this.nullableDateTimePicker1 = new CRM_VIEW.Controllers.NullableDateTimePicker(this.components);
+			this.nullableDateTimePicker2 = new CRM_VIEW.Controllers.NullableDateTimePicker(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -126,34 +126,11 @@
 			// 
 			this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.goodStorageItemBindingSource, "PurchasePrice", true));
 			this.textBox2.Location = new System.Drawing.Point(97, 56);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(201, 20);
 			this.textBox2.TabIndex = 7;
-			// 
-			// dateTimePicker1
-			// 
-			this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dateTimePicker1.Checked = false;
-			this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.goodStorageItemBindingSource, "ReceivingDate", true));
-			this.dateTimePicker1.Location = new System.Drawing.Point(97, 82);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.ShowCheckBox = true;
-			this.dateTimePicker1.Size = new System.Drawing.Size(201, 20);
-			this.dateTimePicker1.TabIndex = 8;
-			// 
-			// dateTimePicker2
-			// 
-			this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dateTimePicker2.Checked = false;
-			this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.goodStorageItemBindingSource, "ShelfLife", true));
-			this.dateTimePicker2.Location = new System.Drawing.Point(97, 108);
-			this.dateTimePicker2.Name = "dateTimePicker2";
-			this.dateTimePicker2.ShowCheckBox = true;
-			this.dateTimePicker2.Size = new System.Drawing.Size(201, 20);
-			this.dateTimePicker2.TabIndex = 9;
 			// 
 			// numericUpDown1
 			// 
@@ -173,15 +150,39 @@
 			// 
 			// crmdbContextController1
 			// 
-			this.crmdbContextController1.Context = crmdbContext1;
+			this.crmdbContextController1.Context = crmdbContext2;
+			// 
+			// nullableDateTimePicker1
+			// 
+			this.nullableDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.nullableDateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("NullableValue", this.goodStorageItemBindingSource, "ReceivingDate", true));
+			this.nullableDateTimePicker1.Location = new System.Drawing.Point(97, 82);
+			this.nullableDateTimePicker1.Name = "nullableDateTimePicker1";
+			this.nullableDateTimePicker1.NullableValue = new System.DateTime(2016, 7, 31, 23, 24, 0, 466);
+			this.nullableDateTimePicker1.ShowCheckBox = true;
+			this.nullableDateTimePicker1.Size = new System.Drawing.Size(200, 20);
+			this.nullableDateTimePicker1.TabIndex = 11;
+			// 
+			// nullableDateTimePicker2
+			// 
+			this.nullableDateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.nullableDateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("NullableValue", this.goodStorageItemBindingSource, "ShelfLife", true));
+			this.nullableDateTimePicker2.Location = new System.Drawing.Point(97, 108);
+			this.nullableDateTimePicker2.Name = "nullableDateTimePicker2";
+			this.nullableDateTimePicker2.NullableValue = new System.DateTime(2016, 7, 31, 23, 24, 3, 349);
+			this.nullableDateTimePicker2.ShowCheckBox = true;
+			this.nullableDateTimePicker2.Size = new System.Drawing.Size(200, 20);
+			this.nullableDateTimePicker2.TabIndex = 12;
 			// 
 			// GoodStorageItemView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.nullableDateTimePicker2);
+			this.Controls.Add(this.nullableDateTimePicker1);
 			this.Controls.Add(this.numericUpDown1);
-			this.Controls.Add(this.dateTimePicker2);
-			this.Controls.Add(this.dateTimePicker1);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.comboBox1);
 			this.Controls.Add(this.label5);
@@ -208,11 +209,11 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
-		private System.Windows.Forms.DateTimePicker dateTimePicker2;
 		private System.Windows.Forms.BindingSource goodBindingSource;
 		private System.Windows.Forms.NumericUpDown numericUpDown1;
 		private System.Windows.Forms.BindingSource goodStorageItemBindingSource;
 		private CRMDBContextController crmdbContextController1;
+		private Controllers.NullableDateTimePicker nullableDateTimePicker1;
+		private Controllers.NullableDateTimePicker nullableDateTimePicker2;
 	}
 }

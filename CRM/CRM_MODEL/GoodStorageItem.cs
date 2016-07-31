@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,5 +35,10 @@ namespace CRM_MODEL
 		/// срок годности
 		/// </summary>
 		public DateTime? ShelfLife { get; set; }
+
+		public override string ToString()
+		{
+			return (Good?.ToString() ?? "<Товар не указан>") + " (" + Count + " шт.)";
+		}
 	}
 }
