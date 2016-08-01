@@ -12,16 +12,8 @@ using System.Data.Entity;
 
 namespace CRM_VIEW.Views
 {
-	public partial class GoodView : UserControl
+	public partial class GoodView : BaseCRMVIew
 	{
-		public CRM_MODEL.CRMDBContext Context
-		{
-			get { return crmdbContextController1.Context; }
-			set
-			{
-				crmdbContextController1.Context = value; ReloadData();
-			}
-		}
 		Good _good;
 		public Good Good
 		{
@@ -36,18 +28,18 @@ namespace CRM_VIEW.Views
 			}
 		}
 
-		void ReloadData()
+		public GoodView()
+		{
+			InitializeComponent();
+			Good = new Good();
+		}
+
+		private void GoodView_ReloadAll(object sender, EventArgs e)
 		{
 			Context.GoodTypes.Load();
 			Context.Providers.Load();
 			goodTypeBindingSource.DataSource = Context.GoodTypes.Local;
 			providerBindingSource.DataSource = Context.Providers.Local;
-		}
-		public GoodView()
-		{
-			InitializeComponent();
-			ReloadData();
-			Good = new Good();
 		}
 	}
 }

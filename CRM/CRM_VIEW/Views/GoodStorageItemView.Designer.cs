@@ -28,7 +28,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@
 			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			this.nullableDateTimePicker1 = new CRM_VIEW.Controllers.NullableDateTimePicker(this.components);
 			this.nullableDateTimePicker2 = new CRM_VIEW.Controllers.NullableDateTimePicker(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).BeginInit();
@@ -149,10 +147,6 @@
 			this.numericUpDown1.TabIndex = 10;
 			this.numericUpDown1.ThousandsSeparator = true;
 			// 
-			// crmdbContextController1
-			// 
-			this.crmdbContextController1.Context = crmdbContext2;
-			// 
 			// nullableDateTimePicker1
 			// 
 			this.nullableDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -195,6 +189,7 @@
 			this.Controls.Add(this.label1);
 			this.Name = "GoodStorageItemView";
 			this.Size = new System.Drawing.Size(301, 131);
+			this.ReloadAll += new System.EventHandler(this.GoodStorageItemView_ReloadAll);
 			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -215,7 +210,6 @@
 		private System.Windows.Forms.BindingSource goodBindingSource;
 		private System.Windows.Forms.NumericUpDown numericUpDown1;
 		private System.Windows.Forms.BindingSource goodStorageItemBindingSource;
-		private CRMDBContextController crmdbContextController1;
 		private Controllers.NullableDateTimePicker nullableDateTimePicker1;
 		private Controllers.NullableDateTimePicker nullableDateTimePicker2;
 	}

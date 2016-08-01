@@ -227,7 +227,7 @@
 			// 
 			this.goodStorageItemView1.Context = crmdbContext1;
 			this.goodStorageItemView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			goodStorageItem1.Count = (0);
+			goodStorageItem1.Count = 0;
 			goodStorageItem1.Good = null;
 			goodStorageItem1.Id = null;
 			goodStorageItem1.PurchasePrice = 0D;

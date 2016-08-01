@@ -29,7 +29,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoodView));
-			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
+			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -49,6 +49,8 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.referenceStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.referenceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -64,6 +66,8 @@
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.referenceStringDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.competitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
@@ -78,10 +82,6 @@
 			this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
-			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.referenceStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.referenceStringDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
@@ -296,6 +296,20 @@
 			this.dataGridView1.Size = new System.Drawing.Size(284, 127);
 			this.dataGridView1.TabIndex = 1;
 			// 
+			// commentDataGridViewTextBoxColumn
+			// 
+			this.commentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+			this.commentDataGridViewTextBoxColumn.Width = 82;
+			// 
+			// referenceStringDataGridViewTextBoxColumn
+			// 
+			this.referenceStringDataGridViewTextBoxColumn.DataPropertyName = "ReferenceString";
+			this.referenceStringDataGridViewTextBoxColumn.HeaderText = "Ссылка";
+			this.referenceStringDataGridViewTextBoxColumn.Name = "referenceStringDataGridViewTextBoxColumn";
+			// 
 			// referenceBindingSource
 			// 
 			this.referenceBindingSource.DataSource = typeof(CRM_MODEL.Reference);
@@ -441,6 +455,20 @@
 			this.dataGridView2.Size = new System.Drawing.Size(284, 127);
 			this.dataGridView2.TabIndex = 1;
 			// 
+			// commentDataGridViewTextBoxColumn1
+			// 
+			this.commentDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.commentDataGridViewTextBoxColumn1.DataPropertyName = "Comment";
+			this.commentDataGridViewTextBoxColumn1.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
+			this.commentDataGridViewTextBoxColumn1.Width = 82;
+			// 
+			// referenceStringDataGridViewTextBoxColumn1
+			// 
+			this.referenceStringDataGridViewTextBoxColumn1.DataPropertyName = "ReferenceString";
+			this.referenceStringDataGridViewTextBoxColumn1.HeaderText = "Ссылка";
+			this.referenceStringDataGridViewTextBoxColumn1.Name = "referenceStringDataGridViewTextBoxColumn1";
+			// 
 			// competitorBindingSource
 			// 
 			this.competitorBindingSource.DataSource = typeof(CRM_MODEL.Reference);
@@ -562,35 +590,7 @@
 			// 
 			// crmdbContextController1
 			// 
-			this.crmdbContextController1.Context = crmdbContext2;
-			// 
-			// commentDataGridViewTextBoxColumn
-			// 
-			this.commentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
-			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-			this.commentDataGridViewTextBoxColumn.Width = 82;
-			// 
-			// referenceStringDataGridViewTextBoxColumn
-			// 
-			this.referenceStringDataGridViewTextBoxColumn.DataPropertyName = "ReferenceString";
-			this.referenceStringDataGridViewTextBoxColumn.HeaderText = "Ссылка";
-			this.referenceStringDataGridViewTextBoxColumn.Name = "referenceStringDataGridViewTextBoxColumn";
-			// 
-			// commentDataGridViewTextBoxColumn1
-			// 
-			this.commentDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.commentDataGridViewTextBoxColumn1.DataPropertyName = "Comment";
-			this.commentDataGridViewTextBoxColumn1.HeaderText = "Описание";
-			this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
-			this.commentDataGridViewTextBoxColumn1.Width = 82;
-			// 
-			// referenceStringDataGridViewTextBoxColumn1
-			// 
-			this.referenceStringDataGridViewTextBoxColumn1.DataPropertyName = "ReferenceString";
-			this.referenceStringDataGridViewTextBoxColumn1.HeaderText = "Ссылка";
-			this.referenceStringDataGridViewTextBoxColumn1.Name = "referenceStringDataGridViewTextBoxColumn1";
+			this.crmdbContextController1.Context = crmdbContext1;
 			// 
 			// GoodView
 			// 
@@ -600,6 +600,7 @@
 			this.Controls.Add(this.panel1);
 			this.Name = "GoodView";
 			this.Size = new System.Drawing.Size(298, 344);
+			this.ReloadAll += new System.EventHandler(this.GoodView_ReloadAll);
 			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();

@@ -12,17 +12,8 @@ using System.Data.Entity;
 
 namespace CRM_VIEW.Views
 {
-	public partial class GoodStorageItemView : UserControl
+	public partial class GoodStorageItemView : BaseCRMVIew
 	{
-		public CRMDBContext Context
-		{
-			get { return crmdbContextController1.Context; }
-			set
-			{
-				crmdbContextController1.Context = value;
-				ReloadAll();
-			}
-		}
 		GoodStorageItem _goodStorageItem;
 		[Bindable(BindableSupport.Default)]
 		public GoodStorageItem GoodStorageItem
@@ -39,21 +30,21 @@ namespace CRM_VIEW.Views
 				goodStorageItemBindingSource.DataSource = _goodStorageItem;
             }
 		}
-		public void ReloadAll()
-		{
-			Context.Goods.Load();
-			goodBindingSource.DataSource = Context.Goods.Local.ToList();
-        }
         public GoodStorageItemView()
 		{
 			InitializeComponent();
-			ReloadAll();
 			GoodStorageItem = new GoodStorageItem();
 		}
 
 		private void comboBox1_TextChanged(object sender, EventArgs e)
 		{
 			comboBox1.Text = comboBox1.SelectedItem?.ToString();
+		}
+
+		private void GoodStorageItemView_ReloadAll(object sender, EventArgs e)
+		{
+			Context.Goods.Load();
+			goodBindingSource.DataSource = Context.Goods.Local.ToList();
 		}
 	}
 }

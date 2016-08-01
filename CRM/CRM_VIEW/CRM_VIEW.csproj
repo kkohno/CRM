@@ -73,16 +73,16 @@
     <Compile Include="Forms\AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CRMController.cs">
+    <Compile Include="Controllers\CRMController.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CRMController.Designer.cs">
+    <Compile Include="Controllers\CRMController.Designer.cs">
       <DependentUpon>CRMController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GoodsForm.cs">
@@ -103,6 +103,12 @@
     <Compile Include="Forms\ProvidersForm.Designer.cs">
       <DependentUpon>ProvidersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SalesForm.Designer.cs">
+      <DependentUpon>SalesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StorageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     </Compile>
     <Compile Include="Forms\RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseCRMVIew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BaseCRMVIew.Designer.cs">
+      <DependentUpon>BaseCRMVIew.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\GoodStorageItemView.cs">
       <SubType>UserControl</SubType>
@@ -135,6 +147,12 @@
     <Compile Include="Views\ProviderView.Designer.cs">
       <DependentUpon>ProviderView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SaleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SaleView.Designer.cs">
+      <DependentUpon>SaleView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,7 +163,7 @@
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -157,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProvidersForm.resx">
       <DependentUpon>ProvidersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalesForm.resx">
+      <DependentUpon>SalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StorageForm.resx">
       <DependentUpon>StorageForm.cs</DependentUpon>
@@ -173,6 +194,9 @@
     <EmbeddedResource Include="Forms\RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\BaseCRMVIew.resx">
+      <DependentUpon>BaseCRMVIew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\GoodStorageItemView.resx">
       <DependentUpon>GoodStorageItemView.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ProviderView.resx">
       <DependentUpon>ProviderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SaleView.resx">
+      <DependentUpon>SaleView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserView.resx">
       <DependentUpon>UserView.cs</DependentUpon>
