@@ -11,9 +11,10 @@ using CRM_MODEL;
 
 namespace CRM_VIEW
 {
+	[DefaultBindingProperty("User")]
 	public partial class UserView : UserControl
 	{
-		[Description("Задвет или возвращает текущего пользователя")]
+		[Description("Задает или возвращает текущего пользователя")]
 		public User User
 		{
 			get

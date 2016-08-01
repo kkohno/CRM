@@ -10,6 +10,7 @@ namespace CRM_MODEL
 	/// <summary>
 	/// продажа
 	/// </summary>
+	[Serializable]
 	public class Sale
 	{
 		public long? Id { get; set; }

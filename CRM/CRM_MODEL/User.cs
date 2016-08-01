@@ -10,6 +10,7 @@ namespace CRM_MODEL
 	/// <summary>
 	/// пользователь CRM
 	/// </summary>
+	[Serializable]
 	public class User
 	{
 		public long? Id { get; set; }

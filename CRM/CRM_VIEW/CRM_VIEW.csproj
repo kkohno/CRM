@@ -219,6 +219,7 @@
     <None Include="Properties\DataSources\CRM_MODEL.Phone.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Provider.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Reference.datasource" />
+    <None Include="Properties\DataSources\CRM_MODEL.Sale.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

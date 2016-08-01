@@ -56,9 +56,9 @@ namespace CRM_MODEL
 
 		public CRMDBContext() : base("CRMDBConnectionString")
 		{
-/*#if DEBUG
+#if DEBUG
 			Database.SetInitializer<CRMDBContext>(null);    // ЭТО СПОРНОЕ РЕШЕНИЕ - СЛЕДУЕТ ИЗУЧИТЬ!!!!!!!!!!!
-#endif*/
+#endif
 		}
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

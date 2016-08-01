@@ -12,6 +12,7 @@ using System.Data.Entity;
 
 namespace CRM_VIEW.Views
 {
+	[DefaultBindingProperty("GoodStorageItem")]
 	public partial class GoodStorageItemView : BaseCRMVIew
 	{
 		GoodStorageItem _goodStorageItem;

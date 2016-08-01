@@ -9,7 +9,8 @@ using System.Windows.Forms;
 
 namespace CRM_VIEW.Controllers
 {
-	public partial class NullableDateTimePicker : DateTimePicker
+    [DefaultBindingProperty("NullableValue")]
+    public partial class NullableDateTimePicker : DateTimePicker
 	{
 		[Bindable(BindableSupport.Default)]
 		public DateTime? NullableValue

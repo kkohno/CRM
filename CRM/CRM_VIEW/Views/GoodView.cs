@@ -12,19 +12,18 @@ using System.Data.Entity;
 
 namespace CRM_VIEW.Views
 {
+	[DefaultBindingProperty("Good")]
 	public partial class GoodView : BaseCRMVIew
 	{
-		Good _good;
 		public Good Good
 		{
-			get { return _good; }
+			get { return goodBindingSource.DataSource as Good; }
 			set
 			{
-				_good = value;
-				if (_good == null) _good = new Good();
-				goodBindingSource.DataSource = _good;
-				referenceBindingSource.DataSource = _good.References;
-				competitorBindingSource.DataSource = _good.CompetitorRefs;
+				if (value != null) goodBindingSource.DataSource = value;
+				else goodBindingSource.DataSource = new Good();
+				referenceBindingSource.DataSource = value.References;
+				competitorBindingSource.DataSource = value.CompetitorRefs;
 			}
 		}
 

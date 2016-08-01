@@ -69,5 +69,10 @@ namespace CRM_VIEW
 		{
 			ViewUtils.ExceptionWrapper(this, () => { using (var f = new StorageForm(crmController1.User)) f.ShowDialog(); });
 		}
+
+		private void продажиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ViewUtils.ExceptionWrapper(this, () => { using (var f = new SalesForm(crmController1.User)) f.ShowDialog(); });
+		}
 	}
 }

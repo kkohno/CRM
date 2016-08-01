@@ -11,6 +11,7 @@ using CRM_MODEL;
 
 namespace CRM_VIEW.Views
 {
+	[DefaultBindingProperty("Provider")]
 	public partial class ProviderView : UserControl
 	{
 		Provider _provider;
