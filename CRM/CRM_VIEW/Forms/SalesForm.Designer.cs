@@ -29,8 +29,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesForm));
-			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
-			CRM_MODEL.CRMDBContext crmdbContext3 = new CRM_MODEL.CRMDBContext();
+			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.saleBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -47,8 +46,8 @@
 			this.saleBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
 			this.saleListBox = new System.Windows.Forms.ListBox();
 			this.saleView1 = new CRM_VIEW.Views.SaleView();
-			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
+			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.saleBindingNavigator)).BeginInit();
 			this.saleBindingNavigator.SuspendLayout();
@@ -68,6 +67,7 @@
 			this.saleBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
 			this.saleBindingNavigator.BindingSource = this.saleBindingSource;
 			this.saleBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+			this.saleBindingNavigator.CountItemFormat = "из {0}";
 			this.saleBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
 			this.saleBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -105,8 +105,8 @@
 			// bindingNavigatorCountItem
 			// 
 			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-			this.bindingNavigatorCountItem.Text = "для {0}";
+			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+			this.bindingNavigatorCountItem.Text = "из {0}";
 			this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
 			// 
 			// bindingNavigatorDeleteItem
@@ -201,14 +201,18 @@
 			// 
 			// saleView1
 			// 
-			this.saleView1.Context = crmdbContext2;
-			this.saleView1.DataSource = ((object)(resources.GetObject("saleView1.DataSource")));
+			this.saleView1.Context = crmdbContext1;
+			this.saleView1.ContextController = this.crmdbContextController1;
 			this.saleView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.saleView1.Location = new System.Drawing.Point(0, 0);
 			this.saleView1.Name = "saleView1";
 			this.saleView1.Sale = ((CRM_MODEL.Sale)(resources.GetObject("saleView1.Sale")));
 			this.saleView1.Size = new System.Drawing.Size(422, 445);
 			this.saleView1.TabIndex = 2;
+			// 
+			// crmdbContextController1
+			// 
+			this.crmdbContextController1.Context = crmdbContext1;
 			// 
 			// splitContainer1
 			// 
@@ -226,10 +230,6 @@
 			this.splitContainer1.Size = new System.Drawing.Size(639, 445);
 			this.splitContainer1.SplitterDistance = 213;
 			this.splitContainer1.TabIndex = 3;
-			// 
-			// crmdbContextController1
-			// 
-			this.crmdbContextController1.Context = crmdbContext3;
 			// 
 			// SalesForm
 			// 

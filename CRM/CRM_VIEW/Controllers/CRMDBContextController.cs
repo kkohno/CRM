@@ -43,5 +43,5 @@ namespace CRM_VIEW
 
 			InitializeComponent();
 		}
-	}
+    }
 }

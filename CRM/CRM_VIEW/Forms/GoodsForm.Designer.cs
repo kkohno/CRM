@@ -34,6 +34,7 @@
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.goodView1 = new CRM_VIEW.Views.GoodView();
+			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -92,12 +93,16 @@
 			// goodView1
 			// 
 			this.goodView1.Context = crmdbContext1;
-			this.goodView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.goodView1.ContextController = this.crmdbContextController1;
 			this.goodView1.Good = ((CRM_MODEL.Good)(resources.GetObject("goodView1.Good")));
 			this.goodView1.Location = new System.Drawing.Point(0, 0);
 			this.goodView1.Name = "goodView1";
 			this.goodView1.Size = new System.Drawing.Size(326, 349);
 			this.goodView1.TabIndex = 0;
+			// 
+			// crmdbContextController1
+			// 
+			this.crmdbContextController1.Context = crmdbContext1;
 			// 
 			// bindingNavigator1
 			// 
@@ -273,5 +278,6 @@
 		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
 		private System.Windows.Forms.ToolStripButton сохранитьToolStripButton;
+		private CRMDBContextController crmdbContextController1;
 	}
 }

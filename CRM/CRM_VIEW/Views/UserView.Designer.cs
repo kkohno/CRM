@@ -1,4 +1,4 @@
-﻿namespace CRM_VIEW
+﻿namespace CRM_VIEW.Views
 {
 	partial class UserView
 	{
@@ -27,98 +27,108 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.Label name1Label;
+			System.Windows.Forms.Label name2Label;
+			System.Windows.Forms.Label name3Label;
+			this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.name1TextBox = new System.Windows.Forms.TextBox();
+			this.name2TextBox = new System.Windows.Forms.TextBox();
+			this.name3TextBox = new System.Windows.Forms.TextBox();
+			this.isAdminCheckBox = new System.Windows.Forms.CheckBox();
+			name1Label = new System.Windows.Forms.Label();
+			name2Label = new System.Windows.Forms.Label();
+			name3Label = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// label1
+			// name1Label
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(-3, 3);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(56, 13);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Фамилия";
+			name1Label.AutoSize = true;
+			name1Label.Location = new System.Drawing.Point(3, 6);
+			name1Label.Name = "name1Label";
+			name1Label.Size = new System.Drawing.Size(59, 13);
+			name1Label.TabIndex = 1;
+			name1Label.Text = "Фамилия:";
 			// 
-			// label2
+			// name2Label
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(-3, 27);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(29, 13);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Имя";
+			name2Label.AutoSize = true;
+			name2Label.Location = new System.Drawing.Point(3, 32);
+			name2Label.Name = "name2Label";
+			name2Label.Size = new System.Drawing.Size(32, 13);
+			name2Label.TabIndex = 2;
+			name2Label.Text = "Имя:";
 			// 
-			// textBox1
+			// name3Label
 			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			name3Label.AutoSize = true;
+			name3Label.Location = new System.Drawing.Point(3, 58);
+			name3Label.Name = "name3Label";
+			name3Label.Size = new System.Drawing.Size(57, 13);
+			name3Label.TabIndex = 4;
+			name3Label.Text = "Отчество:";
+			// 
+			// userBindingSource
+			// 
+			this.userBindingSource.DataSource = typeof(CRM_MODEL.User);
+			// 
+			// name1TextBox
+			// 
+			this.name1TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox1.Location = new System.Drawing.Point(59, 0);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(108, 20);
-			this.textBox1.TabIndex = 2;
+			this.name1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Name1", true));
+			this.name1TextBox.Location = new System.Drawing.Point(66, 3);
+			this.name1TextBox.Name = "name1TextBox";
+			this.name1TextBox.Size = new System.Drawing.Size(162, 20);
+			this.name1TextBox.TabIndex = 2;
 			// 
-			// textBox2
+			// name2TextBox
 			// 
-			this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.name2TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox2.Location = new System.Drawing.Point(59, 24);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(108, 20);
-			this.textBox2.TabIndex = 3;
+			this.name2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Name2", true));
+			this.name2TextBox.Location = new System.Drawing.Point(66, 29);
+			this.name2TextBox.Name = "name2TextBox";
+			this.name2TextBox.Size = new System.Drawing.Size(162, 20);
+			this.name2TextBox.TabIndex = 3;
 			// 
-			// textBox3
+			// name3TextBox
 			// 
-			this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.name3TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox3.Location = new System.Drawing.Point(59, 50);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(108, 20);
-			this.textBox3.TabIndex = 5;
+			this.name3TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Name3", true));
+			this.name3TextBox.Location = new System.Drawing.Point(66, 55);
+			this.name3TextBox.Name = "name3TextBox";
+			this.name3TextBox.Size = new System.Drawing.Size(162, 20);
+			this.name3TextBox.TabIndex = 5;
 			// 
-			// label3
+			// isAdminCheckBox
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(-3, 53);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(54, 13);
-			this.label3.TabIndex = 4;
-			this.label3.Text = "Отчество";
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.isAdminCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(59, 76);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(105, 17);
-			this.checkBox1.TabIndex = 7;
-			this.checkBox1.Text = "Администратор";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.isAdminCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.userBindingSource, "IsAdmin", true));
+			this.isAdminCheckBox.Location = new System.Drawing.Point(66, 81);
+			this.isAdminCheckBox.Name = "isAdminCheckBox";
+			this.isAdminCheckBox.Size = new System.Drawing.Size(159, 24);
+			this.isAdminCheckBox.TabIndex = 7;
+			this.isAdminCheckBox.Text = "Админ";
+			this.isAdminCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// UserView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.checkBox1);
-			this.Controls.Add(this.textBox3);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.isAdminCheckBox);
+			this.Controls.Add(name3Label);
+			this.Controls.Add(this.name3TextBox);
+			this.Controls.Add(name2Label);
+			this.Controls.Add(this.name2TextBox);
+			this.Controls.Add(name1Label);
+			this.Controls.Add(this.name1TextBox);
 			this.Name = "UserView";
-			this.Size = new System.Drawing.Size(168, 93);
+			this.Size = new System.Drawing.Size(228, 103);
+			((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -126,12 +136,10 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.BindingSource userBindingSource;
+		private System.Windows.Forms.TextBox name1TextBox;
+		private System.Windows.Forms.TextBox name2TextBox;
+		private System.Windows.Forms.TextBox name3TextBox;
+		private System.Windows.Forms.CheckBox isAdminCheckBox;
 	}
 }

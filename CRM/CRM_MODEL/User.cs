@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,24 @@ namespace CRM_MODEL
 		/// </summary>
 		public int Rights { get; set; }
 
+		/// <summary>
+		/// является ли пользователь администратором
+		/// </summary>
+		[NotMapped]
+		[Display(Name ="Админ")]
+		public bool IsAdmin
+		{
+			get
+			{
+				return (Rights & 1) == 1;
+			}
+			set
+			{
+				if (value) Rights |= 1;
+				else Rights &= ~(Rights | 1);
+			}
+		}
+			
 		/// <summary>
 		/// возвращает короткое ФИО
 		/// </summary>

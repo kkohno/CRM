@@ -39,8 +39,8 @@
 			this.поставщикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.складToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.crmController1 = new CRM_VIEW.CRMController(this.components);
 			this.продажиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.crmController1 = new CRM_VIEW.CRMController(this.components);
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -107,43 +107,43 @@
 			// типыТоваровToolStripMenuItem
 			// 
 			this.типыТоваровToolStripMenuItem.Name = "типыТоваровToolStripMenuItem";
-			this.типыТоваровToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.типыТоваровToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.типыТоваровToolStripMenuItem.Text = "Типы товаров";
 			this.типыТоваровToolStripMenuItem.Click += new System.EventHandler(this.типыТоваровToolStripMenuItem_Click);
 			// 
 			// поставщикиToolStripMenuItem
 			// 
 			this.поставщикиToolStripMenuItem.Name = "поставщикиToolStripMenuItem";
-			this.поставщикиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.поставщикиToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.поставщикиToolStripMenuItem.Text = "Поставщики";
 			this.поставщикиToolStripMenuItem.Click += new System.EventHandler(this.поставщикиToolStripMenuItem_Click);
 			// 
 			// товарыToolStripMenuItem
 			// 
 			this.товарыToolStripMenuItem.Name = "товарыToolStripMenuItem";
-			this.товарыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.товарыToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.товарыToolStripMenuItem.Text = "Товары";
 			this.товарыToolStripMenuItem.Click += new System.EventHandler(this.товарыToolStripMenuItem_Click);
 			// 
 			// складToolStripMenuItem
 			// 
 			this.складToolStripMenuItem.Name = "складToolStripMenuItem";
-			this.складToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.складToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.складToolStripMenuItem.Text = "Склад";
 			this.складToolStripMenuItem.Click += new System.EventHandler(this.складToolStripMenuItem_Click);
+			// 
+			// продажиToolStripMenuItem
+			// 
+			this.продажиToolStripMenuItem.Name = "продажиToolStripMenuItem";
+			this.продажиToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+			this.продажиToolStripMenuItem.Text = "Продажи";
+			this.продажиToolStripMenuItem.Click += new System.EventHandler(this.продажиToolStripMenuItem_Click);
 			// 
 			// crmController1
 			// 
 			this.crmController1.User = null;
 			this.crmController1.OnAuthorized += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnAuthorized);
 			this.crmController1.OnLogout += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnLogout);
-			// 
-			// продажиToolStripMenuItem
-			// 
-			this.продажиToolStripMenuItem.Name = "продажиToolStripMenuItem";
-			this.продажиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.продажиToolStripMenuItem.Text = "Продажи";
-			this.продажиToolStripMenuItem.Click += new System.EventHandler(this.продажиToolStripMenuItem_Click);
 			// 
 			// Form1
 			// 

@@ -13,22 +13,21 @@ using System.Data.Entity;
 namespace CRM_VIEW.Views
 {
 	[DefaultBindingProperty("GoodStorageItem")]
+	[DefaultProperty("GoodStorageItem")]
 	public partial class GoodStorageItemView : BaseCRMVIew
 	{
-		GoodStorageItem _goodStorageItem;
 		[Bindable(BindableSupport.Default)]
+		[Browsable(false)]
 		public GoodStorageItem GoodStorageItem
 		{
 			get
 			{
-				return _goodStorageItem;
+				return goodStorageItemBindingSource.DataSource as GoodStorageItem;
 			}
 			set
 			{
-				_goodStorageItem = value;
-				if (value == null) _goodStorageItem = new GoodStorageItem();
-				comboBox1.SelectedItem = _goodStorageItem.Good;
-				goodStorageItemBindingSource.DataSource = _goodStorageItem;
+				if (value != null) goodStorageItemBindingSource.DataSource = value;
+				else goodStorageItemBindingSource.DataSource = new GoodStorageItem();
             }
 		}
         public GoodStorageItemView()

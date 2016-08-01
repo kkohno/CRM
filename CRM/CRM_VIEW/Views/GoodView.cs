@@ -13,8 +13,10 @@ using System.Data.Entity;
 namespace CRM_VIEW.Views
 {
 	[DefaultBindingProperty("Good")]
+	[DefaultValue("Good")]
 	public partial class GoodView : BaseCRMVIew
 	{
+		[Browsable(false)]
 		public Good Good
 		{
 			get { return goodBindingSource.DataSource as Good; }

@@ -29,10 +29,8 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProviderView));
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			System.Windows.Forms.Label nameLabel;
+			System.Windows.Forms.Label commentLabel;
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.phoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.referenceBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -69,6 +67,11 @@
 			this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+			this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.nameTextBox = new System.Windows.Forms.TextBox();
+			this.commentTextBox = new System.Windows.Forms.TextBox();
+			nameLabel = new System.Windows.Forms.Label();
+			commentLabel = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.referenceBindingSource)).BeginInit();
@@ -81,58 +84,19 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
 			this.bindingNavigator2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// label1
-			// 
-			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(0, 6);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(57, 13);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Название";
-			// 
-			// label2
-			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(1, 32);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(57, 13);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Описание";
-			// 
-			// textBox1
-			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox1.Location = new System.Drawing.Point(63, 3);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(224, 20);
-			this.textBox1.TabIndex = 2;
-			// 
-			// textBox2
-			// 
-			this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox2.Location = new System.Drawing.Point(63, 29);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(224, 20);
-			this.textBox2.TabIndex = 3;
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.textBox1);
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Controls.Add(this.label2);
-			this.panel1.Controls.Add(this.textBox2);
+			this.panel1.Controls.Add(commentLabel);
+			this.panel1.Controls.Add(this.commentTextBox);
+			this.panel1.Controls.Add(nameLabel);
+			this.panel1.Controls.Add(this.nameTextBox);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(290, 53);
+			this.panel1.Size = new System.Drawing.Size(290, 54);
 			this.panel1.TabIndex = 6;
 			// 
 			// phoneBindingSource
@@ -148,10 +112,10 @@
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 53);
+			this.tabControl1.Location = new System.Drawing.Point(0, 54);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(290, 167);
+			this.tabControl1.Size = new System.Drawing.Size(290, 166);
 			this.tabControl1.TabIndex = 9;
 			// 
 			// tabPage1
@@ -161,7 +125,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(282, 141);
+			this.tabPage1.Size = new System.Drawing.Size(282, 140);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Телефоны";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -177,7 +141,7 @@
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(3, 28);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(276, 110);
+			this.dataGridView1.Size = new System.Drawing.Size(276, 109);
 			this.dataGridView1.TabIndex = 3;
 			// 
 			// phoneNumberDataGridViewTextBoxColumn
@@ -467,6 +431,48 @@
 			this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
 			this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
+			// providerBindingSource
+			// 
+			this.providerBindingSource.DataSource = typeof(CRM_MODEL.Provider);
+			// 
+			// nameLabel
+			// 
+			nameLabel.AutoSize = true;
+			nameLabel.Location = new System.Drawing.Point(1, 6);
+			nameLabel.Name = "nameLabel";
+			nameLabel.Size = new System.Drawing.Size(60, 13);
+			nameLabel.TabIndex = 0;
+			nameLabel.Text = "Название:";
+			// 
+			// nameTextBox
+			// 
+			this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Name", true));
+			this.nameTextBox.Location = new System.Drawing.Point(67, 3);
+			this.nameTextBox.Name = "nameTextBox";
+			this.nameTextBox.Size = new System.Drawing.Size(219, 20);
+			this.nameTextBox.TabIndex = 1;
+			// 
+			// commentLabel
+			// 
+			commentLabel.AutoSize = true;
+			commentLabel.Location = new System.Drawing.Point(1, 32);
+			commentLabel.Name = "commentLabel";
+			commentLabel.Size = new System.Drawing.Size(60, 13);
+			commentLabel.TabIndex = 2;
+			commentLabel.Text = "Описание:";
+			// 
+			// commentTextBox
+			// 
+			this.commentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.commentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Comment", true));
+			this.commentTextBox.Location = new System.Drawing.Point(67, 29);
+			this.commentTextBox.Name = "commentTextBox";
+			this.commentTextBox.Size = new System.Drawing.Size(219, 20);
+			this.commentTextBox.TabIndex = 3;
+			// 
 			// ProviderView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,16 +498,12 @@
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
 			this.bindingNavigator2.ResumeLayout(false);
 			this.bindingNavigator2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.BindingSource referenceBindingSource;
 		private System.Windows.Forms.BindingSource phoneBindingSource;
@@ -538,5 +540,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn referenceStringDataGridViewTextBoxColumn;
+		private System.Windows.Forms.TextBox commentTextBox;
+		private System.Windows.Forms.BindingSource providerBindingSource;
+		private System.Windows.Forms.TextBox nameTextBox;
 	}
 }

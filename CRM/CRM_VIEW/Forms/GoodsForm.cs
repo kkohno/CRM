@@ -14,20 +14,18 @@ namespace CRM_VIEW.Forms
 {
 	public partial class GoodsForm : Form
 	{
-		CRMDBContext context = new CRMDBContext();
 		void Save()
 		{
 			goodBindingSource.EndEdit();
 			Validate();
-			context.SaveChanges();
+			crmdbContextController1.Context.SaveChanges();
 		}
 
 		public GoodsForm(User user)
 		{
 			InitializeComponent();
-			goodView1.Context = context;
-			context.Goods.Load();
-			goodBindingSource.DataSource = context.Goods.Local.ToBindingList();
+			crmdbContextController1.Context.Goods.Load();
+			goodBindingSource.DataSource = crmdbContextController1.Context.Goods.Local.ToBindingList();
 		}
 
 		private void сохранитьToolStripButton_Click(object sender, EventArgs e)

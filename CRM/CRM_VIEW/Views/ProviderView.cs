@@ -12,21 +12,22 @@ using CRM_MODEL;
 namespace CRM_VIEW.Views
 {
 	[DefaultBindingProperty("Provider")]
-	public partial class ProviderView : UserControl
+	[DefaultValue("Provider")]
+	public partial class ProviderView : BaseCRMVIew
 	{
-		Provider _provider;
+		[Browsable(false)]
 		public Provider Provider
 		{
-			get { return _provider; }
+			get
+			{
+				return providerBindingSource.DataSource as Provider;
+			}
 			set
 			{
-				_provider = value?? new Provider();
-				textBox1.DataBindings.Clear();
-				textBox1.DataBindings.Add("Text", _provider, "Name");
-				textBox2.DataBindings.Clear();
-				textBox2.DataBindings.Add("Text", _provider, "Comment");
-				phoneBindingSource.DataSource = _provider.Phones;
-				referenceBindingSource.DataSource = _provider.References;
+				if (value != null) providerBindingSource.DataSource = value;
+				else providerBindingSource.DataSource = new Provider();
+				phoneBindingSource.DataSource = value.Phones;
+				referenceBindingSource.DataSource = value.References;
 			}
 		}
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CRM_MODEL;
 
-namespace CRM_VIEW
+namespace CRM_VIEW.Forms
 {
 	public partial class RegistrationForm : Form
 	{

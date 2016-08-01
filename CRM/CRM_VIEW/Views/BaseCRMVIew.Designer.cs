@@ -41,7 +41,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Name = "BaseCRMVIew";
-			this.Load += new System.EventHandler(this.BaseCRMVIew_Load);
+			this.Layout += new System.Windows.Forms.LayoutEventHandler(this.BaseCRMVIew_Layout);
 			this.ResumeLayout(false);
 
 		}

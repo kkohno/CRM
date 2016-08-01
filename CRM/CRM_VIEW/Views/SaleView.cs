@@ -14,10 +14,10 @@ namespace CRM_VIEW.Views
 {
     [DefaultProperty("Value")]
     [DefaultBindingProperty("Sale")]
-	[ComplexBindingProperties("DataSource")]
 	public partial class SaleView : BaseCRMVIew
 	{
 		[Bindable(BindableSupport.Default)]
+		[Browsable(false)]
 		public Sale Sale
 		{
 			get
@@ -40,17 +40,6 @@ namespace CRM_VIEW.Views
 		{
 			Context.Goods.Load();
 			goodBindingSource.DataSource = Context.Goods.Local.ToBindingList();
-		}
-		public object DataSource
-		{
-			get
-			{
-				return saleBindingSource.DataSource;
-            }
-			set
-			{
-				saleBindingSource.DataSource = value;
-			}
 		}
 	}
 }

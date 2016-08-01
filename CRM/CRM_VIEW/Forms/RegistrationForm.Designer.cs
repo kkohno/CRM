@@ -1,4 +1,5 @@
-﻿namespace CRM_VIEW
+﻿
+namespace CRM_VIEW.Forms
 {
 	partial class RegistrationForm
 	{
@@ -28,7 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			CRM_MODEL.User user1 = new CRM_MODEL.User();
+			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBox2 = new System.Windows.Forms.TextBox();
@@ -37,7 +39,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.userView1 = new CRM_VIEW.UserView();
+			this.userView1 = new CRM_VIEW.Views.UserView();
 			this.crmController1 = new CRM_VIEW.CRMController(this.components);
 			this.SuspendLayout();
 			// 
@@ -113,20 +115,12 @@
 			// 
 			// userView1
 			// 
-			this.userView1.Location = new System.Drawing.Point(15, 84);
+			this.userView1.Context = crmdbContext1;
+			this.userView1.Location = new System.Drawing.Point(12, 84);
 			this.userView1.Name = "userView1";
-			this.userView1.Name1 = "";
-			this.userView1.Name2 = "";
-			this.userView1.Name3 = "";
-			this.userView1.Rights = 0;
-			this.userView1.Size = new System.Drawing.Size(294, 93);
+			this.userView1.Size = new System.Drawing.Size(297, 102);
 			this.userView1.TabIndex = 11;
-			user1.Id = null;
-			user1.Name1 = "";
-			user1.Name2 = "";
-			user1.Name3 = "";
-			user1.Rights = 0;
-			this.userView1.User = user1;
+			this.userView1.User = ((CRM_MODEL.User)(resources.GetObject("userView1.User")));
 			// 
 			// crmController1
 			// 
@@ -167,7 +161,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Label label3;
-		private UserView userView1;
+		private Views.UserView userView1;
 		private CRMController crmController1;
 	}
 }

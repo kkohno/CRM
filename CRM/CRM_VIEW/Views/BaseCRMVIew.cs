@@ -16,7 +16,21 @@ namespace CRM_VIEW.Views
 		/// <summary>
 		/// контекст базы данных
 		/// </summary>
+		[Browsable(false)]
 		public CRMDBContext Context
+		{
+			get
+			{
+				return crmdbContextController;
+			}
+			set
+			{
+				crmdbContextController = value;
+			}
+		}
+		[Description("Контекст БД для отображения вспомогательных данных компонента")]
+		[Category("Данные")]
+		public CRMDBContextController ContextController
 		{
 			get
 			{
@@ -33,16 +47,16 @@ namespace CRM_VIEW.Views
 			InitializeComponent();
 		}
 
-		private void BaseCRMVIew_Load(object sender, EventArgs e)
-		{
-			if (ReloadAll != null) ReloadAll(this, e);
-		}
-
 		/// <summary>
 		/// Вызывается при необходимости перезагрузки контента для визуализатора
 		/// </summary>
 		[Category("Данные")]
 		[Description("Вызывается при необходимости перезагрузки контента для визуализатора")]
 		public event EventHandler ReloadAll;
+
+		private void BaseCRMVIew_Layout(object sender, LayoutEventArgs e)
+		{
+			if (ReloadAll != null) ReloadAll(sender, e);
+		}
 	}
 }
