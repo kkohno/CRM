@@ -11,6 +11,7 @@ namespace CRM_VIEW
 {
 	public partial class CRMDBContextController : Component
 	{
+		[Browsable(false)]
 		private CRMDBContext _context;
 		public CRM_MODEL.CRMDBContext Context
 		{

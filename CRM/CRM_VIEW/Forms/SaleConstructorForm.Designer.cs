@@ -29,7 +29,6 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleConstructorForm));
-			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
@@ -306,10 +305,6 @@
 			this.saleBindingNavigatorSaveItem.Name = "saleBindingNavigatorSaveItem";
 			this.saleBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
 			this.saleBindingNavigatorSaveItem.Text = "Сохранить данные";
-			// 
-			// crmdbContextController1
-			// 
-			this.crmdbContextController1.Context = crmdbContext2;
 			// 
 			// SaleConstructorForm
 			// 
