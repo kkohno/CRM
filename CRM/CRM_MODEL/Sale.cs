@@ -21,5 +21,10 @@ namespace CRM_MODEL
 		[Required]
 		public DateTime? Date { get; set; }
 		public virtual User User { get; set; }
+
+		public override string ToString()
+		{
+			return string.Format("{0} {1}шт. {2}р.", Good, Count, SellingPrice * Count);
+		}
 	}
 }

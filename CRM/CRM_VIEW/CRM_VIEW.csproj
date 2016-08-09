@@ -67,6 +67,7 @@
     <Compile Include="Controllers\CRMDBContextController.Designer.cs">
       <DependentUpon>CRMDBContextController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\ExtBindingList.cs" />
     <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +167,7 @@
       <DependentUpon>UserView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewUtils.cs" />
+    <Compile Include="VisualModel\SaleVisualItem.cs" />
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +232,7 @@
     <None Include="Properties\DataSources\CRM_MODEL.Reference.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Sale.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.User.datasource" />
+    <None Include="Properties\DataSources\CRM_VIEW.VisualModel.SaleVisualItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

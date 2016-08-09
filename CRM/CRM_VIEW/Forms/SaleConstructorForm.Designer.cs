@@ -29,6 +29,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleConstructorForm));
+			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
@@ -36,13 +37,8 @@
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.storageBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.goodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.saleBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.saleVisualItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -53,8 +49,16 @@
 			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.saleBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
+			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.goodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MaxCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -62,9 +66,10 @@
 			this.splitContainer1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.saleBindingNavigator)).BeginInit();
-			this.saleBindingNavigator.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.saleVisualItemBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+			this.bindingNavigator1.SuspendLayout();
+			this.statusStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -72,7 +77,7 @@
 			this.panel1.Controls.Add(this.button2);
 			this.panel1.Controls.Add(this.button1);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel1.Location = new System.Drawing.Point(0, 415);
+			this.panel1.Location = new System.Drawing.Point(0, 393);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(839, 37);
 			this.panel1.TabIndex = 0;
@@ -98,6 +103,7 @@
 			this.button1.TabIndex = 0;
 			this.button1.Text = "OK";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// splitContainer1
 			// 
@@ -112,8 +118,8 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-			this.splitContainer1.Panel2.Controls.Add(this.saleBindingNavigator);
-			this.splitContainer1.Size = new System.Drawing.Size(839, 415);
+			this.splitContainer1.Panel2.Controls.Add(this.bindingNavigator1);
+			this.splitContainer1.Size = new System.Drawing.Size(839, 452);
 			this.splitContainer1.SplitterDistance = 279;
 			this.splitContainer1.TabIndex = 1;
 			// 
@@ -124,7 +130,7 @@
 			this.listBox1.FormattingEnabled = true;
 			this.listBox1.Location = new System.Drawing.Point(0, 0);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(279, 415);
+			this.listBox1.Size = new System.Drawing.Size(279, 452);
 			this.listBox1.TabIndex = 0;
 			this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
 			// 
@@ -139,56 +145,30 @@
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.goodDataGridViewTextBoxColumn,
+            this.SellingPrice,
             this.countDataGridViewTextBoxColumn,
-            this.sellingPriceDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn});
-			this.dataGridView1.DataSource = this.saleBindingSource;
+            this.MaxCount,
+            this.Sum});
+			this.dataGridView1.DataSource = this.saleVisualItemBindingSource;
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(0, 25);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(556, 390);
+			this.dataGridView1.Size = new System.Drawing.Size(556, 427);
 			this.dataGridView1.TabIndex = 3;
+			this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
 			// 
-			// goodDataGridViewTextBoxColumn
+			// saleVisualItemBindingSource
 			// 
-			this.goodDataGridViewTextBoxColumn.DataPropertyName = "Good";
-			this.goodDataGridViewTextBoxColumn.HeaderText = "Товар";
-			this.goodDataGridViewTextBoxColumn.Name = "goodDataGridViewTextBoxColumn";
-			this.goodDataGridViewTextBoxColumn.ReadOnly = true;
-			this.goodDataGridViewTextBoxColumn.Width = 250;
+			this.saleVisualItemBindingSource.DataSource = typeof(CRM_VIEW.VisualModel.SaleVisualItem);
 			// 
-			// countDataGridViewTextBoxColumn
+			// bindingNavigator1
 			// 
-			this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-			this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
-			this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-			this.countDataGridViewTextBoxColumn.Width = 80;
-			// 
-			// sellingPriceDataGridViewTextBoxColumn
-			// 
-			this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
-			this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Цена";
-			this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
-			this.sellingPriceDataGridViewTextBoxColumn.Width = 80;
-			// 
-			// dateDataGridViewTextBoxColumn
-			// 
-			this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-			this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
-			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-			// 
-			// saleBindingSource
-			// 
-			this.saleBindingSource.DataSource = typeof(CRM_MODEL.Sale);
-			// 
-			// saleBindingNavigator
-			// 
-			this.saleBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-			this.saleBindingNavigator.BindingSource = this.saleBindingSource;
-			this.saleBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-			this.saleBindingNavigator.CountItemFormat = "из {0}";
-			this.saleBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-			this.saleBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.bindingNavigator1.AddNewItem = null;
+			this.bindingNavigator1.BindingSource = this.saleVisualItemBindingSource;
+			this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+			this.bindingNavigator1.CountItemFormat = "из {0}";
+			this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+			this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -198,28 +178,17 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.saleBindingNavigatorSaveItem});
-			this.saleBindingNavigator.Location = new System.Drawing.Point(0, 0);
-			this.saleBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-			this.saleBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-			this.saleBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-			this.saleBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-			this.saleBindingNavigator.Name = "saleBindingNavigator";
-			this.saleBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-			this.saleBindingNavigator.Size = new System.Drawing.Size(556, 25);
-			this.saleBindingNavigator.TabIndex = 2;
-			this.saleBindingNavigator.Text = "bindingNavigator1";
-			// 
-			// bindingNavigatorAddNewItem
-			// 
-			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorAddNewItem.Text = "Добавить";
+            this.bindingNavigatorDeleteItem});
+			this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
+			this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+			this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+			this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+			this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+			this.bindingNavigator1.Name = "bindingNavigator1";
+			this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+			this.bindingNavigator1.Size = new System.Drawing.Size(556, 25);
+			this.bindingNavigator1.TabIndex = 4;
+			this.bindingNavigator1.Text = "bindingNavigator1";
 			// 
 			// bindingNavigatorCountItem
 			// 
@@ -236,6 +205,7 @@
 			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
 			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorDeleteItem.Text = "Удалить";
+			this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
 			// 
 			// bindingNavigatorMoveFirstItem
 			// 
@@ -297,14 +267,72 @@
 			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
 			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
 			// 
-			// saleBindingNavigatorSaveItem
+			// crmdbContextController1
 			// 
-			this.saleBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.saleBindingNavigatorSaveItem.Enabled = false;
-			this.saleBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("saleBindingNavigatorSaveItem.Image")));
-			this.saleBindingNavigatorSaveItem.Name = "saleBindingNavigatorSaveItem";
-			this.saleBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-			this.saleBindingNavigatorSaveItem.Text = "Сохранить данные";
+			this.crmdbContextController1.Context = crmdbContext1;
+			// 
+			// statusStrip1
+			// 
+			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3});
+			this.statusStrip1.Location = new System.Drawing.Point(0, 430);
+			this.statusStrip1.Name = "statusStrip1";
+			this.statusStrip1.Size = new System.Drawing.Size(839, 22);
+			this.statusStrip1.TabIndex = 2;
+			this.statusStrip1.Text = "statusStrip1";
+			// 
+			// toolStripStatusLabel1
+			// 
+			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+			this.toolStripStatusLabel1.Size = new System.Drawing.Size(55, 17);
+			this.toolStripStatusLabel1.Text = "К оплате";
+			// 
+			// toolStripStatusLabel2
+			// 
+			this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+			this.toolStripStatusLabel2.Size = new System.Drawing.Size(13, 17);
+			this.toolStripStatusLabel2.Text = "0";
+			// 
+			// toolStripStatusLabel3
+			// 
+			this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+			this.toolStripStatusLabel3.Size = new System.Drawing.Size(17, 17);
+			this.toolStripStatusLabel3.Text = "р.";
+			// 
+			// goodDataGridViewTextBoxColumn
+			// 
+			this.goodDataGridViewTextBoxColumn.DataPropertyName = "Good";
+			this.goodDataGridViewTextBoxColumn.HeaderText = "Товар";
+			this.goodDataGridViewTextBoxColumn.Name = "goodDataGridViewTextBoxColumn";
+			this.goodDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// SellingPrice
+			// 
+			this.SellingPrice.DataPropertyName = "SellingPrice";
+			this.SellingPrice.HeaderText = "Цена продажи";
+			this.SellingPrice.Name = "SellingPrice";
+			// 
+			// countDataGridViewTextBoxColumn
+			// 
+			this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+			this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
+			this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+			// 
+			// MaxCount
+			// 
+			this.MaxCount.DataPropertyName = "MaxCount";
+			this.MaxCount.HeaderText = "На складе";
+			this.MaxCount.Name = "MaxCount";
+			this.MaxCount.ReadOnly = true;
+			// 
+			// Sum
+			// 
+			this.Sum.DataPropertyName = "Sum";
+			this.Sum.HeaderText = "Сумма";
+			this.Sum.Name = "Sum";
+			this.Sum.ReadOnly = true;
 			// 
 			// SaleConstructorForm
 			// 
@@ -313,8 +341,9 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.button2;
 			this.ClientSize = new System.Drawing.Size(839, 452);
-			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.statusStrip1);
+			this.Controls.Add(this.splitContainer1);
 			this.Name = "SaleConstructorForm";
 			this.Text = "Оформление продажи";
 			this.panel1.ResumeLayout(false);
@@ -325,11 +354,14 @@
 			this.splitContainer1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.saleBindingNavigator)).EndInit();
-			this.saleBindingNavigator.ResumeLayout(false);
-			this.saleBindingNavigator.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.saleVisualItemBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+			this.bindingNavigator1.ResumeLayout(false);
+			this.bindingNavigator1.PerformLayout();
+			this.statusStrip1.ResumeLayout(false);
+			this.statusStrip1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -342,9 +374,13 @@
 		private CRMDBContextController crmdbContextController1;
 		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.BindingSource saleBindingSource;
-		private System.Windows.Forms.BindingNavigator saleBindingNavigator;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+		private System.Windows.Forms.BindingSource storageBindingSource;
+		private System.Windows.Forms.BindingSource saleVisualItemBindingSource;
+		private System.Windows.Forms.StatusStrip statusStrip1;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+		private System.Windows.Forms.BindingNavigator bindingNavigator1;
 		private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
 		private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
 		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -355,11 +391,10 @@
 		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
 		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
 		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-		private System.Windows.Forms.ToolStripButton saleBindingNavigatorSaveItem;
-		private System.Windows.Forms.BindingSource storageBindingSource;
 		private System.Windows.Forms.DataGridViewTextBoxColumn goodDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SellingPrice;
 		private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MaxCount;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Sum;
 	}
 }

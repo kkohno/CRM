@@ -9,13 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CRM_MODEL;
+using CRM_VIEW.Extensions;
+using CRM_VIEW.VisualModel;
 
 namespace CRM_VIEW.Forms
 {
 	public partial class SaleConstructorForm : Form
 	{
-		BindingList<GoodStorageItem> storage;
-		BindingList<Sale> sales = new BindingList<Sale>();
+		BindingList<GoodStorageItem> storage;											// все товары на складе
+		List<GoodStorageItem> invStorageItems = new List<GoodStorageItem>();			// те товары склада, которые сейчас не видны
+		ExtBindingList<SaleVisualItem> sales = new ExtBindingList<SaleVisualItem>();	// текущий намеченый список продажи
 		CRMDBContext Context
 		{
 			get
@@ -23,6 +26,7 @@ namespace CRM_VIEW.Forms
 				return crmdbContextController1;
 			}
 		}
+
 		void ReloadAll()
 		{
 			var req = from gsi in Context.GoodStorageItems
@@ -32,11 +36,36 @@ namespace CRM_VIEW.Forms
 			storage = new BindingList<GoodStorageItem>(req.ToList());
 			storageBindingSource.DataSource = storage;
         }
+		void RecalculateAll()
+		{
+			double sum = 0;
+			foreach (var sale in sales){
+				sum += sale.Sum;
+			}
+			toolStripStatusLabel2.Text = sum.ToString();
+        }
+
 		public SaleConstructorForm(User user)
 		{
 			InitializeComponent();
-			saleBindingSource.DataSource = sales;
+			saleVisualItemBindingSource.DataSource = sales;
 			ReloadAll();
+			sales.BeforeRemove += Sales_BeforeRemove;
+        }
+
+		private void Sales_BeforeRemove(object sender, SaleVisualItem e)
+		{
+			var gsi = saleVisualItemBindingSource.Current as SaleVisualItem;
+			if (gsi == null) return;
+			int index = -1;
+			for (int i = 1; i < storage.Count; ++i)
+				if (string.Compare(gsi.Good.Name, storage[i].Good.Name, StringComparison.InvariantCulture) < 0) {
+					index = i;
+					break;
+				}
+			if (index == -1) index = storage.Count;
+			storage.Insert(index, gsi.GoodStorageItem);
+			RecalculateAll();
         }
 
 		private void button2_Click(object sender, EventArgs e)
@@ -48,8 +77,54 @@ namespace CRM_VIEW.Forms
 		{
 			var gsi = storageBindingSource.Current as GoodStorageItem;
 			if (gsi == null) return;
-			sales.Add(new Sale { Good = gsi.Good, Date = DateTime.Now, Count = 1, SellingPrice = gsi.Good.CurrentSellingPrice });
+			invStorageItems.Add(gsi);
+			sales.Add(new SaleVisualItem {
+				Sale = new Sale {
+					Good = gsi.Good,
+					Date = DateTime.Now,
+					Count = 1,
+					SellingPrice = gsi.Good.CurrentSellingPrice
+				},
+				GoodStorageItem = gsi
+			});
 			storage.Remove(gsi);
+			RecalculateAll();
+        }
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+
+			saleVisualItemBindingSource.EndEdit();
+			// ограничитель
+			if (sales.Count == 0) {
+				Close();
+				return;
+			}
+			// добавляем продажи
+			foreach (var saleView in sales) Context.Sales.Add(saleView.Sale);
+
+			// отнимаем склад
+			foreach (var gsi in invStorageItems) {
+				gsi.Count -= sales.First(x => x.Good == gsi.Good).Count;
+				Context.GoodStorageItems.Attach(gsi);
+				Context.Entry(gsi).State = EntityState.Modified;
+			}
+
+			// сохранение
+			Context.SaveChanges();
+
+			// закрываем форму
+			Close();
 		}
+
+		private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+		{
+			RecalculateAll();
+        }
+
+		private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+		{
+			RecalculateAll();
+        }
 	}
 }

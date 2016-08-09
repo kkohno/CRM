@@ -190,14 +190,12 @@
 			// saleListBox
 			// 
 			this.saleListBox.DataSource = this.saleBindingSource;
-			this.saleListBox.DisplayMember = "Count";
 			this.saleListBox.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.saleListBox.FormattingEnabled = true;
 			this.saleListBox.Location = new System.Drawing.Point(0, 0);
 			this.saleListBox.Name = "saleListBox";
 			this.saleListBox.Size = new System.Drawing.Size(213, 445);
 			this.saleListBox.TabIndex = 1;
-			this.saleListBox.ValueMember = "Count";
 			// 
 			// saleView1
 			// 
