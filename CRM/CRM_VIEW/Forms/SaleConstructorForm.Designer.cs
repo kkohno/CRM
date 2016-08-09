@@ -311,7 +311,7 @@
 			// SellingPrice
 			// 
 			this.SellingPrice.DataPropertyName = "SellingPrice";
-			this.SellingPrice.HeaderText = "Цена продажи";
+			this.SellingPrice.HeaderText = "Цена";
 			this.SellingPrice.Name = "SellingPrice";
 			// 
 			// countDataGridViewTextBoxColumn
