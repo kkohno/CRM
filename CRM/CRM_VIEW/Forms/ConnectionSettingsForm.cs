@@ -19,7 +19,7 @@ namespace CRM_VIEW.Forms
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			contextSettingsView1.SaveContext();
+			contextSettingsView1.SaveContextSettings();
 			Close();
 		}
 

@@ -20,7 +20,7 @@ namespace CRM_VIEW.Views
 			_contextSettings = ContextSettings.Instance.GetCopy();
             contextSettingsBindingSource.DataSource = _contextSettings;
         }
-		public void SaveContext()
+		public void SaveContextSettings()
 		{
 			ContextSettings.Instance = _contextSettings;
             ContextSettings.Instance.Save();
