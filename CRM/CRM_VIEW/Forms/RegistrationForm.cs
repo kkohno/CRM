@@ -28,7 +28,11 @@ namespace CRM_VIEW.Forms
 			}
 			try
 			{
-				crmController1.Registration(new LoginPass { Login = textBox1.Text, Pass = textBox2.Text }, userView1.User);
+				crmController1.Registration(new LoginPass {
+					Login = textBox1.Text,
+					Pass = textBox2.Text
+				},
+				userView1.User);
 			}
 			catch (System.Exception ex)
 			{

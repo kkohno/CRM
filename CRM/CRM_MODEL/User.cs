@@ -16,18 +16,9 @@ namespace CRM_MODEL
 	{
 		public long? Id { get; set; }
 		/// <summary>
-		/// фамилия
+		/// персона
 		/// </summary>
-		[Required]
-		public string Name1 { get; set; }
-		/// <summary>
-		/// имя
-		/// </summary>
-		public string Name2 { get; set; }
-		/// <summary>
-		/// отчество
-		/// </summary>
-		public string Name3 { get; set; }
+		public virtual Person Person { get; set; } = new Person();
 		/// <summary>
 		/// бинарная маска прав пользователя
 		/// </summary>
@@ -50,24 +41,10 @@ namespace CRM_MODEL
 				else Rights &= ~(Rights | 1);
 			}
 		}
-			
-		/// <summary>
-		/// возвращает короткое ФИО
-		/// </summary>
-		public string ShortFIO
-		{
-			get
-			{
-				string fio = Name1;
-				if (!string.IsNullOrEmpty(Name2)) fio += " " + Name2[0] + ".";
-				if (!string.IsNullOrEmpty(Name3)) fio += " " + Name3[0] + ".";
-				return fio;
-			}
-		}
 
 		public override string ToString()
 		{
-			return ShortFIO;
+			return Person.ToString();
 		}
 	}
 }

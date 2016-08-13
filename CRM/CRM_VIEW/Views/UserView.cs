@@ -13,7 +13,7 @@ namespace CRM_VIEW.Views
 {
 	[DefaultBindingProperty("User")]
 	[DefaultProperty("User")]
-	public partial class UserView : BaseCRMVIew
+	public partial class UserView : UserControl
 	{
 		[Description("Задает или возвращает текущего пользователя")]
 		[Browsable(false)]

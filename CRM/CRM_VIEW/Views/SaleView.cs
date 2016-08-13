@@ -12,7 +12,7 @@ using System.Data.Entity;
 
 namespace CRM_VIEW.Views
 {
-    [DefaultProperty("Value")]
+    [DefaultProperty("Sale")]
     [DefaultBindingProperty("Sale")]
 	public partial class SaleView : BaseCRMVIew
 	{

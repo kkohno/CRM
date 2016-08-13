@@ -28,12 +28,24 @@ namespace CRM_TEST
 				var lp1 = new LoginPass {
 					Login = "RegisterUser_login1",
 					Pass = "RegisterUser_pass1",
-					User = new User { Name1 = "Иванов", Name2 = "Иван", Name3 = "Иванович" }
+					User = new User {
+						Person = new Person {
+							Name1 = "Иванов",
+							Name2 = "Иван",
+							Name3 = "Иванович"
+						}
+					}
 				};
 				var lp2 = new LoginPass {
 					Login = "RegisterUser_login2",
 					Pass = "RegisterUser_pass2",
-					User = new User { Name1 = "Иванов", Name2 = "Иван", Name3 = "Иванович" }
+					User = new User {
+						Person = new Person {
+							Name1 = "Иванов",
+							Name2 = "Иван",
+							Name3 = "Иванович"
+						}
+					}
 				};
 				context.LoginPasses.Add(lp1);
 				context.LoginPasses.Add(lp2);
@@ -77,9 +89,11 @@ namespace CRM_TEST
 					ReceivingDate = DateTime.Today
 				};
 				var user = new User {
-					Name1 = "AddGood фамилия",
-					Name2 = "AddGood имя",
-					Name3 = "AddGood отчество",
+					Person = new Person {
+						Name1 = "AddGood фамилия",
+						Name2 = "AddGood имя",
+						Name3 = "AddGood отчество"
+					}
 				};
 				var sale = new Sale {
 					Date = DateTime.Today,

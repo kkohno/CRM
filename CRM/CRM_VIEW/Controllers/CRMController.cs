@@ -73,9 +73,9 @@ namespace CRM_VIEW
 			if (string.IsNullOrEmpty(loginPass.Login)) throw new Exception("Не удалось зарегестрировать пользователя - не указан логин");
 			if (string.IsNullOrEmpty(loginPass.Pass)) throw new Exception("Не удалось зарегестрировать пользователя - не указан пароль");
 			if (user == null) throw new Exception("Не удалось зарегестрировать пользователя - не указан пользователь");
-			if (string.IsNullOrEmpty(user.Name1)) throw new Exception("Не удалось зарегестрировать пользователя - не указана фамилия");
-			if (string.IsNullOrEmpty(user.Name2)) throw new Exception("Не удалось зарегестрировать пользователя - не указана имя");
-			if (string.IsNullOrEmpty(user.Name3)) throw new Exception("Не удалось зарегестрировать пользователя - не указана отчество");
+			if (string.IsNullOrEmpty(user.Person.Name1)) throw new Exception("Не удалось зарегестрировать пользователя - не указана фамилия");
+			if (string.IsNullOrEmpty(user.Person.Name2)) throw new Exception("Не удалось зарегестрировать пользователя - не указана имя");
+			if (string.IsNullOrEmpty(user.Person.Name3)) throw new Exception("Не удалось зарегестрировать пользователя - не указана отчество");
 
 			using (var context = new CRMDBContext()) {
 				// проверка логина

@@ -39,14 +39,15 @@ namespace CRM_VIEW.Forms
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
+			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			this.userView1 = new CRM_VIEW.Views.UserView();
-			this.crmController1 = new CRM_VIEW.CRMController(this.components);
-			this.SuspendLayout();
+			this.crmController1 = new CRMController();
+            this.SuspendLayout();
 			// 
 			// button2
 			// 
 			this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.button2.Location = new System.Drawing.Point(234, 192);
+			this.button2.Location = new System.Drawing.Point(234, 197);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 13;
@@ -55,7 +56,7 @@ namespace CRM_VIEW.Forms
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(153, 192);
+			this.button1.Location = new System.Drawing.Point(153, 197);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 12;
@@ -113,18 +114,17 @@ namespace CRM_VIEW.Forms
 			this.label3.TabIndex = 12;
 			this.label3.Text = "Повтор";
 			// 
+			// crmdbContextController1
+			// 
+			this.crmdbContextController1.Context = crmdbContext1;
+			// 
 			// userView1
 			// 
-			this.userView1.Context = crmdbContext1;
 			this.userView1.Location = new System.Drawing.Point(12, 84);
 			this.userView1.Name = "userView1";
-			this.userView1.Size = new System.Drawing.Size(297, 102);
+			this.userView1.Size = new System.Drawing.Size(297, 109);
 			this.userView1.TabIndex = 11;
 			this.userView1.User = ((CRM_MODEL.User)(resources.GetObject("userView1.User")));
-			// 
-			// crmController1
-			// 
-			this.crmController1.User = null;
 			// 
 			// RegistrationForm
 			// 
@@ -132,7 +132,7 @@ namespace CRM_VIEW.Forms
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.button2;
-			this.ClientSize = new System.Drawing.Size(321, 222);
+			this.ClientSize = new System.Drawing.Size(321, 225);
 			this.Controls.Add(this.userView1);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.label3);
@@ -161,7 +161,8 @@ namespace CRM_VIEW.Forms
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Label label3;
-		private Views.UserView userView1;
 		private CRMController crmController1;
+		private CRMDBContextController crmdbContextController1;
+		private Views.UserView userView1;
 	}
 }

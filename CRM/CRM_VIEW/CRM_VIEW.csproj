@@ -160,6 +160,12 @@
     <Compile Include="Views\GoodView.Designer.cs">
       <DependentUpon>GoodView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PersonView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PersonView.Designer.cs">
+      <DependentUpon>PersonView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProviderView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     <EmbeddedResource Include="Views\GoodView.resx">
       <DependentUpon>GoodView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\PersonView.resx">
+      <DependentUpon>PersonView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ProviderView.resx">
       <DependentUpon>ProviderView.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +256,7 @@
     <None Include="Properties\DataSources\CRM_MODEL.GoodStorageItem.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.GoodType.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Mail.datasource" />
+    <None Include="Properties\DataSources\CRM_MODEL.Person.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Phone.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Provider.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Reference.datasource" />
