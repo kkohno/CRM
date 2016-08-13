@@ -28,6 +28,7 @@ namespace CRM_VIEW.Views
 				else providerBindingSource.DataSource = new Provider();
 				phoneBindingSource.DataSource = value.Phones;
 				referenceBindingSource.DataSource = value.References;
+				mailBindingSource.DataSource = value.Mails;
 			}
 		}
 

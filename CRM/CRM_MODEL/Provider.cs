@@ -32,6 +32,10 @@ namespace CRM_MODEL
 		/// ссылки на поставщика
 		/// </summary>
 		public virtual ICollection<Reference> References { get; set; } = new List<Reference>();
+		/// <summary>
+		/// почтовые ящики поставщика
+		/// </summary>
+		public virtual ICollection<Mail> Mails { get; set; } = new List<Mail>();
 
 		public override string ToString()
 		{

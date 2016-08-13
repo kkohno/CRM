@@ -246,6 +246,7 @@
     <None Include="Properties\DataSources\CRM_MODEL.Good.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.GoodStorageItem.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.GoodType.datasource" />
+    <None Include="Properties\DataSources\CRM_MODEL.Mail.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Phone.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Provider.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Reference.datasource" />

@@ -45,6 +45,8 @@
 			this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.подключениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.crmController1 = new CRM_VIEW.CRMController(this.components);
+			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -101,11 +103,13 @@
 			// 
 			this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.типыТоваровToolStripMenuItem,
+            this.toolStripMenuItem3,
             this.поставщикиToolStripMenuItem,
             this.товарыToolStripMenuItem,
+            this.toolStripMenuItem4,
             this.складToolStripMenuItem,
-            this.продажиToolStripMenuItem,
             this.toolStripMenuItem2,
+            this.продажиToolStripMenuItem,
             this.оформитьПродажуToolStripMenuItem});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
 			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
@@ -179,6 +183,16 @@
 			this.crmController1.OnAuthorized += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnAuthorized);
 			this.crmController1.OnLogout += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnLogout);
 			// 
+			// toolStripMenuItem3
+			// 
+			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+			this.toolStripMenuItem3.Size = new System.Drawing.Size(181, 6);
+			// 
+			// toolStripMenuItem4
+			// 
+			this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+			this.toolStripMenuItem4.Size = new System.Drawing.Size(181, 6);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +229,8 @@
 		private System.Windows.Forms.ToolStripMenuItem оформитьПродажуToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem подключениеToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
 	}
 }
 

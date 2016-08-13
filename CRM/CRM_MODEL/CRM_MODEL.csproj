@@ -55,6 +55,16 @@
     <Compile Include="GoodStorageItem.cs" />
     <Compile Include="GoodType.cs" />
     <Compile Include="LoginPass.cs" />
+    <Compile Include="Mail.cs" />
+    <Compile Include="Migrations\201608011102054_InitialCreate.cs" />
+    <Compile Include="Migrations\201608011102054_InitialCreate.Designer.cs">
+      <DependentUpon>201608011102054_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608130938320_1.cs" />
+    <Compile Include="Migrations\201608130938320_1.Designer.cs">
+      <DependentUpon>201608130938320_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Provider.cs" />
     <Compile Include="Phone.cs" />
     <Compile Include="Reference.cs" />
@@ -66,6 +76,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608011102054_InitialCreate.resx">
+      <DependentUpon>201608011102054_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608130938320_1.resx">
+      <DependentUpon>201608130938320_1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

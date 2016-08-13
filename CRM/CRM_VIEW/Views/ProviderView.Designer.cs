@@ -28,10 +28,13 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProviderView));
 			System.Windows.Forms.Label nameLabel;
 			System.Windows.Forms.Label commentLabel;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProviderView));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.commentTextBox = new System.Windows.Forms.TextBox();
+			this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.nameTextBox = new System.Windows.Forms.TextBox();
 			this.phoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.referenceBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -67,12 +70,27 @@
 			this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-			this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.nameTextBox = new System.Windows.Forms.TextBox();
-			this.commentTextBox = new System.Windows.Forms.TextBox();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.dataGridView3 = new System.Windows.Forms.DataGridView();
+			this.mailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bindingNavigator3 = new System.Windows.Forms.BindingNavigator(this.components);
+			this.bindingNavigatorAddNewItem2 = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorCountItem2 = new System.Windows.Forms.ToolStripLabel();
+			this.bindingNavigatorDeleteItem2 = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorMoveFirstItem2 = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorMovePreviousItem2 = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+			this.bindingNavigatorPositionItem2 = new System.Windows.Forms.ToolStripTextBox();
+			this.bindingNavigatorSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+			this.bindingNavigatorMoveNextItem2 = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorMoveLastItem2 = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+			this.mailStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.commentDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			nameLabel = new System.Windows.Forms.Label();
 			commentLabel = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.referenceBindingSource)).BeginInit();
 			this.tabControl1.SuspendLayout();
@@ -84,8 +102,30 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
 			this.bindingNavigator2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
+			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.mailBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator3)).BeginInit();
+			this.bindingNavigator3.SuspendLayout();
 			this.SuspendLayout();
+			// 
+			// nameLabel
+			// 
+			nameLabel.AutoSize = true;
+			nameLabel.Location = new System.Drawing.Point(1, 6);
+			nameLabel.Name = "nameLabel";
+			nameLabel.Size = new System.Drawing.Size(60, 13);
+			nameLabel.TabIndex = 0;
+			nameLabel.Text = "Название:";
+			// 
+			// commentLabel
+			// 
+			commentLabel.AutoSize = true;
+			commentLabel.Location = new System.Drawing.Point(1, 32);
+			commentLabel.Name = "commentLabel";
+			commentLabel.Size = new System.Drawing.Size(60, 13);
+			commentLabel.TabIndex = 2;
+			commentLabel.Text = "Описание:";
 			// 
 			// panel1
 			// 
@@ -99,6 +139,30 @@
 			this.panel1.Size = new System.Drawing.Size(290, 54);
 			this.panel1.TabIndex = 6;
 			// 
+			// commentTextBox
+			// 
+			this.commentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.commentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Comment", true));
+			this.commentTextBox.Location = new System.Drawing.Point(67, 29);
+			this.commentTextBox.Name = "commentTextBox";
+			this.commentTextBox.Size = new System.Drawing.Size(219, 20);
+			this.commentTextBox.TabIndex = 3;
+			// 
+			// providerBindingSource
+			// 
+			this.providerBindingSource.DataSource = typeof(CRM_MODEL.Provider);
+			// 
+			// nameTextBox
+			// 
+			this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Name", true));
+			this.nameTextBox.Location = new System.Drawing.Point(67, 3);
+			this.nameTextBox.Name = "nameTextBox";
+			this.nameTextBox.Size = new System.Drawing.Size(219, 20);
+			this.nameTextBox.TabIndex = 1;
+			// 
 			// phoneBindingSource
 			// 
 			this.phoneBindingSource.DataSource = typeof(CRM_MODEL.Phone);
@@ -111,6 +175,7 @@
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Location = new System.Drawing.Point(0, 54);
 			this.tabControl1.Name = "tabControl1";
@@ -282,7 +347,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(282, 141);
+			this.tabPage2.Size = new System.Drawing.Size(282, 140);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Ссылки";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -298,7 +363,7 @@
 			this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView2.Location = new System.Drawing.Point(3, 28);
 			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.Size = new System.Drawing.Size(276, 110);
+			this.dataGridView2.Size = new System.Drawing.Size(276, 109);
 			this.dataGridView2.TabIndex = 3;
 			// 
 			// commentDataGridViewTextBoxColumn1
@@ -431,47 +496,162 @@
 			this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
 			this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
-			// providerBindingSource
+			// tabPage3
 			// 
-			this.providerBindingSource.DataSource = typeof(CRM_MODEL.Provider);
+			this.tabPage3.Controls.Add(this.dataGridView3);
+			this.tabPage3.Controls.Add(this.bindingNavigator3);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage3.Size = new System.Drawing.Size(282, 140);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "e-mail";
+			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
-			// nameLabel
+			// dataGridView3
 			// 
-			nameLabel.AutoSize = true;
-			nameLabel.Location = new System.Drawing.Point(1, 6);
-			nameLabel.Name = "nameLabel";
-			nameLabel.Size = new System.Drawing.Size(60, 13);
-			nameLabel.TabIndex = 0;
-			nameLabel.Text = "Название:";
+			this.dataGridView3.AutoGenerateColumns = false;
+			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mailStringDataGridViewTextBoxColumn,
+            this.commentDataGridViewTextBoxColumn2});
+			this.dataGridView3.DataSource = this.mailBindingSource;
+			this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridView3.Location = new System.Drawing.Point(3, 28);
+			this.dataGridView3.Name = "dataGridView3";
+			this.dataGridView3.Size = new System.Drawing.Size(276, 109);
+			this.dataGridView3.TabIndex = 1;
 			// 
-			// nameTextBox
+			// mailBindingSource
 			// 
-			this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Name", true));
-			this.nameTextBox.Location = new System.Drawing.Point(67, 3);
-			this.nameTextBox.Name = "nameTextBox";
-			this.nameTextBox.Size = new System.Drawing.Size(219, 20);
-			this.nameTextBox.TabIndex = 1;
+			this.mailBindingSource.DataSource = typeof(CRM_MODEL.Mail);
 			// 
-			// commentLabel
+			// bindingNavigator3
 			// 
-			commentLabel.AutoSize = true;
-			commentLabel.Location = new System.Drawing.Point(1, 32);
-			commentLabel.Name = "commentLabel";
-			commentLabel.Size = new System.Drawing.Size(60, 13);
-			commentLabel.TabIndex = 2;
-			commentLabel.Text = "Описание:";
+			this.bindingNavigator3.AddNewItem = this.bindingNavigatorAddNewItem2;
+			this.bindingNavigator3.BindingSource = this.mailBindingSource;
+			this.bindingNavigator3.CountItem = this.bindingNavigatorCountItem2;
+			this.bindingNavigator3.CountItemFormat = "из {0}";
+			this.bindingNavigator3.DeleteItem = this.bindingNavigatorDeleteItem2;
+			this.bindingNavigator3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem2,
+            this.bindingNavigatorMovePreviousItem2,
+            this.bindingNavigatorSeparator6,
+            this.bindingNavigatorPositionItem2,
+            this.bindingNavigatorCountItem2,
+            this.bindingNavigatorSeparator7,
+            this.bindingNavigatorMoveNextItem2,
+            this.bindingNavigatorMoveLastItem2,
+            this.bindingNavigatorSeparator8,
+            this.bindingNavigatorAddNewItem2,
+            this.bindingNavigatorDeleteItem2});
+			this.bindingNavigator3.Location = new System.Drawing.Point(3, 3);
+			this.bindingNavigator3.MoveFirstItem = this.bindingNavigatorMoveFirstItem2;
+			this.bindingNavigator3.MoveLastItem = this.bindingNavigatorMoveLastItem2;
+			this.bindingNavigator3.MoveNextItem = this.bindingNavigatorMoveNextItem2;
+			this.bindingNavigator3.MovePreviousItem = this.bindingNavigatorMovePreviousItem2;
+			this.bindingNavigator3.Name = "bindingNavigator3";
+			this.bindingNavigator3.PositionItem = this.bindingNavigatorPositionItem2;
+			this.bindingNavigator3.Size = new System.Drawing.Size(276, 25);
+			this.bindingNavigator3.TabIndex = 0;
+			this.bindingNavigator3.Text = "bindingNavigator3";
 			// 
-			// commentTextBox
+			// bindingNavigatorAddNewItem2
 			// 
-			this.commentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.commentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Comment", true));
-			this.commentTextBox.Location = new System.Drawing.Point(67, 29);
-			this.commentTextBox.Name = "commentTextBox";
-			this.commentTextBox.Size = new System.Drawing.Size(219, 20);
-			this.commentTextBox.TabIndex = 3;
+			this.bindingNavigatorAddNewItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorAddNewItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem2.Image")));
+			this.bindingNavigatorAddNewItem2.Name = "bindingNavigatorAddNewItem2";
+			this.bindingNavigatorAddNewItem2.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorAddNewItem2.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorAddNewItem2.Text = "Добавить";
+			// 
+			// bindingNavigatorCountItem2
+			// 
+			this.bindingNavigatorCountItem2.Name = "bindingNavigatorCountItem2";
+			this.bindingNavigatorCountItem2.Size = new System.Drawing.Size(36, 22);
+			this.bindingNavigatorCountItem2.Text = "из {0}";
+			this.bindingNavigatorCountItem2.ToolTipText = "Общее число элементов";
+			// 
+			// bindingNavigatorDeleteItem2
+			// 
+			this.bindingNavigatorDeleteItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorDeleteItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem2.Image")));
+			this.bindingNavigatorDeleteItem2.Name = "bindingNavigatorDeleteItem2";
+			this.bindingNavigatorDeleteItem2.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorDeleteItem2.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorDeleteItem2.Text = "Удалить";
+			// 
+			// bindingNavigatorMoveFirstItem2
+			// 
+			this.bindingNavigatorMoveFirstItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorMoveFirstItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem2.Image")));
+			this.bindingNavigatorMoveFirstItem2.Name = "bindingNavigatorMoveFirstItem2";
+			this.bindingNavigatorMoveFirstItem2.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorMoveFirstItem2.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorMoveFirstItem2.Text = "Переместить в начало";
+			// 
+			// bindingNavigatorMovePreviousItem2
+			// 
+			this.bindingNavigatorMovePreviousItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorMovePreviousItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem2.Image")));
+			this.bindingNavigatorMovePreviousItem2.Name = "bindingNavigatorMovePreviousItem2";
+			this.bindingNavigatorMovePreviousItem2.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorMovePreviousItem2.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorMovePreviousItem2.Text = "Переместить назад";
+			// 
+			// bindingNavigatorSeparator6
+			// 
+			this.bindingNavigatorSeparator6.Name = "bindingNavigatorSeparator6";
+			this.bindingNavigatorSeparator6.Size = new System.Drawing.Size(6, 25);
+			// 
+			// bindingNavigatorPositionItem2
+			// 
+			this.bindingNavigatorPositionItem2.AccessibleName = "Положение";
+			this.bindingNavigatorPositionItem2.AutoSize = false;
+			this.bindingNavigatorPositionItem2.Name = "bindingNavigatorPositionItem2";
+			this.bindingNavigatorPositionItem2.Size = new System.Drawing.Size(50, 23);
+			this.bindingNavigatorPositionItem2.Text = "0";
+			this.bindingNavigatorPositionItem2.ToolTipText = "Текущее положение";
+			// 
+			// bindingNavigatorSeparator7
+			// 
+			this.bindingNavigatorSeparator7.Name = "bindingNavigatorSeparator7";
+			this.bindingNavigatorSeparator7.Size = new System.Drawing.Size(6, 25);
+			// 
+			// bindingNavigatorMoveNextItem2
+			// 
+			this.bindingNavigatorMoveNextItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorMoveNextItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem2.Image")));
+			this.bindingNavigatorMoveNextItem2.Name = "bindingNavigatorMoveNextItem2";
+			this.bindingNavigatorMoveNextItem2.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorMoveNextItem2.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorMoveNextItem2.Text = "Переместить вперед";
+			// 
+			// bindingNavigatorMoveLastItem2
+			// 
+			this.bindingNavigatorMoveLastItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorMoveLastItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem2.Image")));
+			this.bindingNavigatorMoveLastItem2.Name = "bindingNavigatorMoveLastItem2";
+			this.bindingNavigatorMoveLastItem2.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorMoveLastItem2.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorMoveLastItem2.Text = "Переместить в конец";
+			// 
+			// bindingNavigatorSeparator8
+			// 
+			this.bindingNavigatorSeparator8.Name = "bindingNavigatorSeparator8";
+			this.bindingNavigatorSeparator8.Size = new System.Drawing.Size(6, 25);
+			// 
+			// mailStringDataGridViewTextBoxColumn
+			// 
+			this.mailStringDataGridViewTextBoxColumn.DataPropertyName = "MailString";
+			this.mailStringDataGridViewTextBoxColumn.HeaderText = "e-mail";
+			this.mailStringDataGridViewTextBoxColumn.Name = "mailStringDataGridViewTextBoxColumn";
+			// 
+			// commentDataGridViewTextBoxColumn2
+			// 
+			this.commentDataGridViewTextBoxColumn2.DataPropertyName = "Comment";
+			this.commentDataGridViewTextBoxColumn2.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn2.Name = "commentDataGridViewTextBoxColumn2";
 			// 
 			// ProviderView
 			// 
@@ -483,6 +663,7 @@
 			this.Size = new System.Drawing.Size(290, 220);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.referenceBindingSource)).EndInit();
 			this.tabControl1.ResumeLayout(false);
@@ -498,7 +679,13 @@
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
 			this.bindingNavigator2.ResumeLayout(false);
 			this.bindingNavigator2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
+			this.tabPage3.ResumeLayout(false);
+			this.tabPage3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.mailBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator3)).EndInit();
+			this.bindingNavigator3.ResumeLayout(false);
+			this.bindingNavigator3.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -543,5 +730,22 @@
 		private System.Windows.Forms.TextBox commentTextBox;
 		private System.Windows.Forms.BindingSource providerBindingSource;
 		private System.Windows.Forms.TextBox nameTextBox;
+		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.DataGridView dataGridView3;
+		private System.Windows.Forms.BindingSource mailBindingSource;
+		private System.Windows.Forms.BindingNavigator bindingNavigator3;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem2;
+		private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem2;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem2;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem2;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem2;
+		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator6;
+		private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem2;
+		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator7;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem2;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem2;
+		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator8;
+		private System.Windows.Forms.DataGridViewTextBoxColumn mailStringDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn2;
 	}
 }
