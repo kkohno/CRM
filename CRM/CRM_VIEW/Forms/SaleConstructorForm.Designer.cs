@@ -37,6 +37,11 @@
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.storageBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.goodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MaxCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.saleVisualItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -54,11 +59,6 @@
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.goodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MaxCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -77,16 +77,16 @@
 			this.panel1.Controls.Add(this.button2);
 			this.panel1.Controls.Add(this.button1);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel1.Location = new System.Drawing.Point(0, 393);
+			this.panel1.Location = new System.Drawing.Point(0, 352);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(839, 37);
+			this.panel1.Size = new System.Drawing.Size(822, 37);
 			this.panel1.TabIndex = 0;
 			// 
 			// button2
 			// 
 			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.button2.Location = new System.Drawing.Point(752, 6);
+			this.button2.Location = new System.Drawing.Point(735, 6);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 1;
@@ -97,7 +97,7 @@
 			// button1
 			// 
 			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(671, 6);
+			this.button1.Location = new System.Drawing.Point(654, 6);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 0;
@@ -119,8 +119,8 @@
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
 			this.splitContainer1.Panel2.Controls.Add(this.bindingNavigator1);
-			this.splitContainer1.Size = new System.Drawing.Size(839, 452);
-			this.splitContainer1.SplitterDistance = 279;
+			this.splitContainer1.Size = new System.Drawing.Size(822, 352);
+			this.splitContainer1.SplitterDistance = 273;
 			this.splitContainer1.TabIndex = 1;
 			// 
 			// listBox1
@@ -130,7 +130,7 @@
 			this.listBox1.FormattingEnabled = true;
 			this.listBox1.Location = new System.Drawing.Point(0, 0);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(279, 452);
+			this.listBox1.Size = new System.Drawing.Size(273, 352);
 			this.listBox1.TabIndex = 0;
 			this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
 			// 
@@ -153,9 +153,42 @@
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(0, 25);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(556, 427);
+			this.dataGridView1.Size = new System.Drawing.Size(545, 327);
 			this.dataGridView1.TabIndex = 3;
 			this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+			// 
+			// goodDataGridViewTextBoxColumn
+			// 
+			this.goodDataGridViewTextBoxColumn.DataPropertyName = "Good";
+			this.goodDataGridViewTextBoxColumn.HeaderText = "Товар";
+			this.goodDataGridViewTextBoxColumn.Name = "goodDataGridViewTextBoxColumn";
+			this.goodDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// SellingPrice
+			// 
+			this.SellingPrice.DataPropertyName = "SellingPrice";
+			this.SellingPrice.HeaderText = "Цена";
+			this.SellingPrice.Name = "SellingPrice";
+			// 
+			// countDataGridViewTextBoxColumn
+			// 
+			this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+			this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
+			this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+			// 
+			// MaxCount
+			// 
+			this.MaxCount.DataPropertyName = "MaxCount";
+			this.MaxCount.HeaderText = "На складе";
+			this.MaxCount.Name = "MaxCount";
+			this.MaxCount.ReadOnly = true;
+			// 
+			// Sum
+			// 
+			this.Sum.DataPropertyName = "Sum";
+			this.Sum.HeaderText = "Сумма";
+			this.Sum.Name = "Sum";
+			this.Sum.ReadOnly = true;
 			// 
 			// saleVisualItemBindingSource
 			// 
@@ -186,7 +219,7 @@
 			this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
 			this.bindingNavigator1.Name = "bindingNavigator1";
 			this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-			this.bindingNavigator1.Size = new System.Drawing.Size(556, 25);
+			this.bindingNavigator1.Size = new System.Drawing.Size(545, 25);
 			this.bindingNavigator1.TabIndex = 4;
 			this.bindingNavigator1.Text = "bindingNavigator1";
 			// 
@@ -277,9 +310,9 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 430);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 389);
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new System.Drawing.Size(839, 22);
+			this.statusStrip1.Size = new System.Drawing.Size(822, 22);
 			this.statusStrip1.TabIndex = 2;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
@@ -301,49 +334,16 @@
 			this.toolStripStatusLabel3.Size = new System.Drawing.Size(17, 17);
 			this.toolStripStatusLabel3.Text = "р.";
 			// 
-			// goodDataGridViewTextBoxColumn
-			// 
-			this.goodDataGridViewTextBoxColumn.DataPropertyName = "Good";
-			this.goodDataGridViewTextBoxColumn.HeaderText = "Товар";
-			this.goodDataGridViewTextBoxColumn.Name = "goodDataGridViewTextBoxColumn";
-			this.goodDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// SellingPrice
-			// 
-			this.SellingPrice.DataPropertyName = "SellingPrice";
-			this.SellingPrice.HeaderText = "Цена";
-			this.SellingPrice.Name = "SellingPrice";
-			// 
-			// countDataGridViewTextBoxColumn
-			// 
-			this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-			this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
-			this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-			// 
-			// MaxCount
-			// 
-			this.MaxCount.DataPropertyName = "MaxCount";
-			this.MaxCount.HeaderText = "На складе";
-			this.MaxCount.Name = "MaxCount";
-			this.MaxCount.ReadOnly = true;
-			// 
-			// Sum
-			// 
-			this.Sum.DataPropertyName = "Sum";
-			this.Sum.HeaderText = "Сумма";
-			this.Sum.Name = "Sum";
-			this.Sum.ReadOnly = true;
-			// 
 			// SaleConstructorForm
 			// 
 			this.AcceptButton = this.button1;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.button2;
-			this.ClientSize = new System.Drawing.Size(839, 452);
+			this.ClientSize = new System.Drawing.Size(822, 411);
+			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.statusStrip1);
-			this.Controls.Add(this.splitContainer1);
 			this.Name = "SaleConstructorForm";
 			this.Text = "Оформление продажи";
 			this.panel1.ResumeLayout(false);

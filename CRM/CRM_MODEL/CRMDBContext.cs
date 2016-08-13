@@ -54,7 +54,7 @@ namespace CRM_MODEL
 		public DbSet<Sale> Sales { get; set; }
 		#endregion
 
-		public CRMDBContext() : base("CRMDBConnectionString")
+		public CRMDBContext() : base(ContextSettings.Instance.ToString())
 		{
 #if DEBUG
 			Database.SetInitializer<CRMDBContext>(null);    // ДЛЯ КОРРЕКТНОЙ РАБОТЫ КОНСТРУКТОРА. ЭТО СПОРНОЕ РЕШЕНИЕ - СЛЕДУЕТ ИСПРАВИТЬ!!!!!!!!!!!

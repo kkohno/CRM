@@ -40,9 +40,11 @@
 			this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.складToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.продажиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.crmController1 = new CRM_VIEW.CRMController(this.components);
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
 			this.оформитьПродажуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.подключениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.crmController1 = new CRM_VIEW.CRMController(this.components);
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -50,10 +52,11 @@
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.авторизацияToolStripMenuItem,
-            this.справочникиToolStripMenuItem});
+            this.справочникиToolStripMenuItem,
+            this.настройкиToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(238, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(302, 24);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -143,12 +146,6 @@
 			this.продажиToolStripMenuItem.Text = "Продажи";
 			this.продажиToolStripMenuItem.Click += new System.EventHandler(this.продажиToolStripMenuItem_Click);
 			// 
-			// crmController1
-			// 
-			this.crmController1.User = null;
-			this.crmController1.OnAuthorized += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnAuthorized);
-			this.crmController1.OnLogout += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnLogout);
-			// 
 			// toolStripMenuItem2
 			// 
 			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
@@ -161,11 +158,32 @@
 			this.оформитьПродажуToolStripMenuItem.Text = "Оформить продажу";
 			this.оформитьПродажуToolStripMenuItem.Click += new System.EventHandler(this.оформитьПродажуToolStripMenuItem_Click);
 			// 
+			// настройкиToolStripMenuItem
+			// 
+			this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.подключениеToolStripMenuItem});
+			this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+			this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+			this.настройкиToolStripMenuItem.Text = "Настройки";
+			// 
+			// подключениеToolStripMenuItem
+			// 
+			this.подключениеToolStripMenuItem.Name = "подключениеToolStripMenuItem";
+			this.подключениеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.подключениеToolStripMenuItem.Text = "Подключение";
+			this.подключениеToolStripMenuItem.Click += new System.EventHandler(this.подключениеToolStripMenuItem_Click);
+			// 
+			// crmController1
+			// 
+			this.crmController1.User = null;
+			this.crmController1.OnAuthorized += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnAuthorized);
+			this.crmController1.OnLogout += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnLogout);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(238, 79);
+			this.ClientSize = new System.Drawing.Size(302, 79);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Form1";
@@ -195,6 +213,8 @@
 		private System.Windows.Forms.ToolStripMenuItem продажиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem оформитьПродажуToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem подключениеToolStripMenuItem;
 	}
 }
 
