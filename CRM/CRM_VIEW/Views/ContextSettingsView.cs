@@ -13,14 +13,17 @@ namespace CRM_VIEW.Views
 {
 	public partial class ContextSettingsView : UserControl
 	{
+		ContextSettings _contextSettings;
 		public ContextSettingsView()
 		{
 			InitializeComponent();
-			contextSettingsBindingSource.DataSource = ContextSettings.Instance;
+			_contextSettings = ContextSettings.Instance.GetCopy();
+            contextSettingsBindingSource.DataSource = _contextSettings;
         }
 		public void SaveContext()
 		{
-			ContextSettings.Instance.Save();
+			ContextSettings.Instance = _contextSettings;
+            ContextSettings.Instance.Save();
         }
 	}
 }

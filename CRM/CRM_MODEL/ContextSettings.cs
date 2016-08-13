@@ -24,6 +24,14 @@ namespace CRM_MODEL
 				if (_instance == null) _instance = LoadInstance();				
 				return _instance;
 			}
+			set
+			{
+				_instance = value;
+			}
+		}
+		public ContextSettings GetCopy()
+		{
+			return new ContextSettings { Source = Source, Catalog = Catalog, User = User, Password = Password };
 		}
 		public static string FileName
 		{
