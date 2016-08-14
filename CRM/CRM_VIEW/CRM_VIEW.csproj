@@ -67,6 +67,7 @@
     <Compile Include="Controllers\CRMDBContextController.Designer.cs">
       <DependentUpon>CRMDBContextController.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataGridViewColumns\CalendarColumn.cs" />
     <Compile Include="Extensions\ExtBindingList.cs" />
     <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
@@ -103,6 +104,24 @@
     </Compile>
     <Compile Include="Forms\GoodTypesForm.Designer.cs">
       <DependentUpon>GoodTypesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaymentsForm.Designer.cs">
+      <DependentUpon>PaymentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaymentTypesForm.Designer.cs">
+      <DependentUpon>PaymentTypesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PersonsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonsForm.Designer.cs">
+      <DependentUpon>PersonsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProvidersForm.cs">
       <SubType>Form</SubType>
@@ -202,6 +221,15 @@
     <EmbeddedResource Include="Forms\GoodTypesForm.resx">
       <DependentUpon>GoodTypesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentsForm.resx">
+      <DependentUpon>PaymentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentTypesForm.resx">
+      <DependentUpon>PaymentTypesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonsForm.resx">
+      <DependentUpon>PersonsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProvidersForm.resx">
       <DependentUpon>ProvidersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +284,8 @@
     <None Include="Properties\DataSources\CRM_MODEL.GoodStorageItem.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.GoodType.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Mail.datasource" />
+    <None Include="Properties\DataSources\CRM_MODEL.Payment.datasource" />
+    <None Include="Properties\DataSources\CRM_MODEL.PaymentType.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Person.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Phone.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Provider.datasource" />

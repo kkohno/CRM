@@ -36,17 +36,22 @@
 			this.регистрацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.типыТоваровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
 			this.поставщикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
 			this.складToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.продажиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+			this.продажиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.оформитьПродажуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.выплатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.типыПлатежейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.платежиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.администрированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.людиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.подключениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.crmController1 = new CRM_VIEW.CRMController(this.components);
-			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -55,10 +60,12 @@
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.авторизацияToolStripMenuItem,
             this.справочникиToolStripMenuItem,
+            this.выплатыToolStripMenuItem,
+            this.администрированиеToolStripMenuItem,
             this.настройкиToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(302, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(498, 24);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -112,8 +119,8 @@
             this.продажиToolStripMenuItem,
             this.оформитьПродажуToolStripMenuItem});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
-			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-			this.справочникиToolStripMenuItem.Text = "Справочники";
+			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+			this.справочникиToolStripMenuItem.Text = "Торговля";
 			// 
 			// типыТоваровToolStripMenuItem
 			// 
@@ -121,6 +128,11 @@
 			this.типыТоваровToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
 			this.типыТоваровToolStripMenuItem.Text = "Типы товаров";
 			this.типыТоваровToolStripMenuItem.Click += new System.EventHandler(this.типыТоваровToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem3
+			// 
+			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+			this.toolStripMenuItem3.Size = new System.Drawing.Size(181, 6);
 			// 
 			// поставщикиToolStripMenuItem
 			// 
@@ -136,12 +148,22 @@
 			this.товарыToolStripMenuItem.Text = "Товары";
 			this.товарыToolStripMenuItem.Click += new System.EventHandler(this.товарыToolStripMenuItem_Click);
 			// 
+			// toolStripMenuItem4
+			// 
+			this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+			this.toolStripMenuItem4.Size = new System.Drawing.Size(181, 6);
+			// 
 			// складToolStripMenuItem
 			// 
 			this.складToolStripMenuItem.Name = "складToolStripMenuItem";
 			this.складToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
 			this.складToolStripMenuItem.Text = "Склад";
 			this.складToolStripMenuItem.Click += new System.EventHandler(this.складToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem2
+			// 
+			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 6);
 			// 
 			// продажиToolStripMenuItem
 			// 
@@ -150,17 +172,50 @@
 			this.продажиToolStripMenuItem.Text = "Продажи";
 			this.продажиToolStripMenuItem.Click += new System.EventHandler(this.продажиToolStripMenuItem_Click);
 			// 
-			// toolStripMenuItem2
-			// 
-			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-			this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 6);
-			// 
 			// оформитьПродажуToolStripMenuItem
 			// 
 			this.оформитьПродажуToolStripMenuItem.Name = "оформитьПродажуToolStripMenuItem";
 			this.оформитьПродажуToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
 			this.оформитьПродажуToolStripMenuItem.Text = "Оформить продажу";
 			this.оформитьПродажуToolStripMenuItem.Click += new System.EventHandler(this.оформитьПродажуToolStripMenuItem_Click);
+			// 
+			// выплатыToolStripMenuItem
+			// 
+			this.выплатыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.типыПлатежейToolStripMenuItem,
+            this.платежиToolStripMenuItem});
+			this.выплатыToolStripMenuItem.Name = "выплатыToolStripMenuItem";
+			this.выплатыToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+			this.выплатыToolStripMenuItem.Text = "Выплаты";
+			// 
+			// типыПлатежейToolStripMenuItem
+			// 
+			this.типыПлатежейToolStripMenuItem.Name = "типыПлатежейToolStripMenuItem";
+			this.типыПлатежейToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+			this.типыПлатежейToolStripMenuItem.Text = "Типы платежей";
+			this.типыПлатежейToolStripMenuItem.Click += new System.EventHandler(this.типыПлатежейToolStripMenuItem_Click);
+			// 
+			// платежиToolStripMenuItem
+			// 
+			this.платежиToolStripMenuItem.Name = "платежиToolStripMenuItem";
+			this.платежиToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+			this.платежиToolStripMenuItem.Text = "Платежи";
+			this.платежиToolStripMenuItem.Click += new System.EventHandler(this.платежиToolStripMenuItem_Click);
+			// 
+			// администрированиеToolStripMenuItem
+			// 
+			this.администрированиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.людиToolStripMenuItem});
+			this.администрированиеToolStripMenuItem.Name = "администрированиеToolStripMenuItem";
+			this.администрированиеToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
+			this.администрированиеToolStripMenuItem.Text = "Администрирование";
+			// 
+			// людиToolStripMenuItem
+			// 
+			this.людиToolStripMenuItem.Name = "людиToolStripMenuItem";
+			this.людиToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+			this.людиToolStripMenuItem.Text = "Люди";
+			this.людиToolStripMenuItem.Click += new System.EventHandler(this.людиToolStripMenuItem_Click);
 			// 
 			// настройкиToolStripMenuItem
 			// 
@@ -183,21 +238,11 @@
 			this.crmController1.OnAuthorized += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnAuthorized);
 			this.crmController1.OnLogout += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnLogout);
 			// 
-			// toolStripMenuItem3
-			// 
-			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-			this.toolStripMenuItem3.Size = new System.Drawing.Size(181, 6);
-			// 
-			// toolStripMenuItem4
-			// 
-			this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-			this.toolStripMenuItem4.Size = new System.Drawing.Size(181, 6);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(302, 79);
+			this.ClientSize = new System.Drawing.Size(498, 79);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Form1";
@@ -231,6 +276,11 @@
 		private System.Windows.Forms.ToolStripMenuItem подключениеToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+		private System.Windows.Forms.ToolStripMenuItem администрированиеToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem людиToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem выплатыToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem типыПлатежейToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem платежиToolStripMenuItem;
 	}
 }
 

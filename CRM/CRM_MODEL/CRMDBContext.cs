@@ -18,6 +18,10 @@ namespace CRM_MODEL
 		/// пользователи системы CRM
 		/// </summary>
 		public DbSet<User> Users { get; set; }
+		/// <summary>
+		/// персоны
+		/// </summary>
+		public DbSet<Person> Persons { get; set; }
 		#endregion
 		#region товары
 		/// <summary>
@@ -52,6 +56,16 @@ namespace CRM_MODEL
 		/// все сделанные продажи
 		/// </summary>
 		public DbSet<Sale> Sales { get; set; }
+		#endregion
+		#region платежи
+		/// <summary>
+		/// типы платежей
+		/// </summary>
+		public DbSet<PaymentType> PaymentTypes { get; set; }
+		/// <summary>
+		/// платежи
+		/// </summary>
+		public DbSet<Payment> Payments { get; set; }
 		#endregion
 
 		public CRMDBContext() : base(ContextSettings.Instance.ToString())

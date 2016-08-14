@@ -84,5 +84,20 @@ namespace CRM_VIEW
 		{
 			ViewUtils.ExceptionWrapper(this, () => { using (var f = new ConnectionSettingsForm()) f.ShowDialog(); });
 		}
+
+		private void людиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ViewUtils.ExceptionWrapper(this, () => { using (var f = new PersonsForm(crmController1.User)) f.ShowDialog(); });
+		}
+
+		private void типыПлатежейToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ViewUtils.ExceptionWrapper(this, () => { using (var f = new PaymentTypesForm(crmController1.User)) f.ShowDialog(); });
+		}
+
+		private void платежиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ViewUtils.ExceptionWrapper(this, () => { using (var f = new PaymentsForm(crmController1.User)) f.ShowDialog(); });
+		}
 	}
 }

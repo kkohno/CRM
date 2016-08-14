@@ -68,7 +68,17 @@
     <Compile Include="Migrations\201608131443468_2.Designer.cs">
       <DependentUpon>201608131443468_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608140634416_3.cs" />
+    <Compile Include="Migrations\201608140634416_3.Designer.cs">
+      <DependentUpon>201608140634416_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608140802455_4.cs" />
+    <Compile Include="Migrations\201608140802455_4.Designer.cs">
+      <DependentUpon>201608140802455_4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Payment.cs" />
+    <Compile Include="PaymentType.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Provider.cs" />
     <Compile Include="Phone.cs" />
@@ -91,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608131443468_2.resx">
       <DependentUpon>201608131443468_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608140634416_3.resx">
+      <DependentUpon>201608140634416_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608140802455_4.resx">
+      <DependentUpon>201608140802455_4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

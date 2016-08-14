@@ -43,5 +43,16 @@ namespace CRM_MODEL
 		{
 			return ShortFIO;
 		}
+
+		/// <summary>
+		/// возвращает ссылку на текущий объект
+		/// </summary>
+		public Person Instance
+		{
+			get
+			{
+				return this;
+			}
+		}
 	}
 }
