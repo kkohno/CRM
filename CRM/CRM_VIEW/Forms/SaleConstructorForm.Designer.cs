@@ -31,6 +31,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleConstructorForm));
 			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -59,6 +61,9 @@
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -74,6 +79,8 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.textBox1);
+			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.button2);
 			this.panel1.Controls.Add(this.button1);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -81,6 +88,24 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(822, 37);
 			this.panel1.TabIndex = 0;
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(93, 3);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(100, 20);
+			this.textBox1.TabIndex = 3;
+			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+			this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(3, 6);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(84, 13);
+			this.label1.TabIndex = 2;
+			this.label1.Text = "Наличными (р.)";
 			// 
 			// button2
 			// 
@@ -309,7 +334,10 @@
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3});
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel4,
+            this.toolStripStatusLabel5,
+            this.toolStripStatusLabel6});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 389);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(822, 22);
@@ -334,6 +362,24 @@
 			this.toolStripStatusLabel3.Size = new System.Drawing.Size(17, 17);
 			this.toolStripStatusLabel3.Text = "р.";
 			// 
+			// toolStripStatusLabel4
+			// 
+			this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+			this.toolStripStatusLabel4.Size = new System.Drawing.Size(40, 17);
+			this.toolStripStatusLabel4.Text = "Сдача";
+			// 
+			// toolStripStatusLabel5
+			// 
+			this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+			this.toolStripStatusLabel5.Size = new System.Drawing.Size(13, 17);
+			this.toolStripStatusLabel5.Text = "0";
+			// 
+			// toolStripStatusLabel6
+			// 
+			this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
+			this.toolStripStatusLabel6.Size = new System.Drawing.Size(17, 17);
+			this.toolStripStatusLabel6.Text = "р.";
+			// 
 			// SaleConstructorForm
 			// 
 			this.AcceptButton = this.button1;
@@ -345,8 +391,10 @@
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.statusStrip1);
 			this.Name = "SaleConstructorForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Оформление продажи";
 			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			this.splitContainer1.Panel2.PerformLayout();
@@ -396,5 +444,10 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaxCount;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Sum;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
 	}
 }

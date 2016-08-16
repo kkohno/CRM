@@ -43,6 +43,16 @@ namespace CRM_VIEW.Forms
 				sum += sale.Sum;
 			}
 			toolStripStatusLabel2.Text = sum.ToString();
+
+			double cash = 0;
+            try {
+				cash = double.Parse(textBox1.Text);
+				double delta = cash - sum;
+				toolStripStatusLabel5.Text = delta >= 0 ? delta.ToString() : "клиенту не хватает " + (-delta).ToString();
+			}
+			catch(Exception ex) {
+				toolStripStatusLabel5.Text = "-";
+			}
         }
 
 		public SaleConstructorForm(User user)
@@ -126,5 +136,21 @@ namespace CRM_VIEW.Forms
 		{
 			RecalculateAll();
         }
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+			RecalculateAll();
+        }
+
+		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar)) {
+				//разделитель еще не стоит
+				if (((e.KeyChar == '.') || (e.KeyChar == ',')) && (textBox1.Text.IndexOf(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator[0]) == -1))
+					e.KeyChar = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator[0];
+				else if (!char.IsDigit(e.KeyChar))
+					e.Handled = true;
+			}
+		}
 	}
 }
