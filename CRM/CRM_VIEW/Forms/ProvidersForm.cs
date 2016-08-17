@@ -14,21 +14,27 @@ namespace CRM_VIEW.Forms
 {
 	public partial class ProvidersForm : Form
 	{
-		CRMDBContext context = new CRMDBContext();
+		public CRMDBContext Context
+		{
+			get
+			{
+				return crmdbContextController1;
+			}
+		}
 		void Save()
 		{
 			ViewUtils.ExceptionWrapper(this, () => {
 				providerBindingSource.EndEdit();
 				this.Validate();
-				context.SaveChanges();
+				Context.SaveChanges();
 			});
 		}
 
 		public ProvidersForm(User user)
 		{
 			InitializeComponent();
-			context.Providers.Load();
-			providerBindingSource.DataSource = context.Providers.Local.ToBindingList();
+			Context.Providers.Load();
+			providerBindingSource.DataSource = Context.Providers.Local.ToBindingList();
 		}
 
 		private void providerBindingSource_CurrentItemChanged(object sender, EventArgs e)

@@ -29,9 +29,11 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProvidersForm));
-			CRM_MODEL.Provider provider1 = new CRM_MODEL.Provider();
+			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
+			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -46,15 +48,15 @@
 			this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.listBox1 = new System.Windows.Forms.ListBox();
-			this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.providerView1 = new CRM_VIEW.Views.ProviderView();
+			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
 			this.bindingNavigator1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// bindingNavigator1
@@ -97,6 +99,11 @@
 			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
 			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorAddNewItem.Text = "Добавить";
+			// 
+			// providerBindingSource
+			// 
+			this.providerBindingSource.DataSource = typeof(CRM_MODEL.Provider);
+			this.providerBindingSource.CurrentItemChanged += new System.EventHandler(this.providerBindingSource_CurrentItemChanged);
 			// 
 			// bindingNavigatorCountItem
 			// 
@@ -216,24 +223,19 @@
 			this.listBox1.Size = new System.Drawing.Size(151, 237);
 			this.listBox1.TabIndex = 0;
 			// 
-			// providerBindingSource
-			// 
-			this.providerBindingSource.DataSource = typeof(CRM_MODEL.Provider);
-			this.providerBindingSource.CurrentItemChanged += new System.EventHandler(this.providerBindingSource_CurrentItemChanged);
-			// 
 			// providerView1
 			// 
+			this.providerView1.Context = crmdbContext1;
 			this.providerView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.providerView1.Location = new System.Drawing.Point(0, 0);
 			this.providerView1.Name = "providerView1";
-			provider1.Comment = null;
-			provider1.Id = null;
-			provider1.Name = null;
-			provider1.Phones = ((System.Collections.Generic.ICollection<CRM_MODEL.Phone>)(resources.GetObject("provider1.Phones")));
-			provider1.References = ((System.Collections.Generic.ICollection<CRM_MODEL.Reference>)(resources.GetObject("provider1.References")));
-			this.providerView1.Provider = provider1;
+			this.providerView1.Provider = ((CRM_MODEL.Provider)(resources.GetObject("providerView1.Provider")));
 			this.providerView1.Size = new System.Drawing.Size(300, 237);
 			this.providerView1.TabIndex = 0;
+			// 
+			// crmdbContextController1
+			// 
+			this.crmdbContextController1.Context = crmdbContext2;
 			// 
 			// ProvidersForm
 			// 
@@ -248,11 +250,11 @@
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
 			this.bindingNavigator1.ResumeLayout(false);
 			this.bindingNavigator1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -278,5 +280,6 @@
 		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.BindingSource providerBindingSource;
 		private Views.ProviderView providerView1;
+		private CRMDBContextController crmdbContextController1;
 	}
 }

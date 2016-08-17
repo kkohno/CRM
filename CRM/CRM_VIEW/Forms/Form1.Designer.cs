@@ -28,6 +28,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.авторизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.входToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,7 @@
 			this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.подключениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.crmController1 = new CRM_VIEW.CRMController(this.components);
+			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -238,6 +240,11 @@
 			this.crmController1.OnAuthorized += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnAuthorized);
 			this.crmController1.OnLogout += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnLogout);
 			// 
+			// crmdbContextController1
+			// 
+			this.crmdbContextController1.ContainerForm = this;
+			this.crmdbContextController1.Context = crmdbContext1;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +288,7 @@
 		private System.Windows.Forms.ToolStripMenuItem выплатыToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem типыПлатежейToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem платежиToolStripMenuItem;
+		private CRMDBContextController crmdbContextController1;
 	}
 }
 

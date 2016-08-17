@@ -6,11 +6,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CRM_MODEL;
+using System.Windows.Forms;
+using System.ComponentModel.Design;
+using System.Collections;
 
 namespace CRM_VIEW
 {
 	public partial class CRMDBContextController : Component
 	{
+		public ContainerControl ContainerForm { get; set; }
+		public override ISite Site
+		{
+			get { return base.Site; }
+			set
+			{
+				base.Site = value;
+				if (value == null) return;
+
+				IDesignerHost host = value.GetService(typeof(IDesignerHost)) as IDesignerHost;
+				if (host == null) return;
+
+				IComponent componentHost = host.RootComponent;
+				if (componentHost is ContainerControl) ContainerForm = componentHost as ContainerControl;				
+			}
+		}
+
 		[Browsable(false)]
 		private CRMDBContext _context;
 		public CRM_MODEL.CRMDBContext Context

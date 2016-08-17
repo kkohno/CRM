@@ -28,6 +28,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
@@ -35,6 +36,7 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.crmController1 = new CRM_VIEW.CRMController(this.components);
+			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			this.SuspendLayout();
 			// 
 			// label1
@@ -97,6 +99,10 @@
 			this.crmController1.OnAuthorized += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnAuthorized);
 			this.crmController1.OnBadLoginOrPass += new System.EventHandler<CRM_MODEL.LoginPass>(this.crmController1_OnBadLoginOrPass);
 			// 
+			// crmdbContextController1
+			// 
+			this.crmdbContextController1.Context = crmdbContext1;
+			// 
 			// AuthorizationForm
 			// 
 			this.AcceptButton = this.button1;
@@ -129,5 +135,6 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
 		private CRMController crmController1;
+		private CRMDBContextController crmdbContextController1;
 	}
 }

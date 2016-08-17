@@ -1,4 +1,6 @@
-﻿namespace CRM_VIEW
+﻿using System.Windows.Forms;
+
+namespace CRM_VIEW
 {
 	partial class CRMDBContextController
 	{
@@ -13,6 +15,13 @@
 		/// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
 		protected override void Dispose(bool disposing)
 		{
+			if (disposing && _context != null) {
+				_context.ChangeTracker.DetectChanges();
+				if (_context.ChangeTracker.HasChanges() &&
+					MessageBox.Show("Сохранить изменения?", string.IsNullOrEmpty(ContainerForm?.Text) ? "CRM" : ContainerForm.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+					_context.SaveChanges();
+				_context.Dispose();
+			}
 			if (disposing && (components != null)) {
 				components.Dispose();
 			}
