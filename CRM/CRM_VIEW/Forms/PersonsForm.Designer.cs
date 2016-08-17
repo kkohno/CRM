@@ -63,18 +63,18 @@
 			this.personBindingNavigator.CountItemFormat = "из {0}";
 			this.personBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
 			this.personBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.personBindingNavigatorSaveItem});
+			this.bindingNavigatorMoveFirstItem,
+			this.bindingNavigatorMovePreviousItem,
+			this.bindingNavigatorSeparator,
+			this.bindingNavigatorPositionItem,
+			this.bindingNavigatorCountItem,
+			this.bindingNavigatorSeparator1,
+			this.bindingNavigatorMoveNextItem,
+			this.bindingNavigatorMoveLastItem,
+			this.bindingNavigatorSeparator2,
+			this.bindingNavigatorAddNewItem,
+			this.bindingNavigatorDeleteItem,
+			this.personBindingNavigatorSaveItem});
 			this.personBindingNavigator.Location = new System.Drawing.Point(0, 0);
 			this.personBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
 			this.personBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -184,21 +184,6 @@
 			this.personBindingNavigatorSaveItem.Text = "Сохранить данные";
 			this.personBindingNavigatorSaveItem.Click += new System.EventHandler(this.personBindingNavigatorSaveItem_Click);
 			// 
-			// personDataGridView
-			// 
-			this.personDataGridView.AutoGenerateColumns = false;
-			this.personDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.personDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-			this.personDataGridView.DataSource = this.personBindingSource;
-			this.personDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.personDataGridView.Location = new System.Drawing.Point(0, 25);
-			this.personDataGridView.Name = "personDataGridView";
-			this.personDataGridView.Size = new System.Drawing.Size(367, 297);
-			this.personDataGridView.TabIndex = 1;
-			// 
 			// dataGridViewTextBoxColumn2
 			// 
 			this.dataGridViewTextBoxColumn2.DataPropertyName = "Name1";
@@ -216,6 +201,21 @@
 			this.dataGridViewTextBoxColumn4.DataPropertyName = "Name3";
 			this.dataGridViewTextBoxColumn4.HeaderText = "Отчество";
 			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			// 
+			// personDataGridView
+			// 
+			this.personDataGridView.AutoGenerateColumns = false;
+			this.personDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.personDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dataGridViewTextBoxColumn2,
+			this.dataGridViewTextBoxColumn3,
+			this.dataGridViewTextBoxColumn4});
+			this.personDataGridView.DataSource = this.personBindingSource;
+			this.personDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.personDataGridView.Location = new System.Drawing.Point(0, 25);
+			this.personDataGridView.Name = "personDataGridView";
+			this.personDataGridView.Size = new System.Drawing.Size(367, 297);
+			this.personDataGridView.TabIndex = 1;
 			// 
 			// crmdbContextController1
 			// 

@@ -31,8 +31,8 @@ namespace CRM_VIEW
 			}
 		}
 
-		[Browsable(false)]
 		private CRMDBContext _context;
+		[Browsable(false)]
 		public CRM_MODEL.CRMDBContext Context
 		{
 			get

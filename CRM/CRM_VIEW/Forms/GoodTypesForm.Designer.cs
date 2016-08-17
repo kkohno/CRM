@@ -55,6 +55,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
+			// goodTypeBindingSource
+			// 
+			this.goodTypeBindingSource.DataSource = typeof(CRM_MODEL.GoodType);
+			// 
 			// dataGridView1
 			// 
 			this.dataGridView1.AutoGenerateColumns = false;
@@ -206,10 +210,6 @@
 			this.nameDataGridViewTextBoxColumn.HeaderText = "Тип товара";
 			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
 			this.nameDataGridViewTextBoxColumn.Width = 350;
-			// 
-			// goodTypeBindingSource
-			// 
-			this.goodTypeBindingSource.DataSource = typeof(CRM_MODEL.GoodType);
 			// 
 			// crmController1
 			// 
