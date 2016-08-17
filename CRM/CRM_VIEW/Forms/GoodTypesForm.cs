@@ -14,46 +14,29 @@ namespace CRM_VIEW
 {
 	public partial class GoodTypesForm : Form
 	{
-		CRMDBContext context = new CRMDBContext();
-		bool saved = true;
+		public CRMDBContext Context
+		{
+			get { return crmdbContextController1; }
+		}
 		void SaveChanges()
 		{
 			goodTypeBindingSource.EndEdit();
 			this.Validate();
-			context.SaveChanges();
-			saved = true;
+			Context.SaveChanges();
 		}
 
 		public GoodTypesForm(User user)
 		{
-			//if (user == null) throw new Exception("Сначала нужно авторизоваться");
 			InitializeComponent();
 			crmController1.User = user;
-			context.GoodTypes.Load();
-			var list = context.GoodTypes.Local.ToBindingList();
-			list.ListChanged += List_ListChanged;
+			Context.GoodTypes.Load();
+			var list = Context.GoodTypes.Local.ToBindingList();
             goodTypeBindingSource.DataSource = list;
 		}
-
-		private void List_ListChanged(object sender, ListChangedEventArgs e)
-		{
-			saved = false;
-		}
-
-		private void GoodTypesForm_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			if (!saved && MessageBox.Show(this, "Сохранить изменения?", "CRM", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-				e.Cancel = ViewUtils.ExceptionWrapper(this, SaveChanges);
-        }
 
 		private void сохранитьToolStripButton_Click(object sender, EventArgs e)
 		{
 			ViewUtils.ExceptionWrapper(this, SaveChanges);
-		}
-
-		private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-		{
-			saved = false;
 		}
 	}
 }

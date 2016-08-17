@@ -50,7 +50,7 @@ namespace CRM_VIEW.Forms
 				double delta = cash - sum;
 				toolStripStatusLabel5.Text = delta >= 0 ? delta.ToString() : "клиенту не хватает " + (-delta).ToString();
 			}
-			catch(Exception ex) {
+			catch(Exception) {
 				toolStripStatusLabel5.Text = "-";
 			}
         }

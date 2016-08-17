@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CRM_VIEW.Extensions
 {
-	public class ExtBindingList<DataType>: BindingList<DataType>
+	public class ExtBindingList<DataType> : BindingList<DataType>
 	{
 		/// <summary>
 		/// происходит перед удалением элемента из списка
