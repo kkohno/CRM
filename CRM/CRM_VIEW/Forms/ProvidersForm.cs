@@ -30,7 +30,7 @@ namespace CRM_VIEW.Forms
 			});
 		}
 
-		public ProvidersForm(User user)
+		public ProvidersForm()
 		{
 			InitializeComponent();
 			Context.Providers.Load();

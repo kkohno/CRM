@@ -55,7 +55,7 @@ namespace CRM_VIEW.Forms
 			}
         }
 
-		public SaleConstructorForm(User user)
+		public SaleConstructorForm()
 		{
 			InitializeComponent();
 			saleVisualItemBindingSource.DataSource = sales;

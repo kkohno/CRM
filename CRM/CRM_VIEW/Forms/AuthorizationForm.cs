@@ -13,10 +13,9 @@ namespace CRM_VIEW
 {
 	public partial class AuthorizationForm : Form
 	{
-        public AuthorizationForm(User user)
+        public AuthorizationForm()
 		{
 			InitializeComponent();
-			crmController1.User = user;
         }
 		public User User
 		{

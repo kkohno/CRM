@@ -21,7 +21,7 @@ namespace CRM_VIEW.Forms
 			crmdbContextController1.Context.SaveChanges();
 		}
 
-		public PaymentsForm(User user)
+		public PaymentsForm()
 		{
 			InitializeComponent();
 			crmdbContextController1.Context.Payments.Load();

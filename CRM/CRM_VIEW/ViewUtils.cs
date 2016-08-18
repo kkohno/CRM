@@ -9,6 +9,29 @@ namespace CRM_VIEW
 {
 	public class ViewUtils
 	{
+		/// <summary>
+		/// стандартный метод, возвращающий значение из источника данных
+		/// </summary>
+		/// <typeparam name="TypeName">тип элеметна источника данных</typeparam>
+		/// <param name="bindingSource">источник данных, из которого извлекается значение</param>
+		/// <returns>элемент из визуализатора. (Не может вернуть NULL)</returns>
+		public static TypeName Get_Std_ViewMethod<TypeName>(BindingSource bindingSource) where TypeName : class, new()
+		{
+			if (bindingSource.DataSource == null) bindingSource.DataSource = new TypeName();
+			return bindingSource.DataSource as TypeName;
+		}
+		/// <summary>
+		/// стандартный метод установки значения на источник данных
+		/// </summary>
+		/// <typeparam name="TypeName">тип элеметна источника данных</typeparam>
+		/// <param name="bindingSource">источник данных, на который задается значение</param>
+		/// <param name="value">задаваемое значение на источник данных если null то задает новый пустой экземпляр</param>
+		public static void Set_Std_ViewMethod<TypeName>(BindingSource bindingSource, TypeName value) where TypeName : new()
+		{
+			if (value == null) value = new TypeName();
+			bindingSource.DataSource = value;
+		}
+
 		public delegate void SimpleMethod();
 
 		/// производит выполнение делегата с выводом ошибки в случае исключения
@@ -26,7 +49,7 @@ namespace CRM_VIEW
 				method();
 			}
 			catch (Exception ex) {
-				MessageBox.Show(window, ex.Message, "CRM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(window, ex.Message, "SMM", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return true;
 			}
 #endif
@@ -46,11 +69,31 @@ namespace CRM_VIEW
 				method();
 			}
 			catch (Exception ex) {
-				MessageBox.Show(ex.Message, "CRM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(ex.Message, "SMM", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return true;
 			}
 #endif
 			return false;
+		}
+		/// <summary>
+		/// создает и отображает окно
+		/// </summary>
+		/// <typeparam name="FormType">тип окна для отображения</typeparam>
+		/// <param name="ownerWindow">окно, пораждающее текущее окно</param>
+		public static void ShowForm<FormType>(IWin32Window ownerWindow) where FormType : Form, new()
+		{
+			ExceptionWrapper(ownerWindow,
+				() => {
+					using (var f = new FormType()) f.ShowDialog();
+				});
+		}
+		/// <summary>
+		/// создает и отображает окно
+		/// </summary>
+		/// <typeparam name="FormType">тип окна для отображения</typeparam>
+		public static void ShowForm<FormType>() where FormType : Form, new()
+		{
+			ShowForm<FormType>(null);
 		}
 	}
 }

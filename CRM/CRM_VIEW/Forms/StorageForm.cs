@@ -25,7 +25,7 @@ namespace CRM_VIEW.Forms
 			crmdbContextController1.Context.GoodStorageItems.Load();
 			goodStorageItemBindingSource.DataSource = crmdbContextController1.Context.GoodStorageItems.Local.ToBindingList();
 		}
-		public StorageForm(User user)
+		public StorageForm()
 		{
 			InitializeComponent();
 			goodStorageItemView1.Context = crmdbContextController1;

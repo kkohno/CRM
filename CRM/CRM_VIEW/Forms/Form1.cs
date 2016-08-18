@@ -18,8 +18,6 @@ namespace CRM_VIEW
 		public Form1()
 		{
 			InitializeComponent();
-			//goodStorageItemView1.GoodStorageItem.Good = new Good { Name = "ololo" };
-            //goodStorageItemView1.GoodStorageItem.ReceivingDate = new DateTime(1990, 1, 1);
         }
 
 		private void crmController1_OnAuthorized(object sender, CRM_MODEL.User e)
@@ -34,7 +32,7 @@ namespace CRM_VIEW
 
 		private void входToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			using (var f = new AuthorizationForm(crmController1.User)) {
+			using (var f = new AuthorizationForm()) {
 				f.ShowDialog();
 				crmController1.User = f.User;
 			}
@@ -47,57 +45,57 @@ namespace CRM_VIEW
 
 		private void регистрацияToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new RegistrationForm()) f.ShowDialog(); });
+			ViewUtils.ShowForm<RegistrationForm>(this);
 		}
 
 		private void типыТоваровToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new GoodTypesForm(crmController1.User)) f.ShowDialog(); });
+			ViewUtils.ShowForm<GoodTypesForm>(this);
 		}
 
 		private void поставщикиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new ProvidersForm(crmController1.User)) f.ShowDialog(); });
+			ViewUtils.ShowForm<ProvidersForm>(this);
 		}
 
 		private void товарыToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new GoodsForm(crmController1.User)) f.ShowDialog(); });
+			ViewUtils.ShowForm<GoodsForm>(this);
 		}
 
 		private void складToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new StorageForm(crmController1.User)) f.ShowDialog(); });
+			ViewUtils.ShowForm<StorageForm>(this);
 		}
 
 		private void продажиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new SalesForm(crmController1.User)) f.ShowDialog(); });
+			ViewUtils.ShowForm<SalesForm>(this);
 		}
 
 		private void оформитьПродажуToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new SaleConstructorForm(crmController1.User)) f.ShowDialog(); });
+			ViewUtils.ShowForm<SaleConstructorForm>(this);
 		}
 
 		private void подключениеToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new ConnectionSettingsForm()) f.ShowDialog(); });
+			ViewUtils.ShowForm<ConnectionSettingsForm>(this);
 		}
 
 		private void людиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new PersonsForm(crmController1.User)) f.ShowDialog(); });
+			ViewUtils.ShowForm<PersonsForm>(this);
 		}
 
 		private void типыПлатежейToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new PaymentTypesForm(crmController1.User)) f.ShowDialog(); });
+			ViewUtils.ShowForm<PaymentTypesForm>(this);
 		}
 
 		private void платежиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ViewUtils.ExceptionWrapper(this, () => { using (var f = new PaymentsForm(crmController1.User)) f.ShowDialog(); });
+			ViewUtils.ShowForm<PaymentsForm>(this);
 		}
 	}
 }

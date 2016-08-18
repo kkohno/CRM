@@ -21,7 +21,7 @@ namespace CRM_VIEW.Forms
 			crmdbContextController1.Context.SaveChanges();
 		}
 
-		public GoodsForm(User user)
+		public GoodsForm()
 		{
 			InitializeComponent();
 			crmdbContextController1.Context.Goods.Load();

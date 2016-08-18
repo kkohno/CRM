@@ -25,10 +25,9 @@ namespace CRM_VIEW
 			Context.SaveChanges();
 		}
 
-		public GoodTypesForm(User user)
+		public GoodTypesForm()
 		{
 			InitializeComponent();
-			crmController1.User = user;
 			Context.GoodTypes.Load();
 			var list = Context.GoodTypes.Local.ToBindingList();
             goodTypeBindingSource.DataSource = list;

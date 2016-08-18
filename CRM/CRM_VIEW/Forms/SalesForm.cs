@@ -14,7 +14,7 @@ namespace CRM_VIEW.Forms
 {
 	public partial class SalesForm : Form
 	{
-		public SalesForm(User user)
+		public SalesForm()
 		{
 			InitializeComponent();
 			crmdbContextController1.Context.Sales.Load();

@@ -20,7 +20,7 @@ namespace CRM_VIEW.Forms
 			Validate();
 			crmdbContextController1.Context.SaveChanges();
 		}
-		public PaymentTypesForm(User user)
+		public PaymentTypesForm()
 		{
 			InitializeComponent();
 			crmdbContextController1.Context.PaymentTypes.Load();
