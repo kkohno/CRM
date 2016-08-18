@@ -74,6 +74,15 @@
 			countLabel.TabIndex = 5;
 			countLabel.Text = "Количество:";
 			// 
+			// dateLabel
+			// 
+			dateLabel.AutoSize = true;
+			dateLabel.Location = new System.Drawing.Point(3, 88);
+			dateLabel.Name = "dateLabel";
+			dateLabel.Size = new System.Drawing.Size(36, 13);
+			dateLabel.TabIndex = 6;
+			dateLabel.Text = "Дата:";
+			// 
 			// saleBindingSource
 			// 
 			this.saleBindingSource.DataSource = typeof(CRM_MODEL.Sale);
@@ -114,15 +123,6 @@
 			this.countNumericUpDown.Size = new System.Drawing.Size(262, 20);
 			this.countNumericUpDown.TabIndex = 6;
 			// 
-			// dateLabel
-			// 
-			dateLabel.AutoSize = true;
-			dateLabel.Location = new System.Drawing.Point(3, 88);
-			dateLabel.Name = "dateLabel";
-			dateLabel.Size = new System.Drawing.Size(36, 13);
-			dateLabel.TabIndex = 6;
-			dateLabel.Text = "Дата:";
-			// 
 			// dateNullableDateTimePicker
 			// 
 			this.dateNullableDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -134,6 +134,7 @@
 			this.dateNullableDateTimePicker.ShowCheckBox = true;
 			this.dateNullableDateTimePicker.Size = new System.Drawing.Size(262, 20);
 			this.dateNullableDateTimePicker.TabIndex = 7;
+			this.dateNullableDateTimePicker.Value = new System.DateTime(2016, 8, 1, 22, 30, 49, 632);
 			// 
 			// SaleView
 			// 

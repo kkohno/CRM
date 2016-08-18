@@ -94,7 +94,6 @@
 			// 
 			this.goodView1.Context = crmdbContext1;
 			this.goodView1.ContextController = this.crmdbContextController1;
-			this.goodView1.Good = ((CRM_MODEL.Good)(resources.GetObject("goodView1.Good")));
 			this.goodView1.Location = new System.Drawing.Point(0, 0);
 			this.goodView1.Name = "goodView1";
 			this.goodView1.Size = new System.Drawing.Size(326, 349);

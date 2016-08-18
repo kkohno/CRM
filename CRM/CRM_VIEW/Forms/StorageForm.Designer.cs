@@ -29,8 +29,6 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StorageForm));
-			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
-			CRM_MODEL.GoodStorageItem goodStorageItem1 = new CRM_MODEL.GoodStorageItem();
 			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -225,15 +223,7 @@
 			// 
 			// goodStorageItemView1
 			// 
-			this.goodStorageItemView1.Context = crmdbContext1;
 			this.goodStorageItemView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			goodStorageItem1.Count = 0;
-			goodStorageItem1.Good = null;
-			goodStorageItem1.Id = null;
-			goodStorageItem1.PurchasePrice = 0D;
-			goodStorageItem1.ReceivingDate = null;
-			goodStorageItem1.ShelfLife = null;
-			this.goodStorageItemView1.GoodStorageItem = goodStorageItem1;
 			this.goodStorageItemView1.Location = new System.Drawing.Point(0, 0);
 			this.goodStorageItemView1.Name = "goodStorageItemView1";
 			this.goodStorageItemView1.Size = new System.Drawing.Size(371, 237);

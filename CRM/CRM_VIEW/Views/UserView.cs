@@ -21,6 +21,7 @@ namespace CRM_VIEW.Views
 		{
 			get
 			{
+				if (userBindingSource.DataSource == null) userBindingSource.DataSource = new User();
 				return userBindingSource.DataSource as User;			
 			}
 			set

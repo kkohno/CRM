@@ -229,7 +229,6 @@
 			this.providerView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.providerView1.Location = new System.Drawing.Point(0, 0);
 			this.providerView1.Name = "providerView1";
-			this.providerView1.Provider = ((CRM_MODEL.Provider)(resources.GetObject("providerView1.Provider")));
 			this.providerView1.Size = new System.Drawing.Size(300, 237);
 			this.providerView1.TabIndex = 0;
 			// 

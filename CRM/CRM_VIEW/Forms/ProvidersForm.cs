@@ -34,7 +34,7 @@ namespace CRM_VIEW.Forms
 		{
 			InitializeComponent();
 			Context.Providers.Load();
-			providerBindingSource.DataSource = Context.Providers.Local.ToBindingList();
+			providerBindingSource.DataSource = Context.Providers.Local.ToBindingList();			
 		}
 
 		private void providerBindingSource_CurrentItemChanged(object sender, EventArgs e)

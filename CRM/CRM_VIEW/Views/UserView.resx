@@ -120,15 +120,4 @@
   <metadata name="userBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="personPersonView.Person" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAEBDUk1fTU9ERUwsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1u
-        ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsDAMAAACaAW1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAs
-        IEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dLCBtc2Nvcmxp
-        YiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2
-        MTkzNGUwODkFAQAAABBDUk1fTU9ERUwuUGVyc29uBAAAABM8SWQ+a19fQmFja2luZ0ZpZWxkFjxOYW1l
-        MT5rX19CYWNraW5nRmllbGQWPE5hbWUyPmtfX0JhY2tpbmdGaWVsZBY8TmFtZTM+a19fQmFja2luZ0Zp
-        ZWxkBAEBAR9TeXN0ZW0uTnVsbGFibGVgMVtbU3lzdGVtLkludDY0AwAAAAIAAAAKCgoKCw==
-</value>
-  </data>
 </root>

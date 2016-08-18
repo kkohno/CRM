@@ -58,7 +58,6 @@
 			this.personPersonView.DataBindings.Add(new System.Windows.Forms.Binding("Person", this.userBindingSource, "Person", true));
 			this.personPersonView.Location = new System.Drawing.Point(0, 0);
 			this.personPersonView.Name = "personPersonView";
-			this.personPersonView.Person = ((CRM_MODEL.Person)(resources.GetObject("personPersonView.Person")));
 			this.personPersonView.Size = new System.Drawing.Size(206, 81);
 			this.personPersonView.TabIndex = 1;
 			// 

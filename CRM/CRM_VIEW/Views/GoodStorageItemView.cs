@@ -22,6 +22,7 @@ namespace CRM_VIEW.Views
 		{
 			get
 			{
+				if (goodStorageItemBindingSource.DataSource == null) goodStorageItemBindingSource.DataSource = new GoodStorageItem();
 				return goodStorageItemBindingSource.DataSource as GoodStorageItem;
 			}
 			set
@@ -33,7 +34,6 @@ namespace CRM_VIEW.Views
         public GoodStorageItemView()
 		{
 			InitializeComponent();
-			GoodStorageItem = new GoodStorageItem();
 		}
 
 		private void comboBox1_TextChanged(object sender, EventArgs e)

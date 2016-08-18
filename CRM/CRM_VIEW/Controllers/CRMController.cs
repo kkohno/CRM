@@ -18,10 +18,7 @@ namespace CRM_VIEW
 		public CRM_MODEL.User User
 		{
 			get { return _user; }
-			set
-			{
-				_user = value;
-			}
+			set { _user = value; }
 		}
 		public bool Authorized
 		{
@@ -43,7 +40,7 @@ namespace CRM_VIEW
 		}
 		public void CopyState(CRMController other)
 		{
-			_user = other._user;
+			User = other.User;
 		}
 
 		public void Authorization(string login, string pass)
@@ -98,7 +95,7 @@ namespace CRM_VIEW
 		{
 			if (!Authorized) return;
 			var last = User;
-			_user = null;
+			User = null;
 			if (OnLogout != null) OnLogout(this, last);
         }
 

@@ -20,17 +20,13 @@ namespace CRM_VIEW.Forms
 			Validate();
 			crmdbContextController1.Context.SaveChanges();
 		}
-		public void ReloadAll()
-		{
-			crmdbContextController1.Context.GoodStorageItems.Load();
-			goodStorageItemBindingSource.DataSource = crmdbContextController1.Context.GoodStorageItems.Local.ToBindingList();
-		}
 		public StorageForm()
 		{
 			InitializeComponent();
+			crmdbContextController1.Context.GoodStorageItems.Load();
+			goodStorageItemBindingSource.DataSource = crmdbContextController1.Context.GoodStorageItems.Local.ToBindingList();
 			goodStorageItemView1.Context = crmdbContextController1;
-			ReloadAll();
-        }
+		}
 
 		private void goodStorageItemBindingSource_CurrentChanged(object sender, EventArgs e)
 		{

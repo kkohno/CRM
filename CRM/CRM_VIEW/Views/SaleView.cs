@@ -22,6 +22,7 @@ namespace CRM_VIEW.Views
 		{
 			get
 			{
+				if (saleBindingSource.DataSource == null) saleBindingSource.DataSource = new Sale();
 				return saleBindingSource.DataSource as Sale;
 			}
 			set

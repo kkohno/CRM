@@ -29,7 +29,6 @@ namespace CRM_VIEW.Forms
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
@@ -114,17 +113,12 @@ namespace CRM_VIEW.Forms
 			this.label3.TabIndex = 12;
 			this.label3.Text = "Повтор";
 			// 
-			// crmdbContextController1
-			// 
-			this.crmdbContextController1.Context = crmdbContext1;
-			// 
 			// userView1
 			// 
 			this.userView1.Location = new System.Drawing.Point(12, 84);
 			this.userView1.Name = "userView1";
 			this.userView1.Size = new System.Drawing.Size(297, 109);
 			this.userView1.TabIndex = 11;
-			this.userView1.User = ((CRM_MODEL.User)(resources.GetObject("userView1.User")));
 			// 
 			// RegistrationForm
 			// 
