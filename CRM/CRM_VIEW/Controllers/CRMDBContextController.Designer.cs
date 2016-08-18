@@ -20,7 +20,7 @@ namespace CRM_VIEW
 				if (_context.ChangeTracker.HasChanges() &&
 					MessageBox.Show("Сохранить изменения?", string.IsNullOrEmpty(ContainerForm?.Text) ? "CRM" : ContainerForm.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 					_context.SaveChanges();
-				_context.Dispose();
+				//_context.Dispose();
 			}
 			if (disposing && (components != null)) {
 				components.Dispose();
