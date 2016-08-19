@@ -40,6 +40,7 @@ namespace CRM_VIEW
 		
 		CRMDBContext _context;
 		[Browsable(false)]
+		[ReadOnly(true)]
 		public CRMDBContext Context
 		{
 			get
