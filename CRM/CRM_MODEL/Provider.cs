@@ -11,7 +11,7 @@ namespace CRM_MODEL
 	/// поставщик
 	/// </summary>
 	[Serializable]
-	public class Provider
+	public class Provider: IComparable
 	{
 		public long? Id { get; set; }
 		/// <summary>
@@ -40,6 +40,11 @@ namespace CRM_MODEL
 		public override string ToString()
 		{
 			return !string.IsNullOrEmpty(Name) ? Name : Utils.NoNameString;
+		}
+
+		public int CompareTo(object obj)
+		{
+			return Utils.StringCompareTo(this, obj);
 		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿namespace CRM_VIEW.Views
+﻿
+namespace CRM_VIEW.Views
 {
 	partial class GoodStorageItemView
 	{
@@ -33,15 +34,14 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.goodStorageItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
 			this.nullableDateTimePicker1 = new CRM_VIEW.Controllers.NullableDateTimePicker(this.components);
 			this.nullableDateTimePicker2 = new CRM_VIEW.Controllers.NullableDateTimePicker(this.components);
+			this.button1 = new System.Windows.Forms.Button();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -100,26 +100,9 @@
 			this.label5.TabIndex = 4;
 			this.label5.Text = "Годен до";
 			// 
-			// comboBox1
-			// 
-			this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.goodStorageItemBindingSource, "Good", true));
-			this.comboBox1.DataSource = this.goodBindingSource;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(97, 3);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(201, 21);
-			this.comboBox1.TabIndex = 5;
-			this.comboBox1.TextUpdate += new System.EventHandler(this.comboBox1_TextChanged);
-			// 
 			// goodStorageItemBindingSource
 			// 
 			this.goodStorageItemBindingSource.DataSource = typeof(CRM_MODEL.GoodStorageItem);
-			// 
-			// goodBindingSource
-			// 
-			this.goodBindingSource.DataSource = typeof(CRM_MODEL.Good);
 			// 
 			// textBox2
 			// 
@@ -128,7 +111,7 @@
 			this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.goodStorageItemBindingSource, "PurchasePrice", true));
 			this.textBox2.Location = new System.Drawing.Point(97, 56);
 			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(201, 20);
+			this.textBox2.Size = new System.Drawing.Size(212, 20);
 			this.textBox2.TabIndex = 7;
 			// 
 			// numericUpDown1
@@ -143,7 +126,7 @@
             0,
             0});
 			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(201, 20);
+			this.numericUpDown1.Size = new System.Drawing.Size(212, 20);
 			this.numericUpDown1.TabIndex = 10;
 			this.numericUpDown1.ThousandsSeparator = true;
 			// 
@@ -156,7 +139,7 @@
 			this.nullableDateTimePicker1.Name = "nullableDateTimePicker1";
 			this.nullableDateTimePicker1.NullableValue = new System.DateTime(2016, 7, 31, 23, 34, 54, 311);
 			this.nullableDateTimePicker1.ShowCheckBox = true;
-			this.nullableDateTimePicker1.Size = new System.Drawing.Size(200, 20);
+			this.nullableDateTimePicker1.Size = new System.Drawing.Size(211, 20);
 			this.nullableDateTimePicker1.TabIndex = 11;
 			this.nullableDateTimePicker1.Value = new System.DateTime(2016, 7, 31, 23, 34, 54, 311);
 			// 
@@ -169,29 +152,51 @@
 			this.nullableDateTimePicker2.Name = "nullableDateTimePicker2";
 			this.nullableDateTimePicker2.NullableValue = new System.DateTime(2016, 7, 31, 23, 34, 54, 315);
 			this.nullableDateTimePicker2.ShowCheckBox = true;
-			this.nullableDateTimePicker2.Size = new System.Drawing.Size(200, 20);
+			this.nullableDateTimePicker2.Size = new System.Drawing.Size(211, 20);
 			this.nullableDateTimePicker2.TabIndex = 12;
 			this.nullableDateTimePicker2.Value = new System.DateTime(2016, 7, 31, 23, 34, 54, 315);
+			// 
+			// button1
+			// 
+			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button1.Location = new System.Drawing.Point(282, 1);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(27, 23);
+			this.button1.TabIndex = 13;
+			this.button1.Text = "^";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// textBox1
+			// 
+			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.goodStorageItemBindingSource, "Good", true));
+			this.textBox1.Location = new System.Drawing.Point(97, 3);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.ReadOnly = true;
+			this.textBox1.Size = new System.Drawing.Size(179, 20);
+			this.textBox1.TabIndex = 14;
 			// 
 			// GoodStorageItemView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.nullableDateTimePicker2);
 			this.Controls.Add(this.nullableDateTimePicker1);
 			this.Controls.Add(this.numericUpDown1);
 			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.comboBox1);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Name = "GoodStorageItemView";
-			this.Size = new System.Drawing.Size(301, 131);
+			this.Size = new System.Drawing.Size(312, 131);
 			this.ReloadAll += new System.EventHandler(this.GoodStorageItemView_ReloadAll);
 			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -205,12 +210,12 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.BindingSource goodBindingSource;
 		private System.Windows.Forms.NumericUpDown numericUpDown1;
-		private System.Windows.Forms.BindingSource goodStorageItemBindingSource;
 		private Controllers.NullableDateTimePicker nullableDateTimePicker1;
 		private Controllers.NullableDateTimePicker nullableDateTimePicker2;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.TextBox textBox1;
+		public System.Windows.Forms.BindingSource goodStorageItemBindingSource;
 	}
 }

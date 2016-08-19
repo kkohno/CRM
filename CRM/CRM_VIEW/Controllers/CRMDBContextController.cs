@@ -31,16 +31,30 @@ namespace CRM_VIEW
 			}
 		}
 
-		private CRMDBContext _context;
+
+		/// <summary>
+		/// является ли текущий контроллер владельцем контекста для его удаления
+		/// </summary>
 		[Browsable(false)]
-		public CRM_MODEL.CRMDBContext Context
+		public bool Owner { get; private set; }		
+		
+		CRMDBContext _context;
+		[Browsable(false)]
+		public CRMDBContext Context
 		{
 			get
 			{
-				if (_context == null) _context = new CRMDBContext();
+				if (_context == null) {
+					_context = new CRMDBContext();
+					Owner = true;
+				}
 				return _context;
 			}
-			set { _context = value; }
+			set
+			{
+				_context = value;
+				Owner = false;
+			}
 		}
 
 		public static implicit operator CRMDBContext(CRMDBContextController controller)

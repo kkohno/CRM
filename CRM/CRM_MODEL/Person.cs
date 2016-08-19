@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CRM_MODEL
 {
 	[Serializable]
-	public class Person
+	public class Person: IComparable
 	{
 		public long? Id { get; set; }
 		/// <summary>
@@ -42,6 +42,11 @@ namespace CRM_MODEL
 		public override string ToString()
 		{
 			return ShortFIO;
+		}
+
+		public int CompareTo(object obj)
+		{
+			return Utils.StringCompareTo(this, obj);
 		}
 
 		/// <summary>

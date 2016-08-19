@@ -28,20 +28,19 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			this.crmdbContextController = new CRM_VIEW.CRMDBContextController(this.components);
 			this.SuspendLayout();
 			// 
 			// crmdbContextController
 			// 
-			this.crmdbContextController.Context = crmdbContext1;
+			this.crmdbContextController.ContainerForm = this;
 			// 
 			// BaseCRMVIew
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Name = "BaseCRMVIew";
-			this.Layout += new System.Windows.Forms.LayoutEventHandler(this.BaseCRMVIew_Layout);
+			this.Load += new System.EventHandler(this.BaseCRMVIew_Load);
 			this.ResumeLayout(false);
 
 		}

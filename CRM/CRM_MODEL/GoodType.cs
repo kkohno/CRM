@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 namespace CRM_MODEL
 {
 	[Serializable]
-	public class GoodType
+	public class GoodType: IComparable
 	{
 		public long? Id { get; set; }
 		[Required]
 		public string Name { get; set; }
+
+		public int CompareTo(object obj)
+		{
+			return Utils.StringCompareTo(this, obj);
+		}
 
 		public override string ToString()
 		{

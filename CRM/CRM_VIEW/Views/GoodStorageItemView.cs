@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CRM_MODEL;
 using System.Data.Entity;
+using CRM_VIEW.Forms;
 
 namespace CRM_VIEW.Views
 {
@@ -36,15 +37,22 @@ namespace CRM_VIEW.Views
 			InitializeComponent();
 		}
 
-		private void comboBox1_TextChanged(object sender, EventArgs e)
-		{
-			comboBox1.Text = comboBox1.SelectedItem?.ToString();
-		}
-
 		private void GoodStorageItemView_ReloadAll(object sender, EventArgs e)
 		{
 			Context.Goods.Load();
-			goodBindingSource.DataSource = Context.Goods.Local.ToList();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			ViewUtils.ShowForm<GoodPickerForm>(this,
+				form => {
+					form.Context = Context;
+					form.CurrentGood = GoodStorageItem.Good;
+				},
+				form => {
+					if (form.DialogResult == DialogResult.OK) GoodStorageItem.Good = form.CurrentGood;
+					goodStorageItemBindingSource.ResetBindings(true);
+				});
 		}
 	}
 }

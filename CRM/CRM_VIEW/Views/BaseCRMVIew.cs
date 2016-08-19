@@ -25,7 +25,7 @@ namespace CRM_VIEW.Views
 			}
 			set
 			{
-				crmdbContextController = value;
+				crmdbContextController.Context = value;
 			}
 		}
 		[Description("Контекст БД для отображения вспомогательных данных компонента")]
@@ -38,7 +38,7 @@ namespace CRM_VIEW.Views
 			}
 			set
 			{
-				crmdbContextController = value;
+				crmdbContextController.Context = value;
 			}
 		}
 
@@ -54,7 +54,7 @@ namespace CRM_VIEW.Views
 		[Description("Вызывается при необходимости перезагрузки контента для визуализатора")]
 		public event EventHandler ReloadAll;
 
-		private void BaseCRMVIew_Layout(object sender, LayoutEventArgs e)
+		private void BaseCRMVIew_Load(object sender, EventArgs e)
 		{
 			if (ReloadAll != null) ReloadAll(sender, e);
 		}

@@ -29,6 +29,8 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StorageForm));
+			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
+			CRM_MODEL.GoodStorageItem goodStorageItem1 = new CRM_MODEL.GoodStorageItem();
 			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -63,6 +65,7 @@
 			this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
 			this.bindingNavigator1.BindingSource = this.goodStorageItemBindingSource;
 			this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+			this.bindingNavigator1.CountItemFormat = "из {0}";
 			this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
 			this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -106,8 +109,8 @@
 			// bindingNavigatorCountItem
 			// 
 			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-			this.bindingNavigatorCountItem.Text = "для {0}";
+			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+			this.bindingNavigatorCountItem.Text = "из {0}";
 			this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
 			// 
 			// bindingNavigatorDeleteItem
@@ -223,7 +226,15 @@
 			// 
 			// goodStorageItemView1
 			// 
+			this.goodStorageItemView1.Context = crmdbContext1;
 			this.goodStorageItemView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			goodStorageItem1.Count = 0;
+			goodStorageItem1.Good = null;
+			goodStorageItem1.Id = null;
+			goodStorageItem1.PurchasePrice = 0D;
+			goodStorageItem1.ReceivingDate = null;
+			goodStorageItem1.ShelfLife = null;
+			this.goodStorageItemView1.GoodStorageItem = goodStorageItem1;
 			this.goodStorageItemView1.Location = new System.Drawing.Point(0, 0);
 			this.goodStorageItemView1.Name = "goodStorageItemView1";
 			this.goodStorageItemView1.Size = new System.Drawing.Size(371, 237);
@@ -231,6 +242,7 @@
 			// 
 			// crmdbContextController1
 			// 
+			this.crmdbContextController1.ContainerForm = this;
 			this.crmdbContextController1.Context = crmdbContext2;
 			// 
 			// StorageForm
@@ -270,12 +282,12 @@
 		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
 		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
 		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-		private System.Windows.Forms.BindingSource goodStorageItemBindingSource;
 		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private Views.GoodStorageItemView goodStorageItemView1;
 		private CRMDBContextController crmdbContextController1;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
 		private System.Windows.Forms.ToolStripButton сохранитьToolStripButton;
+		private System.Windows.Forms.BindingSource goodStorageItemBindingSource;
 	}
 }

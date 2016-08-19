@@ -15,12 +15,12 @@ namespace CRM_VIEW
 		/// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
 		protected override void Dispose(bool disposing)
 		{
-			if (disposing && _context != null) {
+			if (disposing && Owner && _context != null) {
 				_context.ChangeTracker.DetectChanges();
 				if (_context.ChangeTracker.HasChanges() &&
-					MessageBox.Show("Сохранить изменения?", string.IsNullOrEmpty(ContainerForm?.Text) ? "CRM" : ContainerForm.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+					MessageBox.Show("Сохранить изменения?", string.IsNullOrEmpty(ContainerForm?.Text) ? Application.ProductName : ContainerForm.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 					_context.SaveChanges();
-				//_context.Dispose();
+				_context.Dispose();
 			}
 			if (disposing && (components != null)) {
 				components.Dispose();

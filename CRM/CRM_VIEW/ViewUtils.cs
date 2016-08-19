@@ -33,6 +33,7 @@ namespace CRM_VIEW
 		}
 
 		public delegate void SimpleMethod();
+		public delegate void SimpleMethod<TypeName>(TypeName arg);
 
 		/// производит выполнение делегата с выводом ошибки в случае исключения
 		/// в режиме DEBUG не производит обработку ошибок
@@ -80,20 +81,60 @@ namespace CRM_VIEW
 		/// </summary>
 		/// <typeparam name="FormType">тип окна для отображения</typeparam>
 		/// <param name="ownerWindow">окно, пораждающее текущее окно</param>
-		public static void ShowForm<FormType>(IWin32Window ownerWindow) where FormType : Form, new()
+		public static DialogResult ShowForm<FormType>(IWin32Window ownerWindow) where FormType : Form, new()
 		{
+			DialogResult res = DialogResult.None;
 			ExceptionWrapper(ownerWindow,
 				() => {
-					using (var f = new FormType()) f.ShowDialog();
+					using (var f = new FormType()) res = f.ShowDialog();
 				});
+			return res;
 		}
 		/// <summary>
 		/// создает и отображает окно
 		/// </summary>
 		/// <typeparam name="FormType">тип окна для отображения</typeparam>
-		public static void ShowForm<FormType>() where FormType : Form, new()
+		/// <param name="ownerWindow">окно, пораждающее текущее окно</param>
+		/// <param name="beforeShow">делегат выполнения кода с формой перед ее отображением</param>
+		public static DialogResult ShowForm<FormType>(IWin32Window ownerWindow, SimpleMethod<FormType> beforeShow) where FormType : Form, new()
 		{
-			ShowForm<FormType>(null);
+			DialogResult res = DialogResult.None; 
+			ExceptionWrapper(ownerWindow,
+				() => {
+					using (var f = new FormType()) {
+						beforeShow(f);
+						res = f.ShowDialog();
+					}
+				});
+			return res;
+		}
+		/// <summary>
+		/// создает и отображает окно
+		/// </summary>
+		/// <typeparam name="FormType">тип окна для отображения</typeparam>
+		/// <param name="ownerWindow">окно, пораждающее текущее окно</param>
+		/// <param name="beforeShow">делегат выполнения кода с формой перед ее отображением</param>
+		/// <param name="afterClose">делегат выполнения кода с формой после ее закрытия</param>
+		public static DialogResult ShowForm<FormType>(IWin32Window ownerWindow, SimpleMethod<FormType> beforeShow,SimpleMethod<FormType> afterClose) where FormType : Form, new()
+		{
+			DialogResult res = DialogResult.None;
+			ExceptionWrapper(ownerWindow,
+				() => {
+					using (var f = new FormType()) {
+						beforeShow(f);
+						res = f.ShowDialog();
+						afterClose(f);
+					}
+				});
+			return res;
+		}
+		/// <summary>
+		/// создает и отображает окно
+		/// </summary>
+		/// <typeparam name="FormType">тип окна для отображения</typeparam>
+		public static DialogResult ShowForm<FormType>() where FormType : Form, new()
+		{
+			return ShowForm<FormType>(null);
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace CRM_MODEL
 	/// описывает тип платежа
 	/// </summary>
 	[Serializable]
-	public class PaymentType
+	public class PaymentType: IComparable
 	{
 		public long? Id { get; set; }
 		/// <summary>
@@ -38,6 +38,11 @@ namespace CRM_MODEL
 		public override string ToString()
 		{
 			return string.IsNullOrEmpty(Name) ? Utils.NoNameString : Name;
+		}
+
+		public int CompareTo(object obj)
+		{
+			return Utils.StringCompareTo(this, obj);
 		}
 	}
 }
