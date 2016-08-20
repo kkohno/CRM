@@ -175,6 +175,12 @@
     <Compile Include="Views\ContextSettingsView.Designer.cs">
       <DependentUpon>ContextSettingsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\GoodListsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\GoodListsView.Designer.cs">
+      <DependentUpon>GoodListsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\GoodsBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ContextSettingsView.resx">
       <DependentUpon>ContextSettingsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GoodListsView.resx">
+      <DependentUpon>GoodListsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\GoodsBrowser.resx">
       <DependentUpon>GoodsBrowser.cs</DependentUpon>

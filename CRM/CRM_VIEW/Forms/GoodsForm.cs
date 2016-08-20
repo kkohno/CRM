@@ -39,7 +39,7 @@ namespace CRM_VIEW.Forms
 
 		private void goodBindingSource_CurrentItemChanged(object sender, EventArgs e)
 		{
-			goodView1.Good = goodBindingSource.Current as Good;
+			goodListsView1.Good = goodBindingSource.Current as Good;
 		}
 	}
 }
