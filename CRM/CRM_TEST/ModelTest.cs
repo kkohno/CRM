@@ -98,7 +98,7 @@ namespace CRM_TEST
 				var sale = new Sale {
 					Date = DateTime.Today,
 					Good = good,
-					SellingPrice = good.CurrentSellingPrice,
+					SellingPrice = good.CurrentSellingPrice??0,
 					User = user
 				};
 				var lp = new LoginPass {

@@ -30,11 +30,11 @@ namespace CRM_MODEL
 		/// <summary>
 		/// цена закупки товара
 		/// </summary>
-		public double PurchasePrice { get; set; }
+		public double? PurchasePrice { get; set; }
 		/// <summary>
 		/// текущая розничная цена
 		/// </summary>
-		public double CurrentSellingPrice { get; set; }
+		public double? CurrentSellingPrice { get; set; }
 		/// <summary>
 		/// показывает прибыль с продажи одной штуки
 		/// </summary>
@@ -42,7 +42,7 @@ namespace CRM_MODEL
 		{
 			get
 			{
-				if (PurchasePrice == 0 || CurrentSellingPrice == 0) return null;
+				if (PurchasePrice == null || CurrentSellingPrice == null) return null;
 				return CurrentSellingPrice - PurchasePrice;
 			}
 		}

@@ -8,8 +8,10 @@ using System.Windows.Forms;
 
 namespace CRM_VIEW.DataGridViewColumns
 {
-	// класс столбца ExtendedComboBoxColumn
-	[Serializable]
+	/// <summary>
+	/// расширенная колонка со списком значений, которая позволяет задавать null нажатием delete или break
+	/// также сама заботится о приведении типов
+	/// </summary>
 	public class ExtendedComboBoxColumn : DataGridViewColumn
 	{
 		public ExtendedComboBoxColumn()
@@ -36,6 +38,8 @@ namespace CRM_VIEW.DataGridViewColumns
 		BindingSource _dataSource;
 		[Category("Данные")]
 		[Description("Источник данных, из которых выбирается объект")]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+		[DefaultValue(null)]
 		public BindingSource DataSource
 		{
 			get
@@ -45,8 +49,15 @@ namespace CRM_VIEW.DataGridViewColumns
 			set
 			{
 				_dataSource = value;
-				(CellTemplate as ExtendedComboBoxCell).DataSource = value;
+				if(CellTemplate!=null) (CellTemplate as ExtendedComboBoxCell).DataSource = value;
 			}
+		}
+
+		public override object Clone()
+		{
+			var clone = base.Clone() as ExtendedComboBoxColumn;
+			clone.DataSource = DataSource;
+			return clone;
 		}
 	}
 

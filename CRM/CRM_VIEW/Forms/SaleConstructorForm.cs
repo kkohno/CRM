@@ -93,7 +93,7 @@ namespace CRM_VIEW.Forms
 					Good = gsi.Good,
 					Date = DateTime.Now,
 					Count = 1,
-					SellingPrice = gsi.Good.CurrentSellingPrice
+					SellingPrice = gsi.Good.CurrentSellingPrice??0
 				},
 				GoodStorageItem = gsi
 			});
