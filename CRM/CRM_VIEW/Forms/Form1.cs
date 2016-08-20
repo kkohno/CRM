@@ -32,10 +32,7 @@ namespace CRM_VIEW
 
 		private void входToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			using (var f = new AuthorizationForm()) {
-				f.ShowDialog();
-				crmController1.User = f.User;
-			}
+			ViewUtils.ShowForm<AuthorizationForm>(this, null, f=>crmController1.User = f.User);
 		}
 
 		private void выходToolStripMenuItem_Click(object sender, EventArgs e)

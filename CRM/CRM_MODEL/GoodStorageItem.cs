@@ -26,7 +26,7 @@ namespace CRM_MODEL
 		/// <summary>
 		/// почем была куплена единица товара
 		/// </summary>
-		public double PurchasePrice { get; set; }
+		public double? PurchasePrice { get; set; }
 		/// <summary>
 		/// дата приема товара
 		/// </summary>
@@ -35,6 +35,81 @@ namespace CRM_MODEL
 		/// срок годности
 		/// </summary>
 		public DateTime? ShelfLife { get; set; }
+		/// <summary>
+		/// показывает прибыль с продажи одной штуки
+		/// </summary>
+		public double? Profit
+		{
+			get
+			{
+				if (CurrentSellingPrice == null) return null;
+				return CurrentSellingPrice - (PurchasePrice ?? 0);
+			}
+		}
+		/// <summary>
+		/// показывает коэффициент накрутки
+		/// </summary>
+		public double? Koef
+		{
+			get
+			{
+				if (PurchasePrice == null || CurrentSellingPrice == null) return null;
+				return CurrentSellingPrice / PurchasePrice;
+			}
+		}
+
+		#region методы доступа
+		/// <summary>
+		/// название товара
+		/// </summary>
+		public string Name
+		{
+			get
+			{
+				return Good?.Name;
+			}
+		}
+		/// <summary>
+		/// тип товара
+		/// </summary>
+		public virtual GoodType GoodType
+		{
+			get
+			{
+				return Good?.GoodType;
+			}
+		}
+		/// <summary>
+		/// поставщик
+		/// </summary>
+		public virtual Provider Provider
+		{
+			get
+			{
+				return Good?.Provider;
+			}
+		}
+		/// <summary>
+		/// текущая розничная цена
+		/// </summary>
+		public double? CurrentSellingPrice
+		{
+			get
+			{
+				return Good?.CurrentSellingPrice;
+			}
+		}
+		/// <summary>
+		/// комментарий к товару
+		/// </summary>
+		public string Comment
+		{
+			get
+			{
+				return Good?.Comment; 
+			}
+		}
+		#endregion
 
 		public override string ToString()
 		{

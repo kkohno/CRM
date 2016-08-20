@@ -102,7 +102,7 @@ namespace CRM_VIEW
 			ExceptionWrapper(ownerWindow,
 				() => {
 					using (var f = new FormType()) {
-						beforeShow(f);
+						if(beforeShow!=null) beforeShow(f);
 						res = f.ShowDialog();
 					}
 				});
@@ -121,9 +121,9 @@ namespace CRM_VIEW
 			ExceptionWrapper(ownerWindow,
 				() => {
 					using (var f = new FormType()) {
-						beforeShow(f);
+						if(beforeShow!=null) beforeShow(f);
 						res = f.ShowDialog();
-						afterClose(f);
+						if(afterClose!=null) afterClose(f);
 					}
 				});
 			return res;

@@ -85,6 +85,17 @@ namespace CRM_VIEW.DataGridViewColumns
 				return null;
 			}
 		}
+
+		protected override void OnKeyDown(KeyEventArgs e, int rowIndex)
+		{
+			switch (e.KeyCode) {
+				case Keys.Delete:
+				case Keys.Back:
+					Value = null;
+					return;
+			}
+			base.OnKeyDown(e, rowIndex);
+		}
 	}
 
 	class CalendarEditingControl : DateTimePicker, IDataGridViewEditingControl
@@ -196,6 +207,11 @@ namespace CRM_VIEW.DataGridViewColumns
 				case Keys.End:
 				case Keys.PageDown:
 				case Keys.PageUp:
+					return true;
+				case Keys.Delete:
+				case Keys.Back:
+					NValue = null;
+					Text = null;
 					return true;
 				default:
 					return !dataGridViewWantsInputKey;

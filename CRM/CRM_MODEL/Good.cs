@@ -36,20 +36,32 @@ namespace CRM_MODEL
 		/// </summary>
 		public double? CurrentSellingPrice { get; set; }
 		/// <summary>
+		/// комментарий к товару
+		/// </summary>
+		public string Comment { get; set; }
+
+		/// <summary>
 		/// показывает прибыль с продажи одной штуки
 		/// </summary>
 		public double? Profit
 		{
 			get
 			{
-				if (PurchasePrice == null || CurrentSellingPrice == null) return null;
-				return CurrentSellingPrice - PurchasePrice;
+				if (CurrentSellingPrice == null) return null;
+				return CurrentSellingPrice - (PurchasePrice ?? 0);
 			}
 		}
 		/// <summary>
-		/// комментарий к товару
+		/// показывает коэффициент накрутки
 		/// </summary>
-		public string Comment { get; set; }
+		public double? Koef
+		{
+			get
+			{
+				if (PurchasePrice == null || CurrentSellingPrice == null) return null;
+				return CurrentSellingPrice / PurchasePrice;
+			}
+		}
 
 		/// <summary>
 		/// дополнительные ссылки на товар

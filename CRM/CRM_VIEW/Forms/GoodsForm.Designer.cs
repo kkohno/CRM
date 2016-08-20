@@ -33,8 +33,10 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -51,7 +53,6 @@
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.goodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.goodListsView1 = new CRM_VIEW.Views.GoodListsView();
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			this.nameDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
@@ -60,9 +61,11 @@
 			this.purchasePriceDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
 			this.currentSellingPriceDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
 			this.profitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Koef = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.commentDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
 			this.bindingNavigator1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -70,7 +73,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// bindingNavigator1
@@ -113,6 +115,11 @@
 			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
 			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorAddNewItem.Text = "Добавить";
+			// 
+			// goodBindingSource
+			// 
+			this.goodBindingSource.DataSource = typeof(CRM_MODEL.Good);
+			this.goodBindingSource.CurrentItemChanged += new System.EventHandler(this.goodBindingSource_CurrentItemChanged);
 			// 
 			// bindingNavigatorCountItem
 			// 
@@ -234,6 +241,7 @@
             this.purchasePriceDataGridViewTextBoxColumn,
             this.currentSellingPriceDataGridViewTextBoxColumn,
             this.profitDataGridViewTextBoxColumn,
+            this.Koef,
             this.commentDataGridViewTextBoxColumn});
 			this.dataGridView1.DataSource = this.goodBindingSource;
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -249,11 +257,6 @@
 			// providerBindingSource
 			// 
 			this.providerBindingSource.DataSource = typeof(CRM_MODEL.Provider);
-			// 
-			// goodBindingSource
-			// 
-			this.goodBindingSource.DataSource = typeof(CRM_MODEL.Good);
-			this.goodBindingSource.CurrentItemChanged += new System.EventHandler(this.goodBindingSource_CurrentItemChanged);
 			// 
 			// goodListsView1
 			// 
@@ -333,6 +336,18 @@
 			this.profitDataGridViewTextBoxColumn.ReadOnly = true;
 			this.profitDataGridViewTextBoxColumn.Width = 78;
 			// 
+			// Koef
+			// 
+			this.Koef.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.Koef.DataPropertyName = "Koef";
+			dataGridViewCellStyle5.Format = "N2";
+			dataGridViewCellStyle5.NullValue = null;
+			this.Koef.DefaultCellStyle = dataGridViewCellStyle5;
+			this.Koef.HeaderText = "k";
+			this.Koef.Name = "Koef";
+			this.Koef.ReadOnly = true;
+			this.Koef.Width = 38;
+			// 
 			// commentDataGridViewTextBoxColumn
 			// 
 			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
@@ -355,6 +370,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
 			this.bindingNavigator1.ResumeLayout(false);
 			this.bindingNavigator1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -362,7 +378,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -396,6 +411,7 @@
 		private DataGridViewColumns.ExtendedTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
 		private DataGridViewColumns.ExtendedTextBoxColumn currentSellingPriceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn profitDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Koef;
 		private DataGridViewColumns.ExtendedTextBoxColumn commentDataGridViewTextBoxColumn;
 	}
 }

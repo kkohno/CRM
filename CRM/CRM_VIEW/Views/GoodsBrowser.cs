@@ -54,8 +54,7 @@ namespace CRM_VIEW.Views
 
 		private void GoodsBrowser_Load(object sender, EventArgs e)
 		{
-			if (ContextController.Owner || Context.Goods.Local.Count == 0)
-				Context.Goods.Load();
+			if (ContextController.Owner) Context.Goods.Load();
 			var list = Context.Goods.Local.ToBindingList();
 			goodBindingSource.DataSource = list;
 			if (_currentGood != null) goodBindingSource.Position = list.IndexOf(_currentGood);			
