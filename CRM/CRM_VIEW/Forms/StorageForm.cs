@@ -20,6 +20,7 @@ namespace CRM_VIEW.Forms
 			Validate();
 			crmdbContextController1.Context.SaveChanges();
 		}
+
 		public StorageForm()
 		{
 			InitializeComponent();

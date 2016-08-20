@@ -28,13 +28,11 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoodsForm));
-			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.listBox1 = new System.Windows.Forms.ListBox();
-			this.goodView1 = new CRM_VIEW.Views.GoodView();
-			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -49,59 +47,50 @@
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
-			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
+			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.goodTypeDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedComboBoxColumn();
+			this.goodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.providerDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedComboBoxColumn();
+			this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.purchasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.currentSellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.profitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.goodView1 = new CRM_VIEW.Views.GoodView();
+			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+			this.bindingNavigator1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-			this.bindingNavigator1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// goodBindingSource
+			// dataGridView1
 			// 
-			this.goodBindingSource.DataSource = typeof(CRM_MODEL.Good);
-			this.goodBindingSource.CurrentItemChanged += new System.EventHandler(this.goodBindingSource_CurrentItemChanged);
-			// 
-			// splitContainer1
-			// 
-			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer1.Location = new System.Drawing.Point(0, 25);
-			this.splitContainer1.Name = "splitContainer1";
-			// 
-			// splitContainer1.Panel1
-			// 
-			this.splitContainer1.Panel1.Controls.Add(this.listBox1);
-			// 
-			// splitContainer1.Panel2
-			// 
-			this.splitContainer1.Panel2.Controls.Add(this.goodView1);
-			this.splitContainer1.Size = new System.Drawing.Size(493, 349);
-			this.splitContainer1.SplitterDistance = 163;
-			this.splitContainer1.TabIndex = 1;
-			// 
-			// listBox1
-			// 
-			this.listBox1.DataSource = this.goodBindingSource;
-			this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(0, 0);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(163, 349);
-			this.listBox1.TabIndex = 0;
-			// 
-			// goodView1
-			// 
-			this.goodView1.Context = crmdbContext1;
-			this.goodView1.ContextController = this.crmdbContextController1;
-			this.goodView1.Location = new System.Drawing.Point(0, 0);
-			this.goodView1.Name = "goodView1";
-			this.goodView1.Size = new System.Drawing.Size(326, 349);
-			this.goodView1.TabIndex = 0;
-			// 
-			// crmdbContextController1
-			// 
-			this.crmdbContextController1.Context = crmdbContext1;
+			this.dataGridView1.AllowUserToOrderColumns = true;
+			this.dataGridView1.AutoGenerateColumns = false;
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.goodTypeDataGridViewTextBoxColumn,
+            this.providerDataGridViewTextBoxColumn,
+            this.purchasePriceDataGridViewTextBoxColumn,
+            this.currentSellingPriceDataGridViewTextBoxColumn,
+            this.profitDataGridViewTextBoxColumn,
+            this.commentDataGridViewTextBoxColumn});
+			this.dataGridView1.DataSource = this.goodBindingSource;
+			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(656, 349);
+			this.dataGridView1.TabIndex = 1;
 			// 
 			// bindingNavigator1
 			// 
@@ -131,7 +120,7 @@
 			this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
 			this.bindingNavigator1.Name = "bindingNavigator1";
 			this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-			this.bindingNavigator1.Size = new System.Drawing.Size(493, 25);
+			this.bindingNavigator1.Size = new System.Drawing.Size(928, 25);
 			this.bindingNavigator1.TabIndex = 2;
 			this.bindingNavigator1.Text = "bindingNavigator1";
 			// 
@@ -235,24 +224,134 @@
 			this.сохранитьToolStripButton.Text = "&Сохранить";
 			this.сохранитьToolStripButton.Click += new System.EventHandler(this.сохранитьToolStripButton_Click);
 			// 
+			// splitContainer1
+			// 
+			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.splitContainer1.Location = new System.Drawing.Point(0, 25);
+			this.splitContainer1.Name = "splitContainer1";
+			// 
+			// splitContainer1.Panel1
+			// 
+			this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
+			// 
+			// splitContainer1.Panel2
+			// 
+			this.splitContainer1.Panel2.Controls.Add(this.goodView1);
+			this.splitContainer1.Size = new System.Drawing.Size(928, 349);
+			this.splitContainer1.SplitterDistance = 656;
+			this.splitContainer1.TabIndex = 3;
+			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			// 
+			// goodTypeDataGridViewTextBoxColumn
+			// 
+			this.goodTypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.goodTypeDataGridViewTextBoxColumn.DataPropertyName = "GoodType";
+			this.goodTypeDataGridViewTextBoxColumn.DataSource = this.goodTypeBindingSource;
+			this.goodTypeDataGridViewTextBoxColumn.HeaderText = "Тип";
+			this.goodTypeDataGridViewTextBoxColumn.Name = "goodTypeDataGridViewTextBoxColumn";
+			this.goodTypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.goodTypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.goodTypeDataGridViewTextBoxColumn.Width = 51;
+			// 
+			// goodTypeBindingSource
+			// 
+			this.goodTypeBindingSource.DataSource = typeof(CRM_MODEL.GoodType);
+			// 
+			// providerDataGridViewTextBoxColumn
+			// 
+			this.providerDataGridViewTextBoxColumn.DataPropertyName = "Provider";
+			this.providerDataGridViewTextBoxColumn.DataSource = this.providerBindingSource;
+			this.providerDataGridViewTextBoxColumn.HeaderText = "Поставщик";
+			this.providerDataGridViewTextBoxColumn.Name = "providerDataGridViewTextBoxColumn";
+			this.providerDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.providerDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.providerDataGridViewTextBoxColumn.Width = 90;
+			// 
+			// providerBindingSource
+			// 
+			this.providerBindingSource.DataSource = typeof(CRM_MODEL.Provider);
+			// 
+			// purchasePriceDataGridViewTextBoxColumn
+			// 
+			this.purchasePriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
+			dataGridViewCellStyle1.Format = "C2";
+			dataGridViewCellStyle1.NullValue = null;
+			this.purchasePriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+			this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Цена закуп.";
+			this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
+			this.purchasePriceDataGridViewTextBoxColumn.Width = 93;
+			// 
+			// currentSellingPriceDataGridViewTextBoxColumn
+			// 
+			this.currentSellingPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.currentSellingPriceDataGridViewTextBoxColumn.DataPropertyName = "CurrentSellingPrice";
+			dataGridViewCellStyle2.Format = "C2";
+			dataGridViewCellStyle2.NullValue = null;
+			this.currentSellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+			this.currentSellingPriceDataGridViewTextBoxColumn.HeaderText = "Цена прод.";
+			this.currentSellingPriceDataGridViewTextBoxColumn.Name = "currentSellingPriceDataGridViewTextBoxColumn";
+			this.currentSellingPriceDataGridViewTextBoxColumn.Width = 88;
+			// 
+			// profitDataGridViewTextBoxColumn
+			// 
+			this.profitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.profitDataGridViewTextBoxColumn.DataPropertyName = "Profit";
+			dataGridViewCellStyle3.Format = "C2";
+			dataGridViewCellStyle3.NullValue = null;
+			this.profitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+			this.profitDataGridViewTextBoxColumn.HeaderText = "Прибыль";
+			this.profitDataGridViewTextBoxColumn.Name = "profitDataGridViewTextBoxColumn";
+			this.profitDataGridViewTextBoxColumn.ReadOnly = true;
+			this.profitDataGridViewTextBoxColumn.Width = 78;
+			// 
+			// commentDataGridViewTextBoxColumn
+			// 
+			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+			this.commentDataGridViewTextBoxColumn.Width = 250;
+			// 
+			// goodBindingSource
+			// 
+			this.goodBindingSource.DataSource = typeof(CRM_MODEL.Good);
+			this.goodBindingSource.CurrentItemChanged += new System.EventHandler(this.goodBindingSource_CurrentItemChanged);
+			// 
+			// goodView1
+			// 
+			this.goodView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.goodView1.Location = new System.Drawing.Point(0, 0);
+			this.goodView1.Name = "goodView1";
+			this.goodView1.Size = new System.Drawing.Size(268, 349);
+			this.goodView1.TabIndex = 2;
+			// 
 			// GoodsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(493, 374);
+			this.ClientSize = new System.Drawing.Size(928, 374);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.bindingNavigator1);
 			this.Name = "GoodsForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Товары";
-			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+			this.bindingNavigator1.ResumeLayout(false);
+			this.bindingNavigator1.PerformLayout();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-			this.bindingNavigator1.ResumeLayout(false);
-			this.bindingNavigator1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -260,9 +359,6 @@
 
 		#endregion
 		private System.Windows.Forms.BindingSource goodBindingSource;
-		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.ListBox listBox1;
-		private Views.GoodView goodView1;
 		private System.Windows.Forms.BindingNavigator bindingNavigator1;
 		private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
 		private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -278,5 +374,17 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
 		private System.Windows.Forms.ToolStripButton сохранитьToolStripButton;
 		private CRMDBContextController crmdbContextController1;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.BindingSource goodTypeBindingSource;
+		private System.Windows.Forms.BindingSource providerBindingSource;
+		private Views.GoodView goodView1;
+		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+		private DataGridViewColumns.ExtendedComboBoxColumn goodTypeDataGridViewTextBoxColumn;
+		private DataGridViewColumns.ExtendedComboBoxColumn providerDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn currentSellingPriceDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn profitDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
 	}
 }

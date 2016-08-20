@@ -14,6 +14,8 @@ namespace CRM_VIEW
 {
 	public partial class CRMDBContextController : Component
 	{
+		[Browsable(false)]
+		[ReadOnly(true)]
 		public ContainerControl ContainerForm { get; set; }
 		public override ISite Site
 		{

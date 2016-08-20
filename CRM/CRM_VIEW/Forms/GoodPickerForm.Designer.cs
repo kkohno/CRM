@@ -28,8 +28,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
-			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.button3 = new System.Windows.Forms.Button();
 			this.ResetButton = new System.Windows.Forms.Button();
@@ -83,7 +81,6 @@
 			// 
 			// goodsBrowser1
 			// 
-			this.goodsBrowser1.Context = crmdbContext1;
 			this.goodsBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.goodsBrowser1.Location = new System.Drawing.Point(0, 0);
 			this.goodsBrowser1.Name = "goodsBrowser1";
@@ -95,7 +92,6 @@
 			// crmdbContextController1
 			// 
 			this.crmdbContextController1.ContainerForm = this;
-			this.crmdbContextController1.Context = crmdbContext2;
 			// 
 			// GoodPickerForm
 			// 

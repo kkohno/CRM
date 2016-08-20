@@ -25,7 +25,11 @@ namespace CRM_VIEW.Forms
 		{
 			InitializeComponent();
 			crmdbContextController1.Context.Goods.Load();
+			crmdbContextController1.Context.GoodTypes.Load();
+			crmdbContextController1.Context.Providers.Load();
+			goodTypeBindingSource.DataSource = crmdbContextController1.Context.GoodTypes.Local.ToBindingList();
 			goodBindingSource.DataSource = crmdbContextController1.Context.Goods.Local.ToBindingList();
+			providerBindingSource.DataSource = crmdbContextController1.Context.Providers.Local.ToBindingList();
 		}
 
 		private void сохранитьToolStripButton_Click(object sender, EventArgs e)

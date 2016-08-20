@@ -237,10 +237,6 @@
 			this.goodStorageItemView1.Size = new System.Drawing.Size(371, 237);
 			this.goodStorageItemView1.TabIndex = 0;
 			// 
-			// crmdbContextController1
-			// 
-			this.crmdbContextController1.ContainerForm = this;
-			// 
 			// StorageForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

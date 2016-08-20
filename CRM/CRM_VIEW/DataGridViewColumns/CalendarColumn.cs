@@ -40,22 +40,14 @@ namespace CRM_VIEW.DataGridViewColumns
 		public CalendarColumn()
 			: base()
 		{
-			// Use the short date format.
 			this.Style.Format = "d";
 		}
 
-		public override void InitializeEditingControl(int rowIndex, object
-			initialFormattedValue, DataGridViewCellStyle dataGridViewCellStyle)
+		public override void InitializeEditingControl(int rowIndex, object initialFormattedValue, DataGridViewCellStyle dataGridViewCellStyle)
 		{
-			// Set the value of the editing control to the current cell value.
-			base.InitializeEditingControl(rowIndex, initialFormattedValue,
-				dataGridViewCellStyle);
-			CalendarEditingControl ctl =
-				DataGridView.EditingControl as CalendarEditingControl;
-			// Use the default row value when Value property is null.
-			if (this.Value == null) {
-				ctl.NValue = (DateTime?)this.DefaultNewRowValue;
-			}
+			base.InitializeEditingControl(rowIndex, initialFormattedValue, dataGridViewCellStyle);
+			CalendarEditingControl ctl = DataGridView.EditingControl as CalendarEditingControl;
+			if (this.Value == null) ctl.NValue = (DateTime?)this.DefaultNewRowValue;
 			else {
 				try {
 					ctl.NValue = (DateTime)this.Value;

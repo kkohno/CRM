@@ -29,7 +29,6 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesForm));
-			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.saleBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -89,7 +88,7 @@
 			this.saleBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
 			this.saleBindingNavigator.Name = "saleBindingNavigator";
 			this.saleBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-			this.saleBindingNavigator.Size = new System.Drawing.Size(639, 25);
+			this.saleBindingNavigator.Size = new System.Drawing.Size(774, 25);
 			this.saleBindingNavigator.TabIndex = 0;
 			this.saleBindingNavigator.Text = "bindingNavigator1";
 			// 
@@ -194,23 +193,20 @@
 			this.saleListBox.FormattingEnabled = true;
 			this.saleListBox.Location = new System.Drawing.Point(0, 0);
 			this.saleListBox.Name = "saleListBox";
-			this.saleListBox.Size = new System.Drawing.Size(213, 445);
+			this.saleListBox.Size = new System.Drawing.Size(258, 445);
 			this.saleListBox.TabIndex = 1;
 			// 
 			// saleView1
 			// 
-			this.saleView1.Context = crmdbContext1;
-			this.saleView1.ContextController = this.crmdbContextController1;
 			this.saleView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.saleView1.Location = new System.Drawing.Point(0, 0);
 			this.saleView1.Name = "saleView1";
-			this.saleView1.Sale = ((CRM_MODEL.Sale)(resources.GetObject("saleView1.Sale")));
-			this.saleView1.Size = new System.Drawing.Size(422, 445);
+			this.saleView1.Size = new System.Drawing.Size(512, 445);
 			this.saleView1.TabIndex = 2;
 			// 
 			// crmdbContextController1
 			// 
-			this.crmdbContextController1.Context = crmdbContext1;
+			this.crmdbContextController1.ContainerForm = this;
 			// 
 			// splitContainer1
 			// 
@@ -225,15 +221,15 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.saleView1);
-			this.splitContainer1.Size = new System.Drawing.Size(639, 445);
-			this.splitContainer1.SplitterDistance = 213;
+			this.splitContainer1.Size = new System.Drawing.Size(774, 445);
+			this.splitContainer1.SplitterDistance = 258;
 			this.splitContainer1.TabIndex = 3;
 			// 
 			// SalesForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(639, 470);
+			this.ClientSize = new System.Drawing.Size(774, 470);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.saleBindingNavigator);
 			this.Name = "SalesForm";

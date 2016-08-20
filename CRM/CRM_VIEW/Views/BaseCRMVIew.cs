@@ -16,6 +16,7 @@ namespace CRM_VIEW.Views
 		/// <summary>
 		/// контекст базы данных
 		/// </summary>
+		[ReadOnly(true)]
 		[Browsable(false)]
 		public CRMDBContext Context
 		{

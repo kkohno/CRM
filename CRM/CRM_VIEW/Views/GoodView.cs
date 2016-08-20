@@ -16,6 +16,7 @@ namespace CRM_VIEW.Views
 	[DefaultValue("Good")]
 	public partial class GoodView : BaseCRMVIew
 	{
+		[ReadOnly(true)]
 		[Browsable(false)]
 		public Good Good
 		{

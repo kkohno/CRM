@@ -36,6 +36,17 @@ namespace CRM_MODEL
 		/// </summary>
 		public double CurrentSellingPrice { get; set; }
 		/// <summary>
+		/// показывает прибыль с продажи одной штуки
+		/// </summary>
+		public double? Profit
+		{
+			get
+			{
+				if (PurchasePrice == 0 || CurrentSellingPrice == 0) return null;
+				return CurrentSellingPrice - PurchasePrice;
+			}
+		}
+		/// <summary>
 		/// комментарий к товару
 		/// </summary>
 		public string Comment { get; set; }
