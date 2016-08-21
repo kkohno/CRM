@@ -101,6 +101,7 @@
 			this.Name = "GoodPickerForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Выберите товар";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.flowLayoutPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 

@@ -14,6 +14,8 @@ namespace CRM_VIEW.Forms
 {
 	public partial class StorageForm : Form
 	{
+		object buf;
+		Type bufType;
 		private bool needLoadAllGoods = true;
 		public void LoadAllGoods()
 		{
@@ -64,6 +66,21 @@ namespace CRM_VIEW.Forms
 					}
 					else goodStorageItemBindingSource.RemoveCurrent();
 				});
+		}
+
+		private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (dataGridView1.CurrentCell.IsInEditMode) return;
+			if (e.KeyData == (Keys.Control | Keys.C)) {
+				buf = dataGridView1.CurrentCell.Value;
+				bufType = dataGridView1.CurrentCell.ValueType;
+				return;
+			}
+			if (e.KeyData == (Keys.Control | Keys.V)) {
+				if (bufType == dataGridView1.CurrentCell.ValueType)
+					dataGridView1.CurrentCell.Value = buf;
+				return;
+			}
 		}
 	}
 }
