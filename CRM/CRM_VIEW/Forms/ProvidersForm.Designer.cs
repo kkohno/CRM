@@ -29,8 +29,6 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProvidersForm));
-			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
-			CRM_MODEL.CRMDBContext crmdbContext2 = new CRM_MODEL.CRMDBContext();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
 			this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,9 +45,11 @@
 			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.listBox1 = new System.Windows.Forms.ListBox();
-			this.providerView1 = new CRM_VIEW.Views.ProviderView();
+			this.extendedDataGridView1 = new CRM_VIEW.DataGridViewColumns.ExtendedDataGridView();
+			this.providerLists1 = new CRM_VIEW.Views.ProviderLists();
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
+			this.nameDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
+			this.commentDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
 			this.bindingNavigator1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
@@ -57,6 +57,7 @@
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.extendedDataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// bindingNavigator1
@@ -87,7 +88,7 @@
 			this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
 			this.bindingNavigator1.Name = "bindingNavigator1";
 			this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-			this.bindingNavigator1.Size = new System.Drawing.Size(455, 25);
+			this.bindingNavigator1.Size = new System.Drawing.Size(726, 25);
 			this.bindingNavigator1.TabIndex = 0;
 			this.bindingNavigator1.Text = "bindingNavigator1";
 			// 
@@ -204,43 +205,62 @@
 			// 
 			// splitContainer1.Panel1
 			// 
-			this.splitContainer1.Panel1.Controls.Add(this.listBox1);
+			this.splitContainer1.Panel1.Controls.Add(this.extendedDataGridView1);
 			// 
 			// splitContainer1.Panel2
 			// 
-			this.splitContainer1.Panel2.Controls.Add(this.providerView1);
-			this.splitContainer1.Size = new System.Drawing.Size(455, 237);
-			this.splitContainer1.SplitterDistance = 151;
+			this.splitContainer1.Panel2.Controls.Add(this.providerLists1);
+			this.splitContainer1.Size = new System.Drawing.Size(726, 378);
+			this.splitContainer1.SplitterDistance = 337;
 			this.splitContainer1.TabIndex = 1;
 			// 
-			// listBox1
+			// extendedDataGridView1
 			// 
-			this.listBox1.DataSource = this.providerBindingSource;
-			this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(0, 0);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(151, 237);
-			this.listBox1.TabIndex = 0;
+			this.extendedDataGridView1.AllowUserToAddRows = false;
+			this.extendedDataGridView1.AutoGenerateColumns = false;
+			this.extendedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.extendedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.commentDataGridViewTextBoxColumn});
+			this.extendedDataGridView1.DataSource = this.providerBindingSource;
+			this.extendedDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.extendedDataGridView1.Location = new System.Drawing.Point(0, 0);
+			this.extendedDataGridView1.Name = "extendedDataGridView1";
+			this.extendedDataGridView1.ReadonlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.extendedDataGridView1.Size = new System.Drawing.Size(337, 378);
+			this.extendedDataGridView1.TabIndex = 0;
 			// 
-			// providerView1
+			// providerLists1
 			// 
-			this.providerView1.Context = crmdbContext1;
-			this.providerView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.providerView1.Location = new System.Drawing.Point(0, 0);
-			this.providerView1.Name = "providerView1";
-			this.providerView1.Size = new System.Drawing.Size(300, 237);
-			this.providerView1.TabIndex = 0;
+			this.providerLists1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.providerLists1.Location = new System.Drawing.Point(0, 0);
+			this.providerLists1.Name = "providerLists1";
+			this.providerLists1.Size = new System.Drawing.Size(385, 378);
+			this.providerLists1.TabIndex = 0;
 			// 
-			// crmdbContextController1
+			// nameDataGridViewTextBoxColumn
 			// 
-			this.crmdbContextController1.Context = crmdbContext2;
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Поставщик";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.nameDataGridViewTextBoxColumn.Width = 200;
+			// 
+			// commentDataGridViewTextBoxColumn
+			// 
+			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+			this.commentDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.commentDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.commentDataGridViewTextBoxColumn.Width = 200;
 			// 
 			// ProvidersForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(455, 262);
+			this.ClientSize = new System.Drawing.Size(726, 403);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.bindingNavigator1);
 			this.Name = "ProvidersForm";
@@ -254,6 +274,7 @@
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.extendedDataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -276,9 +297,11 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
 		private System.Windows.Forms.ToolStripButton сохранитьToolStripButton;
 		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.BindingSource providerBindingSource;
-		private Views.ProviderView providerView1;
 		private CRMDBContextController crmdbContextController1;
+		private DataGridViewColumns.ExtendedDataGridView extendedDataGridView1;
+		private Views.ProviderLists providerLists1;
+		private DataGridViewColumns.ExtendedTextBoxColumn nameDataGridViewTextBoxColumn;
+		private DataGridViewColumns.ExtendedTextBoxColumn commentDataGridViewTextBoxColumn;
 	}
 }

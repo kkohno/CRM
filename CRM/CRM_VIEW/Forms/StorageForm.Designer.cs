@@ -44,6 +44,7 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.goodStorageItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -56,9 +57,8 @@
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
-			this.dataGridView1 = new DataGridViewColumns.ExtendedDataGridView();
+			this.dataGridView1 = new CRM_VIEW.DataGridViewColumns.ExtendedDataGridView();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.goodStorageItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewCalendarColumn1 = new CRM_VIEW.DataGridViewColumns.DataGridViewCalendarColumn();
@@ -73,7 +73,6 @@
 			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.goodTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.providerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.receivingDateDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.DataGridViewCalendarColumn();
@@ -86,8 +85,8 @@
 			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
 			this.bindingNavigator1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// bindingNavigator1
@@ -131,6 +130,11 @@
 			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorAddNewItem.Text = "Добавить";
 			this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+			// 
+			// goodStorageItemBindingSource
+			// 
+			this.goodStorageItemBindingSource.DataSource = typeof(CRM_MODEL.GoodStorageItem);
+			this.goodStorageItemBindingSource.CurrentChanged += new System.EventHandler(this.goodStorageItemBindingSource_CurrentChanged);
 			// 
 			// bindingNavigatorCountItem
 			// 
@@ -231,7 +235,6 @@
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
-            this.Count,
             this.goodTypeDataGridViewTextBoxColumn,
             this.providerDataGridViewTextBoxColumn,
             this.receivingDateDataGridViewTextBoxColumn,
@@ -246,6 +249,7 @@
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(0, 25);
 			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadonlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.dataGridView1.Size = new System.Drawing.Size(995, 359);
 			this.dataGridView1.TabIndex = 3;
 			this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
@@ -256,11 +260,6 @@
 			this.dataGridViewTextBoxColumn1.HeaderText = "Количество";
 			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			this.dataGridViewTextBoxColumn1.ReadOnly = true;
-			// 
-			// goodStorageItemBindingSource
-			// 
-			this.goodStorageItemBindingSource.DataSource = typeof(CRM_MODEL.GoodStorageItem);
-			this.goodStorageItemBindingSource.CurrentChanged += new System.EventHandler(this.goodStorageItemBindingSource_CurrentChanged);
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
@@ -368,13 +367,6 @@
 			this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
 			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
 			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// Count
-			// 
-			this.Count.DataPropertyName = "Count";
-			this.Count.HeaderText = "Count";
-			this.Count.Name = "Count";
-			this.Count.ReadOnly = true;
 			// 
 			// goodTypeDataGridViewTextBoxColumn
 			// 
@@ -486,8 +478,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
 			this.bindingNavigator1.ResumeLayout(false);
 			this.bindingNavigator1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -526,7 +518,6 @@
 		private DataGridViewColumns.DataGridViewCalendarColumn dataGridViewCalendarColumn1;
 		private DataGridViewColumns.DataGridViewCalendarColumn dataGridViewCalendarColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Count;
 		private System.Windows.Forms.DataGridViewTextBoxColumn goodTypeDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn providerDataGridViewTextBoxColumn;
 		private DataGridViewColumns.DataGridViewCalendarColumn receivingDateDataGridViewTextBoxColumn;

@@ -29,6 +29,11 @@ namespace CRM_VIEW.DataGridViewColumns
 				base.CellTemplate = value;
 			}
 		}
+
+		public override string ToString()
+		{
+			return base.ToString();
+		}
 	}
 
 	public class ExtendedDataGridViewTextBoxCell : DataGridViewTextBoxCell

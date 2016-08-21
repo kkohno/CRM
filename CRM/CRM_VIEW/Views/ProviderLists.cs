@@ -13,7 +13,7 @@ namespace CRM_VIEW.Views
 {
 	[DefaultBindingProperty("Provider")]
 	[DefaultValue("Provider")]
-	public partial class ProviderView : BaseCRMVIew
+	public partial class ProviderLists : UserControl
 	{
 		[DefaultValue(null)]
 		[Browsable(false)]
@@ -33,10 +33,9 @@ namespace CRM_VIEW.Views
 			}
 		}
 
-		public ProviderView()
+		public ProviderLists()
 		{
 			InitializeComponent();
-			Provider = new Provider();
 		}
 	}
 }

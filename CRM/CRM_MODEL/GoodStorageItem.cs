@@ -22,7 +22,7 @@ namespace CRM_MODEL
 		/// <summary>
 		/// количество товара на складе
 		/// </summary>
-		public int Count { get; set; }
+		public int? Count { get; set; }
 		/// <summary>
 		/// почем была куплена единица товара
 		/// </summary>

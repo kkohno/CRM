@@ -83,24 +83,6 @@ namespace CRM_VIEW.Forms
 			Close();
 		}
 
-		private void listBox1_DoubleClick(object sender, EventArgs e)
-		{
-			var gsi = storageBindingSource.Current as GoodStorageItem;
-			if (gsi == null) return;
-			invStorageItems.Add(gsi);
-			sales.Add(new SaleVisualItem {
-				Sale = new Sale {
-					Good = gsi.Good,
-					Date = DateTime.Now,
-					Count = 1,
-					SellingPrice = gsi.Good.CurrentSellingPrice??0
-				},
-				GoodStorageItem = gsi
-			});
-			storage.Remove(gsi);
-			RecalculateAll();
-        }
-
 		private void button1_Click(object sender, EventArgs e)
 		{
 
@@ -111,7 +93,11 @@ namespace CRM_VIEW.Forms
 				return;
 			}
 			// добавляем продажи
-			foreach (var saleView in sales) Context.Sales.Add(saleView.Sale);
+			foreach (var saleView in sales) {
+				var sale = saleView.Sale;
+				sale.PurchasePrice = saleView.GoodStorageItem.PurchasePrice;
+				Context.Sales.Add(sale);
+			}
 
 			// отнимаем склад
 			foreach (var gsi in invStorageItems) {
@@ -151,6 +137,24 @@ namespace CRM_VIEW.Forms
 				else if (!char.IsDigit(e.KeyChar))
 					e.Handled = true;
 			}
+		}
+
+		private void extendedDataGridView1_DoubleClick(object sender, EventArgs e)
+		{
+			var gsi = storageBindingSource.Current as GoodStorageItem;
+			if (gsi == null) return;
+			invStorageItems.Add(gsi);
+			sales.Add(new SaleVisualItem {
+				Sale = new Sale {
+					Good = gsi.Good,
+					Date = DateTime.Now,
+					Count = 1,
+					SellingPrice = gsi.Good.CurrentSellingPrice ?? 0
+				},
+				GoodStorageItem = gsi
+			});
+			storage.Remove(gsi);
+			RecalculateAll();
 		}
 	}
 }

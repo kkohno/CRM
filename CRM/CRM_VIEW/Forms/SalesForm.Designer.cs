@@ -29,7 +29,14 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesForm));
-			this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.saleBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -43,23 +50,27 @@
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.saleBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-			this.saleListBox = new System.Windows.Forms.ListBox();
-			this.saleView1 = new CRM_VIEW.Views.SaleView();
+			this.personsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.extendedDataGridView1 = new CRM_VIEW.DataGridViewColumns.ExtendedDataGridView();
+			this.nameDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedComboBoxColumn();
+			this.goodTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.providerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.goodCommentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.countDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
+			this.dateDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.DataGridViewCalendarColumn();
+			this.purchasePriceDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
+			this.sellingPriceDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
+			this.profitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.koefDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Person = new CRM_VIEW.DataGridViewColumns.ExtendedComboBoxColumn();
+			this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
-			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.saleBindingNavigator)).BeginInit();
 			this.saleBindingNavigator.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-			this.splitContainer1.Panel1.SuspendLayout();
-			this.splitContainer1.Panel2.SuspendLayout();
-			this.splitContainer1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.personsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.extendedDataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// saleBindingSource
-			// 
-			this.saleBindingSource.DataSource = typeof(CRM_MODEL.Sale);
-			this.saleBindingSource.CurrentItemChanged += new System.EventHandler(this.saleBindingSource_CurrentItemChanged);
 			// 
 			// saleBindingNavigator
 			// 
@@ -88,7 +99,7 @@
 			this.saleBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
 			this.saleBindingNavigator.Name = "saleBindingNavigator";
 			this.saleBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-			this.saleBindingNavigator.Size = new System.Drawing.Size(774, 25);
+			this.saleBindingNavigator.Size = new System.Drawing.Size(982, 25);
 			this.saleBindingNavigator.TabIndex = 0;
 			this.saleBindingNavigator.Text = "bindingNavigator1";
 			// 
@@ -100,6 +111,7 @@
 			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
 			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorAddNewItem.Text = "Добавить";
+			this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
 			// 
 			// bindingNavigatorCountItem
 			// 
@@ -186,63 +198,172 @@
 			this.saleBindingNavigatorSaveItem.Text = "Сохранить данные";
 			this.saleBindingNavigatorSaveItem.Click += new System.EventHandler(this.saleBindingNavigatorSaveItem_Click);
 			// 
-			// saleListBox
+			// extendedDataGridView1
 			// 
-			this.saleListBox.DataSource = this.saleBindingSource;
-			this.saleListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.saleListBox.FormattingEnabled = true;
-			this.saleListBox.Location = new System.Drawing.Point(0, 0);
-			this.saleListBox.Name = "saleListBox";
-			this.saleListBox.Size = new System.Drawing.Size(258, 445);
-			this.saleListBox.TabIndex = 1;
+			this.extendedDataGridView1.AllowUserToAddRows = false;
+			this.extendedDataGridView1.AutoGenerateColumns = false;
+			this.extendedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.extendedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.goodTypeDataGridViewTextBoxColumn,
+            this.providerDataGridViewTextBoxColumn,
+            this.goodCommentDataGridViewTextBoxColumn,
+            this.countDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.purchasePriceDataGridViewTextBoxColumn,
+            this.sellingPriceDataGridViewTextBoxColumn,
+            this.profitDataGridViewTextBoxColumn,
+            this.koefDataGridViewTextBoxColumn,
+            this.Person});
+			this.extendedDataGridView1.DataSource = this.saleBindingSource;
+			this.extendedDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.extendedDataGridView1.Location = new System.Drawing.Point(0, 25);
+			this.extendedDataGridView1.Name = "extendedDataGridView1";
+			this.extendedDataGridView1.ReadonlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.extendedDataGridView1.Size = new System.Drawing.Size(982, 445);
+			this.extendedDataGridView1.TabIndex = 1;
 			// 
-			// saleView1
+			// nameDataGridViewTextBoxColumn
 			// 
-			this.saleView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.saleView1.Location = new System.Drawing.Point(0, 0);
-			this.saleView1.Name = "saleView1";
-			this.saleView1.Size = new System.Drawing.Size(512, 445);
-			this.saleView1.TabIndex = 2;
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Товар";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+			this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.nameDataGridViewTextBoxColumn.Width = 200;
 			// 
-			// crmdbContextController1
+			// goodTypeDataGridViewTextBoxColumn
 			// 
-			this.crmdbContextController1.ContainerForm = this;
+			this.goodTypeDataGridViewTextBoxColumn.DataPropertyName = "GoodType";
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.goodTypeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+			this.goodTypeDataGridViewTextBoxColumn.HeaderText = "Тип товара";
+			this.goodTypeDataGridViewTextBoxColumn.Name = "goodTypeDataGridViewTextBoxColumn";
+			this.goodTypeDataGridViewTextBoxColumn.ReadOnly = true;
+			this.goodTypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.goodTypeDataGridViewTextBoxColumn.Width = 200;
 			// 
-			// splitContainer1
+			// providerDataGridViewTextBoxColumn
 			// 
-			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer1.Location = new System.Drawing.Point(0, 25);
-			this.splitContainer1.Name = "splitContainer1";
+			this.providerDataGridViewTextBoxColumn.DataPropertyName = "Provider";
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.providerDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+			this.providerDataGridViewTextBoxColumn.HeaderText = "Поставщик";
+			this.providerDataGridViewTextBoxColumn.Name = "providerDataGridViewTextBoxColumn";
+			this.providerDataGridViewTextBoxColumn.ReadOnly = true;
+			this.providerDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.providerDataGridViewTextBoxColumn.Width = 200;
 			// 
-			// splitContainer1.Panel1
+			// goodCommentDataGridViewTextBoxColumn
 			// 
-			this.splitContainer1.Panel1.Controls.Add(this.saleListBox);
+			this.goodCommentDataGridViewTextBoxColumn.DataPropertyName = "GoodComment";
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.goodCommentDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+			this.goodCommentDataGridViewTextBoxColumn.HeaderText = "Описание товара";
+			this.goodCommentDataGridViewTextBoxColumn.Name = "goodCommentDataGridViewTextBoxColumn";
+			this.goodCommentDataGridViewTextBoxColumn.ReadOnly = true;
+			this.goodCommentDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.goodCommentDataGridViewTextBoxColumn.Width = 200;
 			// 
-			// splitContainer1.Panel2
+			// countDataGridViewTextBoxColumn
 			// 
-			this.splitContainer1.Panel2.Controls.Add(this.saleView1);
-			this.splitContainer1.Size = new System.Drawing.Size(774, 445);
-			this.splitContainer1.SplitterDistance = 258;
-			this.splitContainer1.TabIndex = 3;
+			this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+			this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
+			this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+			this.countDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.countDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			// 
+			// dateDataGridViewTextBoxColumn
+			// 
+			this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+			this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
+			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+			this.dateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.dateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			// 
+			// purchasePriceDataGridViewTextBoxColumn
+			// 
+			this.purchasePriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
+			dataGridViewCellStyle5.Format = "C2";
+			this.purchasePriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+			this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Цена закуп.";
+			this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
+			this.purchasePriceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.purchasePriceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.purchasePriceDataGridViewTextBoxColumn.Width = 86;
+			// 
+			// sellingPriceDataGridViewTextBoxColumn
+			// 
+			this.sellingPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
+			dataGridViewCellStyle6.Format = "C2";
+			this.sellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+			this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "Цена прод.";
+			this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
+			this.sellingPriceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.sellingPriceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.sellingPriceDataGridViewTextBoxColumn.Width = 81;
+			// 
+			// profitDataGridViewTextBoxColumn
+			// 
+			this.profitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.profitDataGridViewTextBoxColumn.DataPropertyName = "Profit";
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle7.Format = "C2";
+			this.profitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+			this.profitDataGridViewTextBoxColumn.HeaderText = "Прибыль";
+			this.profitDataGridViewTextBoxColumn.Name = "profitDataGridViewTextBoxColumn";
+			this.profitDataGridViewTextBoxColumn.ReadOnly = true;
+			this.profitDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.profitDataGridViewTextBoxColumn.Width = 78;
+			// 
+			// koefDataGridViewTextBoxColumn
+			// 
+			this.koefDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.koefDataGridViewTextBoxColumn.DataPropertyName = "Koef";
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle8.Format = "N2";
+			dataGridViewCellStyle8.NullValue = null;
+			this.koefDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+			this.koefDataGridViewTextBoxColumn.HeaderText = "k";
+			this.koefDataGridViewTextBoxColumn.Name = "koefDataGridViewTextBoxColumn";
+			this.koefDataGridViewTextBoxColumn.ReadOnly = true;
+			this.koefDataGridViewTextBoxColumn.Width = 38;
+			// 
+			// Person
+			// 
+			this.Person.DataPropertyName = "Person";
+			this.Person.DataSource = this.personsBindingSource;
+			this.Person.HeaderText = "Продавец";
+			this.Person.Name = "Person";
+			this.Person.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.Person.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			// 
+			// saleBindingSource
+			// 
+			this.saleBindingSource.DataSource = typeof(CRM_MODEL.Sale);
+			this.saleBindingSource.CurrentItemChanged += new System.EventHandler(this.saleBindingSource_CurrentItemChanged);
 			// 
 			// SalesForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(774, 470);
-			this.Controls.Add(this.splitContainer1);
+			this.ClientSize = new System.Drawing.Size(982, 470);
+			this.Controls.Add(this.extendedDataGridView1);
 			this.Controls.Add(this.saleBindingNavigator);
 			this.Name = "SalesForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Продажи";
-			((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.saleBindingNavigator)).EndInit();
 			this.saleBindingNavigator.ResumeLayout(false);
 			this.saleBindingNavigator.PerformLayout();
-			this.splitContainer1.Panel1.ResumeLayout(false);
-			this.splitContainer1.Panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-			this.splitContainer1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.personsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.extendedDataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -264,9 +385,19 @@
 		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
 		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
 		private System.Windows.Forms.ToolStripButton saleBindingNavigatorSaveItem;
-		private System.Windows.Forms.ListBox saleListBox;
-		private Views.SaleView saleView1;
-		private System.Windows.Forms.SplitContainer splitContainer1;
 		private CRMDBContextController crmdbContextController1;
+		private DataGridViewColumns.ExtendedDataGridView extendedDataGridView1;
+		private System.Windows.Forms.BindingSource personsBindingSource;
+		private DataGridViewColumns.ExtendedComboBoxColumn nameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn goodTypeDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn providerDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn goodCommentDataGridViewTextBoxColumn;
+		private DataGridViewColumns.ExtendedTextBoxColumn countDataGridViewTextBoxColumn;
+		private DataGridViewColumns.DataGridViewCalendarColumn dateDataGridViewTextBoxColumn;
+		private DataGridViewColumns.ExtendedTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
+		private DataGridViewColumns.ExtendedTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn profitDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn koefDataGridViewTextBoxColumn;
+		private DataGridViewColumns.ExtendedComboBoxColumn Person;
 	}
 }

@@ -167,6 +167,7 @@
     <Compile Include="Forms\RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaleVisualItem.cs" />
     <Compile Include="Views\BaseCRMVIew.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,6 +210,12 @@
     <Compile Include="Views\PersonView.Designer.cs">
       <DependentUpon>PersonView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProviderLists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ProviderLists.Designer.cs">
+      <DependentUpon>ProviderLists.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProviderView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,7 +235,6 @@
       <DependentUpon>UserView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewUtils.cs" />
-    <Compile Include="VisualModel\SaleVisualItem.cs" />
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +308,9 @@
     <EmbeddedResource Include="Views\PersonView.resx">
       <DependentUpon>PersonView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProviderLists.resx">
+      <DependentUpon>ProviderLists.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ProviderView.resx">
       <DependentUpon>ProviderView.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,7 +354,9 @@
       <Name>CRM_MODEL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

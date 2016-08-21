@@ -29,8 +29,9 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoodTypesForm));
-			CRM_MODEL.CRMDBContext crmdbContext1 = new CRM_MODEL.CRMDBContext();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.goodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -45,22 +46,17 @@
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.goodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.crmController1 = new CRM_VIEW.CRMController(this.components);
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
 			this.bindingNavigator1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// goodTypeBindingSource
-			// 
-			this.goodTypeBindingSource.DataSource = typeof(CRM_MODEL.GoodType);
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.AutoGenerateColumns = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -71,6 +67,17 @@
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(403, 249);
 			this.dataGridView1.TabIndex = 0;
+			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Тип товара";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.Width = 350;
+			// 
+			// goodTypeBindingSource
+			// 
+			this.goodTypeBindingSource.DataSource = typeof(CRM_MODEL.GoodType);
 			// 
 			// bindingNavigator1
 			// 
@@ -204,21 +211,9 @@
 			this.сохранитьToolStripButton.Text = "&Сохранить";
 			this.сохранитьToolStripButton.Click += new System.EventHandler(this.сохранитьToolStripButton_Click);
 			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "Тип товара";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			this.nameDataGridViewTextBoxColumn.Width = 350;
-			// 
 			// crmController1
 			// 
 			this.crmController1.User = null;
-			// 
-			// crmdbContextController1
-			// 
-			this.crmdbContextController1.ContainerForm = this;
-			this.crmdbContextController1.Context = crmdbContext1;
 			// 
 			// GoodTypesForm
 			// 
@@ -231,10 +226,10 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Типы товаров";
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
 			this.bindingNavigator1.ResumeLayout(false);
 			this.bindingNavigator1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.goodTypeBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

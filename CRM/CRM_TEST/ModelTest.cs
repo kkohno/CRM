@@ -99,7 +99,7 @@ namespace CRM_TEST
 					Date = DateTime.Today,
 					Good = good,
 					SellingPrice = good.CurrentSellingPrice??0,
-					User = user
+					Person = user.Person
 				};
 				var lp = new LoginPass {
 					Login = "AddGood login",

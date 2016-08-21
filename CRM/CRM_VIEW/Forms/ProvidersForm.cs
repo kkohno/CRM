@@ -39,7 +39,7 @@ namespace CRM_VIEW.Forms
 
 		private void providerBindingSource_CurrentItemChanged(object sender, EventArgs e)
 		{
-			providerView1.Provider = providerBindingSource.Current as Provider;
+			providerLists1.Provider = providerBindingSource.Current as Provider;
 		}
 
 		private void сохранитьToolStripButton_Click(object sender, EventArgs e)
