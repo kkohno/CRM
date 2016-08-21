@@ -69,6 +69,9 @@
       <DependentUpon>CRMDBContextController.cs</DependentUpon>
     </Compile>
     <Compile Include="DataGridViewColumns\CalendarColumn.cs" />
+    <Compile Include="DataGridViewColumns\ExtendedDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataGridViewColumns\ExtendedTextBoxColumn.cs" />
     <Compile Include="DataGridViewColumns\ExtendedComboBoxColumn.cs" />
     <Compile Include="Extensions\ExtBindingList.cs" />

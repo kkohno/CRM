@@ -30,6 +30,7 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoodsForm));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,20 +51,21 @@
 			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridView1 = new CRM_VIEW.DataGridViewColumns.ExtendedDataGridView();
 			this.goodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.goodListsView1 = new CRM_VIEW.Views.GoodListsView();
+			this.extendedTextBoxColumn1 = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
+			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
 			this.nameDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
 			this.goodTypeDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedComboBoxColumn();
 			this.providerDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedComboBoxColumn();
 			this.purchasePriceDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
 			this.currentSellingPriceDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
-			this.profitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Koef = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.profitDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
+			this.Koef = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
 			this.commentDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
 			this.bindingNavigator1.SuspendLayout();
@@ -246,22 +248,11 @@
 			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
 			this.dataGridView1.MultiSelect = false;
 			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadonlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
 			this.dataGridView1.Size = new System.Drawing.Size(656, 349);
 			this.dataGridView1.TabIndex = 1;
 			this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewTextBoxColumn1.DataPropertyName = "Koef";
-			dataGridViewCellStyle6.Format = "N2";
-			dataGridViewCellStyle6.NullValue = null;
-			this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
-			this.dataGridViewTextBoxColumn1.HeaderText = "k";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.ReadOnly = true;
-			this.dataGridViewTextBoxColumn1.Width = 38;
 			// 
 			// goodTypeBindingSource
 			// 
@@ -283,6 +274,30 @@
 			this.goodListsView1.Name = "goodListsView1";
 			this.goodListsView1.Size = new System.Drawing.Size(268, 349);
 			this.goodListsView1.TabIndex = 0;
+			// 
+			// extendedTextBoxColumn1
+			// 
+			this.extendedTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.extendedTextBoxColumn1.DataPropertyName = "Koef";
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle6.Format = "N2";
+			this.extendedTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+			this.extendedTextBoxColumn1.HeaderText = "k";
+			this.extendedTextBoxColumn1.Name = "extendedTextBoxColumn1";
+			this.extendedTextBoxColumn1.ReadOnly = true;
+			this.extendedTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.extendedTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.dataGridViewTextBoxColumn1.DataPropertyName = "Koef";
+			dataGridViewCellStyle7.Format = "N2";
+			dataGridViewCellStyle7.NullValue = null;
+			this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+			this.dataGridViewTextBoxColumn1.HeaderText = "k";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
 			// 
 			// nameDataGridViewTextBoxColumn
 			// 
@@ -345,24 +360,28 @@
 			// 
 			this.profitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
 			this.profitDataGridViewTextBoxColumn.DataPropertyName = "Profit";
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			dataGridViewCellStyle4.Format = "C2";
-			dataGridViewCellStyle4.NullValue = null;
 			this.profitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
 			this.profitDataGridViewTextBoxColumn.HeaderText = "Прибыль";
 			this.profitDataGridViewTextBoxColumn.Name = "profitDataGridViewTextBoxColumn";
 			this.profitDataGridViewTextBoxColumn.ReadOnly = true;
+			this.profitDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.profitDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
 			this.profitDataGridViewTextBoxColumn.Width = 78;
 			// 
 			// Koef
 			// 
 			this.Koef.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
 			this.Koef.DataPropertyName = "Koef";
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			dataGridViewCellStyle5.Format = "N2";
-			dataGridViewCellStyle5.NullValue = null;
 			this.Koef.DefaultCellStyle = dataGridViewCellStyle5;
 			this.Koef.HeaderText = "k";
 			this.Koef.Name = "Koef";
 			this.Koef.ReadOnly = true;
+			this.Koef.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.Koef.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
 			this.Koef.Width = 38;
 			// 
 			// commentDataGridViewTextBoxColumn
@@ -417,19 +436,20 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
 		private System.Windows.Forms.ToolStripButton сохранитьToolStripButton;
 		private CRMDBContextController crmdbContextController1;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private DataGridViewColumns.ExtendedDataGridView dataGridView1;
 		private System.Windows.Forms.BindingSource goodTypeBindingSource;
 		private System.Windows.Forms.BindingSource providerBindingSource;
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private Views.GoodListsView goodListsView1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private DataGridViewColumns.ExtendedTextBoxColumn extendedTextBoxColumn1;
 		private DataGridViewColumns.ExtendedTextBoxColumn nameDataGridViewTextBoxColumn;
 		private DataGridViewColumns.ExtendedComboBoxColumn goodTypeDataGridViewTextBoxColumn;
 		private DataGridViewColumns.ExtendedComboBoxColumn providerDataGridViewTextBoxColumn;
 		private DataGridViewColumns.ExtendedTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
 		private DataGridViewColumns.ExtendedTextBoxColumn currentSellingPriceDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn profitDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Koef;
+		private DataGridViewColumns.ExtendedTextBoxColumn profitDataGridViewTextBoxColumn;
+		private DataGridViewColumns.ExtendedTextBoxColumn Koef;
 		private DataGridViewColumns.ExtendedTextBoxColumn commentDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 	}
 }

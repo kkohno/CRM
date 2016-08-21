@@ -29,6 +29,11 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StorageForm));
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,14 +42,8 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-			this.goodStorageItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -57,19 +56,9 @@
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
 			this.сохранитьToolStripButton = new System.Windows.Forms.ToolStripButton();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.goodTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.providerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.receivingDateDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.DataGridViewCalendarColumn();
-			this.shelfLifeDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.DataGridViewCalendarColumn();
-			this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.purchasePriceDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
-			this.currentSellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.profitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.koefDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridView1 = new DataGridViewColumns.ExtendedDataGridView();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.goodStorageItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewCalendarColumn1 = new CRM_VIEW.DataGridViewColumns.DataGridViewCalendarColumn();
@@ -83,10 +72,22 @@
 			this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.crmdbContextController1 = new CRM_VIEW.CRMDBContextController(this.components);
+			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.goodTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.providerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.receivingDateDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.DataGridViewCalendarColumn();
+			this.shelfLifeDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.DataGridViewCalendarColumn();
+			this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.purchasePriceDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
+			this.currentSellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.profitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.koefDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedTextBoxColumn();
+			this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
 			this.bindingNavigator1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// bindingNavigator1
@@ -130,11 +131,6 @@
 			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorAddNewItem.Text = "Добавить";
 			this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-			// 
-			// goodStorageItemBindingSource
-			// 
-			this.goodStorageItemBindingSource.DataSource = typeof(CRM_MODEL.GoodStorageItem);
-			this.goodStorageItemBindingSource.CurrentChanged += new System.EventHandler(this.goodStorageItemBindingSource_CurrentChanged);
 			// 
 			// bindingNavigatorCountItem
 			// 
@@ -235,6 +231,7 @@
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
+            this.Count,
             this.goodTypeDataGridViewTextBoxColumn,
             this.providerDataGridViewTextBoxColumn,
             this.receivingDateDataGridViewTextBoxColumn,
@@ -253,117 +250,17 @@
 			this.dataGridView1.TabIndex = 3;
 			this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
 			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-			this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// goodTypeDataGridViewTextBoxColumn
-			// 
-			this.goodTypeDataGridViewTextBoxColumn.DataPropertyName = "GoodType";
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.goodTypeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-			this.goodTypeDataGridViewTextBoxColumn.HeaderText = "Тип товара";
-			this.goodTypeDataGridViewTextBoxColumn.Name = "goodTypeDataGridViewTextBoxColumn";
-			this.goodTypeDataGridViewTextBoxColumn.ReadOnly = true;
-			this.goodTypeDataGridViewTextBoxColumn.Width = 89;
-			// 
-			// providerDataGridViewTextBoxColumn
-			// 
-			this.providerDataGridViewTextBoxColumn.DataPropertyName = "Provider";
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.providerDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-			this.providerDataGridViewTextBoxColumn.HeaderText = "Поставщик";
-			this.providerDataGridViewTextBoxColumn.Name = "providerDataGridViewTextBoxColumn";
-			this.providerDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// receivingDateDataGridViewTextBoxColumn
-			// 
-			this.receivingDateDataGridViewTextBoxColumn.DataPropertyName = "ReceivingDate";
-			this.receivingDateDataGridViewTextBoxColumn.HeaderText = "Получен";
-			this.receivingDateDataGridViewTextBoxColumn.Name = "receivingDateDataGridViewTextBoxColumn";
-			this.receivingDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.receivingDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			// 
-			// shelfLifeDataGridViewTextBoxColumn
-			// 
-			this.shelfLifeDataGridViewTextBoxColumn.DataPropertyName = "ShelfLife";
-			this.shelfLifeDataGridViewTextBoxColumn.HeaderText = "Годен до";
-			this.shelfLifeDataGridViewTextBoxColumn.Name = "shelfLifeDataGridViewTextBoxColumn";
-			this.shelfLifeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.shelfLifeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			// 
-			// countDataGridViewTextBoxColumn
-			// 
-			this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-			this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
-			this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-			// 
-			// purchasePriceDataGridViewTextBoxColumn
-			// 
-			this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
-			dataGridViewCellStyle4.Format = "C2";
-			this.purchasePriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-			this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Цена зак.";
-			this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
-			this.purchasePriceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.purchasePriceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			// 
-			// currentSellingPriceDataGridViewTextBoxColumn
-			// 
-			this.currentSellingPriceDataGridViewTextBoxColumn.DataPropertyName = "CurrentSellingPrice";
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle5.Format = "C2";
-			dataGridViewCellStyle5.NullValue = null;
-			this.currentSellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-			this.currentSellingPriceDataGridViewTextBoxColumn.HeaderText = "Цена прод.";
-			this.currentSellingPriceDataGridViewTextBoxColumn.Name = "currentSellingPriceDataGridViewTextBoxColumn";
-			this.currentSellingPriceDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// profitDataGridViewTextBoxColumn
-			// 
-			this.profitDataGridViewTextBoxColumn.DataPropertyName = "Profit";
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle6.Format = "C2";
-			dataGridViewCellStyle6.NullValue = null;
-			this.profitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-			this.profitDataGridViewTextBoxColumn.HeaderText = "Прибыль";
-			this.profitDataGridViewTextBoxColumn.Name = "profitDataGridViewTextBoxColumn";
-			this.profitDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// koefDataGridViewTextBoxColumn
-			// 
-			this.koefDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.koefDataGridViewTextBoxColumn.DataPropertyName = "Koef";
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			dataGridViewCellStyle7.Format = "N2";
-			dataGridViewCellStyle7.NullValue = null;
-			this.koefDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-			this.koefDataGridViewTextBoxColumn.HeaderText = "k";
-			this.koefDataGridViewTextBoxColumn.Name = "koefDataGridViewTextBoxColumn";
-			this.koefDataGridViewTextBoxColumn.ReadOnly = true;
-			this.koefDataGridViewTextBoxColumn.Width = 38;
-			// 
-			// commentDataGridViewTextBoxColumn
-			// 
-			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.commentDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
-			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-			this.commentDataGridViewTextBoxColumn.ReadOnly = true;
-			this.commentDataGridViewTextBoxColumn.Width = 200;
-			// 
 			// dataGridViewTextBoxColumn1
 			// 
 			this.dataGridViewTextBoxColumn1.DataPropertyName = "Count";
 			this.dataGridViewTextBoxColumn1.HeaderText = "Количество";
 			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			// 
+			// goodStorageItemBindingSource
+			// 
+			this.goodStorageItemBindingSource.DataSource = typeof(CRM_MODEL.GoodStorageItem);
+			this.goodStorageItemBindingSource.CurrentChanged += new System.EventHandler(this.goodStorageItemBindingSource_CurrentChanged);
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
@@ -463,6 +360,119 @@
 			this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
 			this.dataGridViewTextBoxColumn11.ReadOnly = true;
 			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// Count
+			// 
+			this.Count.DataPropertyName = "Count";
+			this.Count.HeaderText = "Count";
+			this.Count.Name = "Count";
+			this.Count.ReadOnly = true;
+			// 
+			// goodTypeDataGridViewTextBoxColumn
+			// 
+			this.goodTypeDataGridViewTextBoxColumn.DataPropertyName = "GoodType";
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.goodTypeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+			this.goodTypeDataGridViewTextBoxColumn.HeaderText = "Тип товара";
+			this.goodTypeDataGridViewTextBoxColumn.Name = "goodTypeDataGridViewTextBoxColumn";
+			this.goodTypeDataGridViewTextBoxColumn.ReadOnly = true;
+			this.goodTypeDataGridViewTextBoxColumn.Width = 89;
+			// 
+			// providerDataGridViewTextBoxColumn
+			// 
+			this.providerDataGridViewTextBoxColumn.DataPropertyName = "Provider";
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.providerDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+			this.providerDataGridViewTextBoxColumn.HeaderText = "Поставщик";
+			this.providerDataGridViewTextBoxColumn.Name = "providerDataGridViewTextBoxColumn";
+			this.providerDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// receivingDateDataGridViewTextBoxColumn
+			// 
+			this.receivingDateDataGridViewTextBoxColumn.DataPropertyName = "ReceivingDate";
+			this.receivingDateDataGridViewTextBoxColumn.HeaderText = "Получен";
+			this.receivingDateDataGridViewTextBoxColumn.Name = "receivingDateDataGridViewTextBoxColumn";
+			this.receivingDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.receivingDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			// 
+			// shelfLifeDataGridViewTextBoxColumn
+			// 
+			this.shelfLifeDataGridViewTextBoxColumn.DataPropertyName = "ShelfLife";
+			this.shelfLifeDataGridViewTextBoxColumn.HeaderText = "Годен до";
+			this.shelfLifeDataGridViewTextBoxColumn.Name = "shelfLifeDataGridViewTextBoxColumn";
+			this.shelfLifeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.shelfLifeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			// 
+			// countDataGridViewTextBoxColumn
+			// 
+			this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+			this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
+			this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+			// 
+			// purchasePriceDataGridViewTextBoxColumn
+			// 
+			this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
+			dataGridViewCellStyle4.Format = "C2";
+			this.purchasePriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+			this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Цена зак.";
+			this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
+			this.purchasePriceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.purchasePriceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			// 
+			// currentSellingPriceDataGridViewTextBoxColumn
+			// 
+			this.currentSellingPriceDataGridViewTextBoxColumn.DataPropertyName = "CurrentSellingPrice";
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle5.Format = "C2";
+			dataGridViewCellStyle5.NullValue = null;
+			this.currentSellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+			this.currentSellingPriceDataGridViewTextBoxColumn.HeaderText = "Цена прод.";
+			this.currentSellingPriceDataGridViewTextBoxColumn.Name = "currentSellingPriceDataGridViewTextBoxColumn";
+			this.currentSellingPriceDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// profitDataGridViewTextBoxColumn
+			// 
+			this.profitDataGridViewTextBoxColumn.DataPropertyName = "Profit";
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle6.Format = "C2";
+			dataGridViewCellStyle6.NullValue = null;
+			this.profitDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+			this.profitDataGridViewTextBoxColumn.HeaderText = "Прибыль";
+			this.profitDataGridViewTextBoxColumn.Name = "profitDataGridViewTextBoxColumn";
+			this.profitDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// koefDataGridViewTextBoxColumn
+			// 
+			this.koefDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.koefDataGridViewTextBoxColumn.DataPropertyName = "Koef";
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			dataGridViewCellStyle7.Format = "N2";
+			this.koefDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+			this.koefDataGridViewTextBoxColumn.HeaderText = "k";
+			this.koefDataGridViewTextBoxColumn.Name = "koefDataGridViewTextBoxColumn";
+			this.koefDataGridViewTextBoxColumn.ReadOnly = true;
+			this.koefDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.koefDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.koefDataGridViewTextBoxColumn.Width = 38;
+			// 
+			// commentDataGridViewTextBoxColumn
+			// 
+			this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.commentDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+			this.commentDataGridViewTextBoxColumn.HeaderText = "Описание";
+			this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+			this.commentDataGridViewTextBoxColumn.ReadOnly = true;
+			this.commentDataGridViewTextBoxColumn.Width = 200;
+			// 
 			// StorageForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,8 +486,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
 			this.bindingNavigator1.ResumeLayout(false);
 			this.bindingNavigator1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.goodStorageItemBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -501,7 +511,7 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
 		private System.Windows.Forms.ToolStripButton сохранитьToolStripButton;
 		private System.Windows.Forms.BindingSource goodStorageItemBindingSource;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private DataGridViewColumns.ExtendedDataGridView dataGridView1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -516,6 +526,7 @@
 		private DataGridViewColumns.DataGridViewCalendarColumn dataGridViewCalendarColumn1;
 		private DataGridViewColumns.DataGridViewCalendarColumn dataGridViewCalendarColumn2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Count;
 		private System.Windows.Forms.DataGridViewTextBoxColumn goodTypeDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn providerDataGridViewTextBoxColumn;
 		private DataGridViewColumns.DataGridViewCalendarColumn receivingDateDataGridViewTextBoxColumn;
@@ -524,7 +535,7 @@
 		private DataGridViewColumns.ExtendedTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn currentSellingPriceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn profitDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn koefDataGridViewTextBoxColumn;
+		private DataGridViewColumns.ExtendedTextBoxColumn koefDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
 	}
 }
