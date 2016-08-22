@@ -94,5 +94,15 @@ namespace CRM_VIEW
 		{
 			ViewUtils.ShowForm<PaymentsForm>(this);
 		}
+
+		private void типыРекламыToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ViewUtils.ShowForm<AdvertisingTypesForm>(this);
+		}
+
+		private void рекламаToolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			ViewUtils.ShowForm<AdvertisingsForm>(this);
+		}
 	}
 }

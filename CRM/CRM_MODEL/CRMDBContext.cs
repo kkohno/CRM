@@ -67,6 +67,16 @@ namespace CRM_MODEL
 		/// </summary>
 		public DbSet<Payment> Payments { get; set; }
 		#endregion
+		#region реклама
+		/// <summary>
+		/// типы рекламы
+		/// </summary>
+		public DbSet<AdvertisingType> AdvertisingTypes { get; set; }
+		/// <summary>
+		/// рекламные акции
+		/// </summary>
+		public DbSet<Advertising> Advertisings { get; set; }
+		#endregion
 
 		public CRMDBContext() : base(ContextSettings.Instance.ToString())
 		{

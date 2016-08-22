@@ -75,6 +75,19 @@
     <Compile Include="DataGridViewColumns\ExtendedTextBoxColumn.cs" />
     <Compile Include="DataGridViewColumns\ExtendedComboBoxColumn.cs" />
     <Compile Include="Extensions\ExtBindingList.cs" />
+    <Compile Include="Formatters\TimeSpanFormatter.cs" />
+    <Compile Include="Forms\AdvertisingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdvertisingsForm.Designer.cs">
+      <DependentUpon>AdvertisingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdvertisingTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdvertisingTypesForm.Designer.cs">
+      <DependentUpon>AdvertisingTypesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +248,12 @@
       <DependentUpon>UserView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewUtils.cs" />
+    <EmbeddedResource Include="Forms\AdvertisingsForm.resx">
+      <DependentUpon>AdvertisingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdvertisingTypesForm.resx">
+      <DependentUpon>AdvertisingTypesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,10 +340,13 @@
       <DependentUpon>UserView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CRM_MODEL.Advertising.datasource" />
+    <None Include="Properties\DataSources\CRM_MODEL.AdvertisingType.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.ContextSettings.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Good.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.GoodStorageItem.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.GoodType.datasource" />
+    <None Include="Properties\DataSources\CRM_MODEL.LoginPass.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Mail.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.Payment.datasource" />
     <None Include="Properties\DataSources\CRM_MODEL.PaymentType.datasource" />

@@ -14,8 +14,6 @@ namespace CRM_VIEW.Forms
 {
 	public partial class SalesForm : Form
 	{
-		object buf;
-		Type bufType;
 		private bool needLoadAllGoods = true;
 		public void LoadAllGoods()
 		{

@@ -44,6 +44,8 @@
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
 			this.продажиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.оформитьПродажуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.рекламаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.типыРекламыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.выплатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.типыПлатежейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.платежиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +54,7 @@
 			this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.подключениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.crmController1 = new CRM_VIEW.CRMController(this.components);
+			this.рекламаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -60,12 +63,13 @@
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.авторизацияToolStripMenuItem,
             this.справочникиToolStripMenuItem,
+            this.рекламаToolStripMenuItem,
             this.выплатыToolStripMenuItem,
             this.администрированиеToolStripMenuItem,
             this.настройкиToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(498, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(604, 24);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -179,6 +183,22 @@
 			this.оформитьПродажуToolStripMenuItem.Text = "Оформить продажу";
 			this.оформитьПродажуToolStripMenuItem.Click += new System.EventHandler(this.оформитьПродажуToolStripMenuItem_Click);
 			// 
+			// рекламаToolStripMenuItem
+			// 
+			this.рекламаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.типыРекламыToolStripMenuItem,
+            this.рекламаToolStripMenuItem1});
+			this.рекламаToolStripMenuItem.Name = "рекламаToolStripMenuItem";
+			this.рекламаToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+			this.рекламаToolStripMenuItem.Text = "Реклама";
+			// 
+			// типыРекламыToolStripMenuItem
+			// 
+			this.типыРекламыToolStripMenuItem.Name = "типыРекламыToolStripMenuItem";
+			this.типыРекламыToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+			this.типыРекламыToolStripMenuItem.Text = "Типы рекламы";
+			this.типыРекламыToolStripMenuItem.Click += new System.EventHandler(this.типыРекламыToolStripMenuItem_Click);
+			// 
 			// выплатыToolStripMenuItem
 			// 
 			this.выплатыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -238,11 +258,18 @@
 			this.crmController1.OnAuthorized += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnAuthorized);
 			this.crmController1.OnLogout += new System.EventHandler<CRM_MODEL.User>(this.crmController1_OnLogout);
 			// 
+			// рекламаToolStripMenuItem1
+			// 
+			this.рекламаToolStripMenuItem1.Name = "рекламаToolStripMenuItem1";
+			this.рекламаToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+			this.рекламаToolStripMenuItem1.Text = "Реклама";
+			this.рекламаToolStripMenuItem1.Click += new System.EventHandler(this.рекламаToolStripMenuItem1_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(498, 52);
+			this.ClientSize = new System.Drawing.Size(604, 52);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Form1";
@@ -281,5 +308,8 @@
 		private System.Windows.Forms.ToolStripMenuItem выплатыToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem типыПлатежейToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem платежиToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem рекламаToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem типыРекламыToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem рекламаToolStripMenuItem1;
 	}
 }

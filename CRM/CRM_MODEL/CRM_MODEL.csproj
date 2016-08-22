@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Advertising.cs" />
+    <Compile Include="AdvertisingType.cs" />
     <Compile Include="ContextSettings.cs" />
     <Compile Include="CRMDBContext.cs" />
     <Compile Include="Good.cs" />
@@ -97,6 +99,18 @@
     <Compile Include="Migrations\201608211603037_9.Designer.cs">
       <DependentUpon>201608211603037_9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608220913115_10.cs" />
+    <Compile Include="Migrations\201608220913115_10.Designer.cs">
+      <DependentUpon>201608220913115_10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608220926053_11.cs" />
+    <Compile Include="Migrations\201608220926053_11.Designer.cs">
+      <DependentUpon>201608220926053_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608220929515_12.cs" />
+    <Compile Include="Migrations\201608220929515_12.Designer.cs">
+      <DependentUpon>201608220929515_12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="PaymentType.cs" />
@@ -143,6 +157,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608211603037_9.resx">
       <DependentUpon>201608211603037_9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608220913115_10.resx">
+      <DependentUpon>201608220913115_10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608220926053_11.resx">
+      <DependentUpon>201608220926053_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608220929515_12.resx">
+      <DependentUpon>201608220929515_12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
