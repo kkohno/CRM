@@ -20,7 +20,7 @@ namespace CRM_VIEW.Forms
 			if (!needLoadAllGoods) return;
 			crmdbContextController1.Context.Goods.Load();
 			needLoadAllGoods = false;
-		}
+        }
 
 		public SalesForm()
 		{
@@ -63,6 +63,19 @@ namespace CRM_VIEW.Forms
 					}
 					else saleBindingSource.RemoveCurrent();
 				});
+		}
+
+		private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+		{
+			if (saleBindingSource.Current == null) e.Cancel = true;
+		}
+
+		private void возвратToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var sale = saleBindingSource.Current as Sale;
+			if (sale == null) return;
+			if (MessageBox.Show(this, "Вернуть " + sale, "Возврат", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+			ViewUtils.ExceptionWrapper(() => crmdbContextController1.Context.Return(sale), "Возврат");
 		}
 	}
 }

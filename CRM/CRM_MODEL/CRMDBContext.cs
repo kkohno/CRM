@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace CRM_MODEL
 {
-	public class CRMDBContext: DbContext
+	public partial class CRMDBContext: DbContext
 	{
 		#region пользователи
 		/// <summary>

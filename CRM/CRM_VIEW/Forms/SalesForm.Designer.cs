@@ -51,6 +51,8 @@
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.saleBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
 			this.personsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.возвратToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.extendedDataGridView1 = new CRM_VIEW.DataGridViewColumns.ExtendedDataGridView();
 			this.nameDataGridViewTextBoxColumn = new CRM_VIEW.DataGridViewColumns.ExtendedComboBoxColumn();
 			this.goodTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +70,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.saleBindingNavigator)).BeginInit();
 			this.saleBindingNavigator.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.personsBindingSource)).BeginInit();
+			this.contextMenuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.extendedDataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
 			this.SuspendLayout();
@@ -99,7 +102,7 @@
 			this.saleBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
 			this.saleBindingNavigator.Name = "saleBindingNavigator";
 			this.saleBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-			this.saleBindingNavigator.Size = new System.Drawing.Size(982, 25);
+			this.saleBindingNavigator.Size = new System.Drawing.Size(1093, 25);
 			this.saleBindingNavigator.TabIndex = 0;
 			this.saleBindingNavigator.Text = "bindingNavigator1";
 			// 
@@ -198,6 +201,21 @@
 			this.saleBindingNavigatorSaveItem.Text = "Сохранить данные";
 			this.saleBindingNavigatorSaveItem.Click += new System.EventHandler(this.saleBindingNavigatorSaveItem_Click);
 			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.возвратToolStripMenuItem});
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+			this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+			// 
+			// возвратToolStripMenuItem
+			// 
+			this.возвратToolStripMenuItem.Name = "возвратToolStripMenuItem";
+			this.возвратToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.возвратToolStripMenuItem.Text = "Возврат";
+			this.возвратToolStripMenuItem.Click += new System.EventHandler(this.возвратToolStripMenuItem_Click);
+			// 
 			// extendedDataGridView1
 			// 
 			this.extendedDataGridView1.AllowUserToAddRows = false;
@@ -215,12 +233,13 @@
             this.profitDataGridViewTextBoxColumn,
             this.koefDataGridViewTextBoxColumn,
             this.Person});
+			this.extendedDataGridView1.ContextMenuStrip = this.contextMenuStrip1;
 			this.extendedDataGridView1.DataSource = this.saleBindingSource;
 			this.extendedDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.extendedDataGridView1.Location = new System.Drawing.Point(0, 25);
 			this.extendedDataGridView1.Name = "extendedDataGridView1";
 			this.extendedDataGridView1.ReadonlyColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.extendedDataGridView1.Size = new System.Drawing.Size(982, 445);
+			this.extendedDataGridView1.Size = new System.Drawing.Size(1093, 445);
 			this.extendedDataGridView1.TabIndex = 1;
 			// 
 			// nameDataGridViewTextBoxColumn
@@ -352,7 +371,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(982, 470);
+			this.ClientSize = new System.Drawing.Size(1093, 470);
 			this.Controls.Add(this.extendedDataGridView1);
 			this.Controls.Add(this.saleBindingNavigator);
 			this.Name = "SalesForm";
@@ -362,6 +381,7 @@
 			this.saleBindingNavigator.ResumeLayout(false);
 			this.saleBindingNavigator.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.personsBindingSource)).EndInit();
+			this.contextMenuStrip1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.extendedDataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
 			this.ResumeLayout(false);
@@ -399,5 +419,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn profitDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn koefDataGridViewTextBoxColumn;
 		private DataGridViewColumns.ExtendedComboBoxColumn Person;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem возвратToolStripMenuItem;
 	}
 }

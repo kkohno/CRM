@@ -63,6 +63,16 @@ namespace CRM_VIEW
 		/// <returns>было ли обработано исключение</returns>
 		public static bool ExceptionWrapper(SimpleMethod method)
 		{
+			return ExceptionWrapper(method, null);
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="method"></param>
+		/// <param name="caption"></param>
+		/// <returns></returns>
+		public static bool ExceptionWrapper(SimpleMethod method, string caption)
+		{
 #if DEBUG
 			method();
 #else
@@ -70,7 +80,7 @@ namespace CRM_VIEW
 				method();
 			}
 			catch (Exception ex) {
-				MessageBox.Show(ex.Message, "SMM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(ex.Message, string.IsNullOrEmpty(caption)? "SMM": caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return true;
 			}
 #endif

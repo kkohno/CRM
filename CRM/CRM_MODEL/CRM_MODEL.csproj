@@ -54,6 +54,7 @@
     <Compile Include="AdvertisingType.cs" />
     <Compile Include="ContextSettings.cs" />
     <Compile Include="CRMDBContext.cs" />
+    <Compile Include="CRMDBContext_BusinessLogic.cs" />
     <Compile Include="Good.cs" />
     <Compile Include="GoodStorageItem.cs" />
     <Compile Include="GoodType.cs" />

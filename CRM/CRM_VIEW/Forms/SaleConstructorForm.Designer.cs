@@ -556,6 +556,7 @@
 			// 
 			// nameDataGridViewTextBoxColumn
 			// 
+			this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
 			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
@@ -564,10 +565,11 @@
 			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
 			this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
 			this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.nameDataGridViewTextBoxColumn.Width = 200;
+			this.nameDataGridViewTextBoxColumn.Width = 82;
 			// 
 			// goodTypeDataGridViewTextBoxColumn
 			// 
+			this.goodTypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
 			this.goodTypeDataGridViewTextBoxColumn.DataPropertyName = "GoodType";
 			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.goodTypeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
@@ -576,7 +578,7 @@
 			this.goodTypeDataGridViewTextBoxColumn.ReadOnly = true;
 			this.goodTypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
 			this.goodTypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.goodTypeDataGridViewTextBoxColumn.Width = 200;
+			this.goodTypeDataGridViewTextBoxColumn.Width = 51;
 			// 
 			// Count
 			// 
@@ -593,6 +595,7 @@
 			// 
 			// providerDataGridViewTextBoxColumn
 			// 
+			this.providerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
 			this.providerDataGridViewTextBoxColumn.DataPropertyName = "Provider";
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.providerDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
@@ -601,6 +604,7 @@
 			this.providerDataGridViewTextBoxColumn.ReadOnly = true;
 			this.providerDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
 			this.providerDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.providerDataGridViewTextBoxColumn.Width = 90;
 			// 
 			// purchasePriceDataGridViewTextBoxColumn
 			// 
